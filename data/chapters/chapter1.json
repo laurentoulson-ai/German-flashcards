@@ -1,4 +1,7 @@
-[
+{
+  "chapter": 1,
+  "title": "Der Junge, der überlebt",
+  "words": [
   {
     "german": "überlebte",
     "english": "survived",
@@ -705,3 +708,4 @@
     "clue": "Die Hecken im Garten waren ordentlich geschnitten."
   }
 ]
+}

@@ -1,3 +1,4 @@
+cat > js/data.js << 'EOF'
 // Data management for German Flashcards
 class FlashcardData {
     constructor() {
@@ -7,12 +8,10 @@ class FlashcardData {
         this.currentLevel = 1;
     }
     
-    // Load chapter data from JSON files
     async loadChapter(chapterNumber) {
         try {
             const response = await fetch(`data/chapters/chapter${chapterNumber}.json`);
             if (!response.ok) {
-                // Create placeholder if chapter doesn't exist yet
                 return {
                     chapter: chapterNumber,
                     title: `Chapter ${chapterNumber}`,
@@ -36,7 +35,6 @@ class FlashcardData {
         };
     }
     
-    // Load all chapters (up to 17)
     async loadAllChapters() {
         const chapterPromises = [];
         for (let i = 1; i <= 17; i++) {
@@ -47,14 +45,12 @@ class FlashcardData {
         return this.chapters;
     }
     
-    // Progress management
     loadProgress() {
         const saved = localStorage.getItem('germanFlashcardsProgress');
         if (saved) {
             return JSON.parse(saved);
         }
         
-        // Initialize empty progress
         return {
             chapters: {},
             stats: {
@@ -69,11 +65,10 @@ class FlashcardData {
         localStorage.setItem('germanFlashcardsProgress', JSON.stringify(this.progress));
     }
     
-    // Initialize progress for a chapter if it doesn't exist
     initChapterProgress(chapterNumber, wordCount) {
         if (!this.progress.chapters[chapterNumber]) {
             this.progress.chapters[chapterNumber] = {
-                wordsToLearn: Array.from({length: wordCount}, (_, i) => i), // All word indices
+                wordsToLearn: Array.from({length: wordCount}, (_, i) => i),
                 learnedWords: [],
                 strongestWords: []
             };
@@ -96,7 +91,6 @@ class FlashcardData {
         this.progress.stats = { totalWords: total, learnedWords: learned, strongestWords: strongest };
     }
     
-    // Get words for a session
     getSessionWords(chapterNumber, level, count, mode = 'mix') {
         const chapter = this.chapters.find(c => c.chapter === chapterNumber);
         const progress = this.progress.chapters[chapterNumber];
@@ -106,7 +100,6 @@ class FlashcardData {
         let wordPool = [];
         
         if (level === 1) {
-            // Level 1: Only wordsToLearn
             if (mode === 'weak') {
                 wordPool = progress.wordsToLearn;
             } else if (mode === 'consolidate') {
@@ -115,14 +108,11 @@ class FlashcardData {
                 wordPool = [...progress.wordsToLearn, ...progress.learnedWords];
             }
         } else if (level === 2) {
-            // Level 2: Only learnedWords and strongestWords
             wordPool = [...progress.learnedWords, ...progress.strongestWords];
         } else if (level === 3) {
-            // Level 3: Only strongestWords
             wordPool = progress.strongestWords;
         }
         
-        // Shuffle and select limited number
         const shuffled = this.shuffleArray([...wordPool]);
         const selectedIndices = shuffled.slice(0, Math.min(count, shuffled.length));
         
@@ -142,31 +132,26 @@ class FlashcardData {
         return newArray;
     }
     
-    // Update progress after a session
     updateWordStatus(chapterNumber, wordIndex, level, isCorrect) {
         const progress = this.progress.chapters[chapterNumber];
         if (!progress) return;
         
         if (level === 1) {
             if (isCorrect) {
-                // Move from wordsToLearn to learnedWords
                 const wordIndexInToLearn = progress.wordsToLearn.indexOf(wordIndex);
                 if (wordIndexInToLearn > -1) {
                     progress.wordsToLearn.splice(wordIndexInToLearn, 1);
                     progress.learnedWords.push(wordIndex);
                 }
             }
-            // If wrong, stays in wordsToLearn
         } else if (level === 2) {
             if (isCorrect) {
-                // Move from learnedWords to strongestWords
                 const wordIndexInLearned = progress.learnedWords.indexOf(wordIndex);
                 if (wordIndexInLearned > -1) {
                     progress.learnedWords.splice(wordIndexInLearned, 1);
                     progress.strongestWords.push(wordIndex);
                 }
             } else {
-                // Move from strongestWords or learnedWords back to wordsToLearn
                 let sourceArray = progress.strongestWords;
                 let arrayIndex = progress.strongestWords.indexOf(wordIndex);
                 
@@ -182,21 +167,18 @@ class FlashcardData {
             }
         } else if (level === 3) {
             if (!isCorrect) {
-                // Move from strongestWords back to learnedWords
                 const wordIndexInStrongest = progress.strongestWords.indexOf(wordIndex);
                 if (wordIndexInStrongest > -1) {
                     progress.strongestWords.splice(wordIndexInStrongest, 1);
                     progress.learnedWords.push(wordIndex);
                 }
             }
-            // If correct, stays in strongestWords
         }
         
         this.updateStats();
         this.saveProgress();
     }
     
-    // Export/Import functionality
     exportProgress() {
         const dataStr = JSON.stringify(this.progress, null, 2);
         const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
@@ -222,5 +204,5 @@ class FlashcardData {
     }
 }
 
-// Create global instance
 const flashcardData = new FlashcardData();
+EOF
