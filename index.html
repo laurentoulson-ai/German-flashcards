@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Flashcards</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Add some loading styles */
+        .loading {
+            text-align: center;
+            padding: 50px;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #e4ab49;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-language"></i> German Flashcards</h1>
+            <p class="subtitle">Master German vocabulary chapter by chapter</p>
+        </header>
+        
+        <main class="chapters-grid" id="chaptersContainer">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Loading chapters...</p>
+            </div>
+        </main>
+        
+        <div class="progress-summary">
+            <div class="progress-item">
+                <span class="progress-label">Total Words:</span>
+                <span class="progress-value" id="totalWords">0</span>
+            </div>
+            <div class="progress-item">
+                <span class="progress-label">Words Learned:</span>
+                <span class="progress-value" id="learnedWords">0</span>
+            </div>
+            <div class="progress-item">
+                <span class="progress-label">Chapters:</span>
+                <span class="progress-value" id="chaptersCount">0/17</span>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button id="exportBtn" class="btn-secondary">
+                <i class="fas fa-download"></i> Export Progress
+            </button>
+            <button id="importBtn" class="btn-secondary">
+                <i class="fas fa-upload"></i> Import Progress
+            </button>
+        </div>
+    </div>
+    
+    <input type="file" id="importFile" accept=".json" style="display: none;">
+    
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
