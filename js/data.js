@@ -98,13 +98,29 @@ class FlashcardData {
     
     getSessionWords(chapterNumber, level, count, mode = 'mix') {
         // Find chapter by its numeric chapter property or by index fallback
-        const chapter = this.chapters.find(c => Number(c.chapter) === Number(chapterNumber)) || this.chapters[chapterNumber - 1];
+        let chapter = this.chapters.find(c => Number(c.chapter) === Number(chapterNumber)) || this.chapters[chapterNumber - 1];
+
+        // If chapters aren't loaded (e.g. directly opened game.html), fall back to stored chapterData
+        if ((!chapter || !Array.isArray(chapter.words)) && typeof localStorage !== 'undefined') {
+            try {
+                const stored = localStorage.getItem('chapterData');
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (parsed && Number(parsed.chapter) === Number(chapterNumber)) {
+                        chapter = parsed;
+                    }
+                }
+            } catch (e) {
+                console.warn('Failed to parse chapterData from localStorage fallback', e);
+            }
+        }
+
         // Ensure chapter.words exists
         const wordsArray = (chapter && Array.isArray(chapter.words)) ? chapter.words : [];
 
         // Ensure progress for this chapter exists
         if (!this.progress.chapters[chapterNumber]) {
-            // initialize with full range
+            // initialize with full range (will be empty if wordsArray.length is 0)
             this.initChapterProgress(Number(chapterNumber), wordsArray.length);
         }
         const progress = this.progress.chapters[chapterNumber];
@@ -144,8 +160,27 @@ class FlashcardData {
 
         // Shuffle and select the requested count
         const shuffled = this.shuffleArray([...wordPoolIndices]);
+
+        // If the sanitized pool is empty but the chapter actually has words, fall back to full range
+        if (shuffled.length === 0 && wordsArray.length > 0) {
+            console.warn(`getSessionWords: sanitized pool empty for chapter ${chapterNumber}, level ${level}, mode ${mode}. Falling back to all indices.`);
+            const allIndices = Array.from({length: wordsArray.length}, (_, i) => i);
+            // shuffle those
+            const shuffledAll = this.shuffleArray(allIndices);
+            const takeAll = Math.min(Number(count) || 0, shuffledAll.length);
+            const selectedAll = shuffledAll.slice(0, takeAll);
+            return selectedAll.map(index => ({
+                ...wordsArray[index],
+                index: index,
+                level: level
+            }));
+        }
+
         const take = Math.min(Number(count) || 0, shuffled.length);
         const selectedIndices = shuffled.slice(0, take);
+
+        // Debug log showing sizes
+        console.log(`getSessionWords: chapter=${chapterNumber} words=${wordsArray.length} poolBefore=${wordPoolIndices.length} poolAfter=${shuffled.length} requested=${count} selected=${selectedIndices.length}`);
 
         // Map to word objects, include original index and level
         return selectedIndices.map(index => ({
