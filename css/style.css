@@ -19,7 +19,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--dark);
+    color: var(--primary); /* main text uses yellow */
     line-height: 1.6;
     padding: 20px;
     max-width: 1200px;
@@ -27,11 +27,12 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(33, 53, 89, 0.75); /* --secondary @ 75% */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
     padding: 30px;
     margin-bottom: 30px;
+    color: var(--primary); /* content text remains yellow */
 }
 
 header {
@@ -54,6 +55,10 @@ h1 {
     font-size: 1.2rem;
 }
 
+h1, h2, h3, p, span, li {
+    color: var(--primary);
+}
+
 .chapters-grid {
     position: relative; /* for overlay pseudo-element */
     background-image: url('../data/images/background.png');
@@ -62,14 +67,13 @@ h1 {
     background-repeat: no-repeat;
     padding: 30px;
     border-radius: 12px;
-    /* keep the grid layout but give some internal spacing so cards don't hit the edges */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
     margin-bottom: 40px;
+    color: var(--primary);
 }
 
-/* overlay to improve contrast between cards and background */
 .chapters-grid::before {
     content: '';
     position: absolute;
@@ -79,7 +83,6 @@ h1 {
     pointer-events: none;
 }
 
-/* ensure grid children render above the overlay */
 .chapters-grid > * {
     position: relative;
     z-index: 1;
@@ -91,7 +94,7 @@ h1 {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    color: white;
+    color: var(--primary); /* make card text yellow */
     position: relative;
 }
 
@@ -153,7 +156,7 @@ h1 {
 .progress-summary {
     display: flex;
     justify-content: space-around;
-    background-color: #f8f9fa;
+    background-color: rgba(33, 53, 89, 0.75);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 30px;
@@ -372,6 +375,27 @@ h1 {
 .tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+/* Level cards: keep white background as requested but set their text to yellow for consistency */
+.level-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    color: var(--primary); /* text inside level cards is yellow */
+}
+
+.level-card h3, .level-card .level-description, .level-card .level-stat {
+    color: var(--primary);
+}
+
+.level-card .btn-play {
+    background-color: var(--primary);
+    color: var(--secondary);
 }
 
 /* Dark mode support */
