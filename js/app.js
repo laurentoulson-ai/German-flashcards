@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     try {
         await flashcardData.loadAllChapters();
         console.log('Chapters loaded:', flashcardData.chapters.length);
+        // Recalculate progress statistics from current progress arrays to avoid stale totals
+        flashcardData.updateStats();
+        flashcardData.saveProgress();
         displayChapters();
         updateProgressSummary();
         
@@ -74,8 +77,10 @@ function displayChapters() {
             strongestWords: []
         };
         
-        const wordsToLearnCount = progress.wordsToLearn.length;
-        const learnedWordsCount = progress.learnedWords.length;
+        // Compute counts: total words in chapter, learned includes learned + strongest
+        const totalCount = chapter.words.length;
+        const learnedCount = (progress.learnedWords ? progress.learnedWords.length : 0) + (progress.strongestWords ? progress.strongestWords.length : 0);
+        const toLearnCount = Math.max(0, totalCount - learnedCount);
         
         const chapterCard = document.createElement('div');
         chapterCard.className = 'chapter-card';
@@ -96,11 +101,11 @@ function displayChapters() {
                 <div class="chapter-stats">
                     <div class="stat">
                         <i class="fas fa-book"></i>
-                        <span>To Learn: ${wordsToLearnCount}</span>
+                        <span>To Learn: ${toLearnCount}</span>
                     </div>
                     <div class="stat">
                         <i class="fas fa-check-circle"></i>
-                        <span>Learned: ${learnedWordsCount}</span>
+                        <span>Learned: ${learnedCount}</span>
                     </div>
                 </div>
             </div>

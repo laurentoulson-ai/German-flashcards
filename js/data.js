@@ -83,16 +83,27 @@ class FlashcardData {
     }
     
     updateStats() {
+        // Total words should be the sum of chapter word counts (avoid double-counting indices stored in progress arrays)
         let total = 0;
         let learned = 0;
         let strongest = 0;
-        
-        Object.values(this.progress.chapters).forEach(chapter => {
-            total += chapter.wordsToLearn.length + chapter.learnedWords.length + chapter.strongestWords.length;
-            learned += chapter.learnedWords.length;
-            strongest += chapter.strongestWords.length;
+
+        // Sum total words from loaded chapter data if available
+        if (Array.isArray(this.chapters) && this.chapters.length > 0) {
+            total = this.chapters.reduce((sum, ch) => sum + (Array.isArray(ch.words) ? ch.words.length : 0), 0);
+        } else {
+            // Fallback: infer total as sum of progress arrays lengths per chapter (not ideal but safe)
+            Object.values(this.progress.chapters).forEach(ch => {
+                total += (ch.wordsToLearn ? ch.wordsToLearn.length : 0) + (ch.learnedWords ? ch.learnedWords.length : 0) + (ch.strongestWords ? ch.strongestWords.length : 0);
+            });
+        }
+
+        // Learned should count only the level-2 list (learnedWords). Strongest counts level-3.
+        Object.values(this.progress.chapters).forEach(ch => {
+            learned += (ch.learnedWords ? ch.learnedWords.length : 0);
+            strongest += (ch.strongestWords ? ch.strongestWords.length : 0);
         });
-        
+
         this.progress.stats = { totalWords: total, learnedWords: learned, strongestWords: strongest };
     }
     
@@ -153,7 +164,8 @@ class FlashcardData {
                 wordPoolIndices = sanitizeIndices([...(progress.wordsToLearn || []), ...(progress.learnedWords || [])]);
             }
         } else if (level === 2) {
-            wordPoolIndices = sanitizeIndices([...(progress.learnedWords || []), ...(progress.strongestWords || [])]);
+            // Level 2 should draw from learnedWords (level 2). strongestWords are a subset of learnedWords and should not be combined here.
+            wordPoolIndices = sanitizeIndices(progress.learnedWords || []);
         } else if (level === 3) {
             wordPoolIndices = sanitizeIndices(progress.strongestWords || []);
         }
@@ -202,46 +214,48 @@ class FlashcardData {
     updateWordStatus(chapterNumber, wordIndex, level, isCorrect) {
         const progress = this.progress.chapters[chapterNumber];
         if (!progress) return;
-        
+
         if (level === 1) {
+            // Level 1: on correct -> remove from wordsToLearn and add to learnedWords (level 2)
             if (isCorrect) {
-                const wordIndexInToLearn = progress.wordsToLearn.indexOf(wordIndex);
-                if (wordIndexInToLearn > -1) {
-                    progress.wordsToLearn.splice(wordIndexInToLearn, 1);
-                    progress.learnedWords.push(wordIndex);
-                }
+                const idx = progress.wordsToLearn.indexOf(wordIndex);
+                if (idx > -1) progress.wordsToLearn.splice(idx, 1);
+                if (!progress.learnedWords.includes(wordIndex)) progress.learnedWords.push(wordIndex);
+                // Ensure it's not duplicated in strongest
+                const sIdx = progress.strongestWords.indexOf(wordIndex);
+                if (sIdx > -1) progress.strongestWords.splice(sIdx, 1);
             }
         } else if (level === 2) {
             if (isCorrect) {
-                const wordIndexInLearned = progress.learnedWords.indexOf(wordIndex);
-                if (wordIndexInLearned > -1) {
-                    progress.learnedWords.splice(wordIndexInLearned, 1);
-                    progress.strongestWords.push(wordIndex);
-                }
+                // Promote to strongest: remove from learnedWords and add to strongestWords
+                const lIdx = progress.learnedWords.indexOf(wordIndex);
+                if (lIdx > -1) progress.learnedWords.splice(lIdx, 1);
+                if (!progress.strongestWords.includes(wordIndex)) progress.strongestWords.push(wordIndex);
             } else {
-                let sourceArray = progress.strongestWords;
-                let arrayIndex = progress.strongestWords.indexOf(wordIndex);
-                
-                if (arrayIndex === -1) {
-                    sourceArray = progress.learnedWords;
-                    arrayIndex = progress.learnedWords.indexOf(wordIndex);
-                }
-                
-                if (arrayIndex > -1) {
-                    sourceArray.splice(arrayIndex, 1);
-                    progress.wordsToLearn.push(wordIndex);
-                }
+                // Incorrect on level 2: remove from strongest and learned and return to wordsToLearn
+                const sIdx = progress.strongestWords.indexOf(wordIndex);
+                if (sIdx > -1) progress.strongestWords.splice(sIdx, 1);
+                const lIdx2 = progress.learnedWords.indexOf(wordIndex);
+                if (lIdx2 > -1) progress.learnedWords.splice(lIdx2, 1);
+                if (!progress.wordsToLearn.includes(wordIndex)) progress.wordsToLearn.push(wordIndex);
             }
         } else if (level === 3) {
-            if (!isCorrect) {
-                const wordIndexInStrongest = progress.strongestWords.indexOf(wordIndex);
-                if (wordIndexInStrongest > -1) {
-                    progress.strongestWords.splice(wordIndexInStrongest, 1);
-                    progress.learnedWords.push(wordIndex);
-                }
+            if (isCorrect) {
+                // Correct on level 3: ensure in strongest and not in learned
+                const lIdx3 = progress.learnedWords.indexOf(wordIndex);
+                if (lIdx3 > -1) progress.learnedWords.splice(lIdx3, 1);
+                if (!progress.strongestWords.includes(wordIndex)) progress.strongestWords.push(wordIndex);
+            } else {
+                // Incorrect on level 3: demote to learned (remove from strongest, add to learned)
+                const sIdx3 = progress.strongestWords.indexOf(wordIndex);
+                if (sIdx3 > -1) progress.strongestWords.splice(sIdx3, 1);
+                if (!progress.learnedWords.includes(wordIndex)) progress.learnedWords.push(wordIndex);
+                // Ensure it's not in wordsToLearn at the same time
+                const wIdx = progress.wordsToLearn.indexOf(wordIndex);
+                if (wIdx > -1) progress.wordsToLearn.splice(wIdx, 1);
             }
         }
-        
+
         this.updateStats();
         this.saveProgress();
     }

@@ -26,17 +26,23 @@ async function loadChapterData(chapterNumber) {
     flashcardData.initChapterProgress(chapterNumber, chapter.words.length);
     const progress = flashcardData.progress.chapters[chapterNumber];
     
-    // Update statistics
-    document.getElementById('wordsToLearn').textContent = progress.wordsToLearn.length;
-    document.getElementById('learnedWords').textContent = progress.learnedWords.length;
-    document.getElementById('masteredWords').textContent = progress.strongestWords.length;
-    document.getElementById('totalWords').textContent = chapter.words.length;
+    // Compute learned (includes strongest/mastered words)
+    const learnedCount = (progress.learnedWords ? progress.learnedWords.length : 0) + (progress.strongestWords ? progress.strongestWords.length : 0);
+    const masteredCount = (progress.strongestWords ? progress.strongestWords.length : 0);
+    const totalCount = chapter.words.length;
+    const toLearnCount = Math.max(0, totalCount - learnedCount);
     
-    // Update level counts
-    document.getElementById('level1Count').textContent = progress.wordsToLearn.length + progress.learnedWords.length;
-    document.getElementById('level2Count').textContent = progress.learnedWords.length + progress.strongestWords.length;
-    document.getElementById('level3Count').textContent = progress.strongestWords.length;
+    // Update statistics (per-chapter)
+    document.getElementById('wordsToLearn').textContent = toLearnCount;
+    document.getElementById('learnedWords').textContent = learnedCount;
+    document.getElementById('masteredWords').textContent = masteredCount;
+    document.getElementById('totalWords').textContent = totalCount;
     
+    // Update level counts: Level 1 should always show total words; Level 2 shows learned (including mastered); Level 3 shows mastered
+    document.getElementById('level1Count').textContent = totalCount;
+    document.getElementById('level2Count').textContent = learnedCount;
+    document.getElementById('level3Count').textContent = masteredCount;
+
     // Store chapter data for game session
     localStorage.setItem('currentChapter', chapterNumber);
     localStorage.setItem('chapterData', JSON.stringify(chapter));
