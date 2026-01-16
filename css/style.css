@@ -37,10 +37,26 @@ body {
 }
 
 header {
+    /* image-only header: remove internal padding so image fills to the separator */
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding: 0; /* removed previous bottom padding to let the image fill the header */
     border-bottom: 2px solid var(--primary);
+}
+
+.cover-image {
+    display: block;
+    width: 100%;
+    height: 260px; /* default desktop height */
+    object-fit: cover;
+    border-top-left-radius: 15px; /* match container rounded corners */
+    border-top-right-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .cover-image {
+        height: 160px; /* smaller height on mobile */
+    }
 }
 
 h1 {

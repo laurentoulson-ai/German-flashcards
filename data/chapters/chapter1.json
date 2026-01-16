@@ -2,710 +2,1980 @@
   "chapter": 1,
   "title": "Der Junge, der überlebt",
   "words": [
-  {
-    "german": "überlebte",
-    "english": "survived",
-    "clue": "Er überlebte den Unfall nur knapp."
-  },
-  {
-    "german": "darauf",
-    "english": "on it; thereupon",
-    "clue": "Darauf ging er einfach wortlos hinaus."
-  },
-  {
-    "german": "sogar",
-    "english": "even",
-    "clue": "Sie kam sogar zu früh zum Termin."
-  },
-  {
-    "german": "merkwürdige",
-    "english": "strange; peculiar",
-    "clue": "Er erzählte eine merkwürdige Geschichte."
-  },
-  {
-    "german": "geheimnisvolle",
-    "english": "mysterious",
-    "clue": "Im Wald hörten wir eine geheimnisvolle Stimme."
-  },
-  {
-    "german": "solchem",
-    "english": "such",
-    "clue": "Mit solchem Lärm kann niemand schlafen."
-  },
-  {
-    "german": "herstellte",
-    "english": "produced; manufactured",
-    "clue": "Die Fabrik stellte früher Fahrräder her."
-  },
-  {
-    "german": "Schnurrbart",
-    "english": "mustache",
-    "clue": "Sein Schnurrbart war sorgfältig gestutzt."
-  },
-  {
-    "german": "dünn",
-    "english": "thin",
-    "clue": "Der Kaffee ist heute ziemlich dünn."
-  },
-  {
-    "german": "besaß",
-    "english": "possessed; had",
-    "clue": "Er besaß ein altes Haus am See."
-  },
-  {
-    "german": "doppelt",
-    "english": "double; twice",
-    "clue": "Bitte nimm doppelt so viel Wasser."
-  },
-  {
-    "german": "notwendig",
-    "english": "necessary",
-    "clue": "Eine Pause ist jetzt notwendig."
-  },
-  {
-    "german": "gewesen",
-    "english": "been",
-    "clue": "Ich bin noch nie in Wien gewesen."
-  },
-  {
-    "german": "allerdings",
-    "english": "however; admittedly",
-    "clue": "Das ist allerdings ein gutes Argument."
-  },
-  {
-    "german": "nirgendwo",
-    "english": "nowhere",
-    "clue": "Ich konnte den Schlüssel nirgendwo finden."
-  },
-  {
-    "german": "besaßen",
-    "english": "possessed; had (plural)",
-    "clue": "Sie besaßen früher keinen Fernseher."
-  },
-  {
-    "german": "Geheimnis",
-    "english": "secret",
-    "clue": "Das bleibt unser Geheimnis."
-  },
-  {
-    "german": "aufdecken",
-    "english": "to uncover; discover",
-    "clue": "Die Polizei will den Betrug aufdecken."
-  },
-  {
-    "german": "unerträglich",
-    "english": "unbearable",
-    "clue": "Die Hitze im Zimmer war unerträglich."
-  },
-  {
-    "german": "Sache",
-    "english": "thing; matter",
-    "clue": "Das ist eine ernste Sache."
-  },
-  {
-    "german": "etlichen",
-    "english": "several; quite a few",
-    "clue": "Nach etlichen Versuchen klappte es endlich."
-  },
-  {
-    "german": "behauptete",
-    "english": "claimed; asserted",
-    "clue": "Er behauptete, er habe nichts gesehen."
-  },
-  {
-    "german": "Nichtsnutz",
-    "english": "good-for-nothing",
-    "clue": "Er nennt ihn ständig einen Nichtsnutz."
-  },
-  {
-    "german": "schauderten",
-    "english": "shuddered",
-    "clue": "Sie schauderten vor Kälte im Wind."
-  },
-  {
-    "german": "Gedanken",
-    "english": "thoughts",
-    "clue": "Meine Gedanken waren ganz woanders."
-  },
-  {
-    "german": "kreuzen",
-    "english": "to cross",
-    "clue": "Hier kreuzen sich zwei wichtige Straßen."
-  },
-  {
-    "german": "Grund",
-    "english": "reason; ground",
-    "clue": "Aus welchem Grund bist du gegangen?"
-  },
-  {
-    "german": "fernzuhalten",
-    "english": "to keep away",
-    "clue": "Er versuchte, die Kinder fernzuhalten."
-  },
-  {
-    "german": "Berührung",
-    "english": "contact; touch",
-    "clue": "Bei Berührung schaltet sich das Licht ein."
-  },
-  {
-    "german": "trüben",
-    "english": "to dull; to sadden",
-    "clue": "Schlechte Nachrichten trüben die Stimmung."
-  },
-  {
-    "german": "aufschlugen",
-    "english": "opened (eyes)",
-    "clue": "Als der Wecker klingelte, schlugen sie die Augen auf."
-  },
-  {
-    "german": "wolkenverhangenen",
-    "english": "cloud-covered; overcast",
-    "clue": "Am wolkenverhangenen Himmel war kein Stern zu sehen."
-  },
-  {
-    "german": "geheimnisvollen",
-    "english": "mysterious (plural/dative)",
-    "clue": "Sie folgten den geheimnisvollen Spuren im Schnee."
-  },
-  {
-    "german": "munter",
-    "english": "cheerful; lively",
-    "clue": "Nach dem Kaffee war er wieder munter."
-  },
-  {
-    "german": "während",
-    "english": "while",
-    "clue": "Während ich koche, deckst du bitte den Tisch."
-  },
-  {
-    "german": "schreienden",
-    "english": "screaming",
-    "clue": "Die schreienden Kinder rannten durch den Flur."
-  },
-  {
-    "german": "rangelte",
-    "english": "wrestled; struggled",
-    "clue": "Der Junge rangelte mit seinem Bruder im Garten."
-  },
-  {
-    "german": "zwängte",
-    "english": "forced; squeezed",
-    "clue": "Sie zwängte sich durch die enge Tür."
-  },
-  {
-    "german": "Waldkauz",
-    "english": "tawny owl",
-    "clue": "Nachts hörten wir einen Waldkauz rufen."
-  },
-  {
-    "german": "vorbeifliegen",
-    "english": "to fly past",
-    "clue": "Ein Vogel schien direkt am Fenster vorbeizufliegen."
-  },
-  {
-    "german": "Wange",
-    "english": "cheek",
-    "clue": "Er küsste sie auf die Wange."
-  },
-  {
-    "german": "Abschiedskuss",
-    "english": "goodbye kiss",
-    "clue": "Zum Abschied gab es noch einen Abschiedskuss."
-  },
-  {
-    "german": "daneben",
-    "english": "wrong; off the mark; next to",
-    "clue": "Ich lag mit meiner Vermutung völlig daneben."
-  },
-  {
-    "german": "Wutanfall",
-    "english": "tantrum",
-    "clue": "Er bekam einen Wutanfall, als er verlor."
-  },
-  {
-    "german": "Haferbrei",
-    "english": "porridge",
-    "clue": "Zum Frühstück gab es warmen Haferbrei."
-  },
-  {
-    "german": "Schlingel",
-    "english": "rascal",
-    "clue": "Du kleiner Schlingel, was hast du angestellt?"
-  },
-  {
-    "german": "rückwärts",
-    "english": "backwards",
-    "clue": "Bitte fahr nicht rückwärts ohne zu schauen!"
-  },
-  {
-    "german": "Einbiegung",
-    "english": "turn; junction",
-    "clue": "An der nächsten Einbiegung rechts abbiegen."
-  },
-  {
-    "german": "hinzuschauen",
-    "english": "to look at",
-    "clue": "Traust du dich, hinzuschauen?"
-  },
-  {
-    "german": "getigerte",
-    "english": "tabby; striped",
-    "clue": "Die getigerte Katze schlief auf dem Sofa."
-  },
-  {
-    "german": "Straßenkarte",
-    "english": "street map; road map",
-    "clue": "Ohne Straßenkarte fanden wir das Dorf nicht."
-  },
-  {
-    "german": "gedacht",
-    "english": "thought",
-    "clue": "Ich habe an dich gedacht."
-  },
-  {
-    "german": "Sinnestäuschung",
-    "english": "hallucination; illusion",
-    "clue": "Vielleicht war es nur eine Sinnestäuschung."
-  },
-  {
-    "german": "blinzelte",
-    "english": "blinked",
-    "clue": "Er blinzelte in die grelle Sonne."
-  },
-  {
-    "german": "Schmetterlingsattacke",
-    "english": "butterfly attack",
-    "clue": "Im Spaß nannte sie seine Nervosität eine Schmetterlingsattacke."
-  },
-  {
-    "german": "bog",
-    "english": "turned; bent",
-    "clue": "Der Weg bog hinter dem Haus nach links ab."
-  },
-  {
-    "german": "entlangfuhr",
-    "english": "drove along",
-    "clue": "Er fuhr den Fluss entlang."
-  },
-  {
-    "german": "Schild",
-    "english": "sign",
-    "clue": "Das Schild zeigte den Weg zum Bahnhof."
-  },
-  {
-    "german": "verpeilte",
-    "english": "was confused; distracted",
-    "clue": "Ich war so verpeilt, dass ich den Termin vergaß."
-  },
-  {
-    "german": "vertige",
-    "english": "mistaken; confused",
-    "clue": "Ich war völlig vertige und nahm die falsche Tür."
-  },
-  {
-    "german": "Kerze",
-    "english": "candle",
-    "clue": "Sie stellte eine Kerze ins Fenster."
-  },
-  {
-    "german": "starre",
-    "english": "rigid; stiff",
-    "clue": "Vor Schreck fiel er in eine starre Haltung."
-  },
-  {
-    "german": "beobachteten",
-    "english": "observed; watched",
-    "clue": "Sie beobachteten das Spiel vom Balkon aus."
-  },
-  {
-    "german": "sodann",
-    "english": "then; thereupon",
-    "clue": "Er las den Brief und ging sodann nach Hause."
-  },
-  {
-    "german": "unterwegs",
-    "english": "on the way; underway",
-    "clue": "Ich bin noch unterwegs und komme später."
-  },
-  {
-    "german": "hängen",
-    "english": "to hang",
-    "clue": "Der Mantel hängt an der Garderobe."
-  },
-  {
-    "german": "anzuziehen",
-    "english": "to put on",
-    "clue": "Es ist kalt; vergiss nicht, eine Jacke anzuziehen."
-  },
-  {
-    "german": "trommelte",
-    "english": "drummed",
-    "clue": "Er trommelte ungeduldig mit den Fingern auf den Tisch."
-  },
-  {
-    "german": "samtweichen",
-    "english": "velvet-soft",
-    "clue": "Sie streichelte das samtweiche Kissen."
-  },
-  {
-    "german": "verleitete",
-    "english": "tempted; induced",
-    "clue": "Der Duft verleitete ihn, noch ein Stück Kuchen zu nehmen."
-  },
-  {
-    "german": "verdreckte",
-    "english": "dirty; soiled",
-    "clue": "Seine Schuhe waren völlig verdreckte."
-  },
-  {
-    "german": "Auftauchen",
-    "english": "appearance; emergence",
-    "clue": "Beim plötzlichen Auftauchen des Hundes erschrak sie."
-  },
-  {
-    "german": "sonnenklar",
-    "english": "crystal clear",
-    "clue": "Es war sonnenklar, dass er log."
-  },
-  {
-    "german": "Erzählstunde",
-    "english": "story time",
-    "clue": "In der Kita beginnt um drei die Erzählstunde."
-  },
-  {
-    "german": "nickte",
-    "english": "nodded",
-    "clue": "Sie nickte zustimmend."
-  },
-  {
-    "german": "überwog",
-    "english": "outweighed",
-    "clue": "Am Ende überwog die Freude die Angst."
-  },
-  {
-    "german": "bemerkte",
-    "english": "noticed",
-    "clue": "Er bemerkte den Fehler sofort."
-  },
-  {
-    "german": "ungewöhnliche",
-    "english": "unusual",
-    "clue": "Das war eine ungewöhnliche Idee."
-  },
-  {
-    "german": "ob",
-    "english": "whether; if",
-    "clue": "Ich weiß nicht, ob er heute kommt."
-  },
-  {
-    "german": "Verzierungen",
-    "english": "decorations",
-    "clue": "Die Verzierungen an der Tür waren handgeschnitzt."
-  },
-  {
-    "german": "grämliche",
-    "english": "grumpy; sullen",
-    "clue": "Seine grämliche Miene machte alle still."
-  },
-  {
-    "german": "Schober",
-    "english": "haystack",
-    "clue": "Hinter dem Schober versteckte sich das Kind."
-  },
-  {
-    "german": "verzich",
-    "english": "do without (archaic)",
-    "clue": "Er sagte feierlich: „Ich verzich auf meinen Anteil.“"
-  },
-  {
-    "german": "Bahn",
-    "english": "path; railway",
-    "clue": "Wir warteten auf dem Bahnsteig auf die Bahn."
-  },
-  {
-    "german": "werfen",
-    "english": "to throw",
-    "clue": "Bitte wirf den Ball nicht ins Fenster."
-  },
-  {
-    "german": "feuerblond",
-    "english": "fiery red",
-    "clue": "Sie trug ihr Haar feuerblond gefärbt."
-  },
-  {
-    "german": "beauhbte",
-    "english": "claimed (misspelling of \"behauptete\")",
-    "clue": "Er beauhbte, alles sei in Ordnung."
-  },
-  {
-    "german": "vorheischwossen",
-    "english": "predicted; foreseen (archaic)",
-    "clue": "Der Alte vorheischwossen ein Unwetter für die Nacht."
-  },
-  {
-    "german": "verfolgen",
-    "english": "to follow; pursue",
-    "clue": "Die Polizei verfolgte den Verdächtigen durch die Gassen."
-  },
-  {
-    "german": "Ehe",
-    "english": "marriage",
-    "clue": "Nach zehn Jahren Ehe feierten sie ihr Jubiläum."
-  },
-  {
-    "german": "überhaupt",
-    "english": "at all; anyway",
-    "clue": "Hast du überhaupt Zeit dafür?"
-  },
-  {
-    "german": "verteilg",
-    "english": "distributed (misspelling)",
-    "clue": "Sie verteilg die Flyer in der Fußgängerzone."
-  },
-  {
-    "german": "zuruckten",
-    "english": "returned (misspelling)",
-    "clue": "Sie zuruckten erst am Sonntag nach Hause."
-  },
-  {
-    "german": "bemerken",
-    "english": "to notice",
-    "clue": "Ich habe nicht bemerkt, dass du schon da bist."
-  },
-  {
-    "german": "glänzender",
-    "english": "shining; brilliant",
-    "clue": "Er hielt eine glänzender Rede."
-  },
-  {
-    "german": "vertrauen",
-    "english": "to trust",
-    "clue": "Du kannst mir vertrauen."
-  },
-  {
-    "german": "verschiedene",
-    "english": "various; different",
-    "clue": "Wir probierten verschiedene Lösungen aus."
-  },
-  {
-    "german": "mißtare",
-    "english": "mistrusted (archaic spelling)",
-    "clue": "Er mißtare jedem Fremden im Dorf."
-  },
-  {
-    "german": "vertreten",
-    "english": "to represent; substitute",
-    "clue": "Kannst du mich morgen im Meeting vertreten?"
-  },
-  {
-    "german": "begegne",
-    "english": "encounter",
-    "clue": "Ich hoffe, ich begegne ihm nicht noch einmal."
-  },
-  {
-    "german": "zornige",
-    "english": "angry",
-    "clue": "Sie warf ihm einen zornige Blick zu."
-  },
-  {
-    "german": "Unbehagen",
-    "english": "discomfort; unease",
-    "clue": "Ein leises Unbehagen blieb trotz der Erklärung."
-  },
-  {
-    "german": "selben",
-    "english": "same",
-    "clue": "Wir wohnen im selben Haus."
-  },
-  {
-    "german": "gewählt",
-    "english": "chosen; selected",
-    "clue": "Sie wurde einstimmig gewählt."
-  },
-  {
-    "german": "streit",
-    "english": "dispute; argument",
-    "clue": "Nach dem Streit redeten sie tagelang nicht."
-  },
-  {
-    "german": "Gabel",
-    "english": "fork",
-    "clue": "Bitte leg die Gabel neben den Teller."
-  },
-  {
-    "german": "überlegte",
-    "english": "considered; thought about",
-    "clue": "Er überlegte lange, bevor er antwortete."
-  },
-  {
-    "german": "Hastg",
-    "english": "hasty",
-    "clue": "Das war eine Hastg Entscheidung, die er bereute."
-  },
-  {
-    "german": "überwurte",
-    "english": "overwhelmed (misspelling)",
-    "clue": "Sie fühlte sich überwurte von den Aufgaben."
-  },
-  {
-    "german": "fürchte",
-    "english": "feared",
-    "clue": "Ich fürchte, wir sind zu spät."
-  },
-  {
-    "german": "griff",
-    "english": "grabbed; reached",
-    "clue": "Er griff nach seiner Tasche."
-  },
-  {
-    "german": "dahin",
-    "english": "there; to that place",
-    "clue": "Wir gehen dahin, wo es ruhig ist."
-  },
-  {
-    "german": "völig",
-    "english": "completely (misspelling of \"völlig\")",
-    "clue": "Ich war völig erschöpft nach der Reise."
-  },
-  {
-    "german": "durcheinander",
-    "english": "confused; mixed up",
-    "clue": "Nach dem Umzug war alles durcheinander."
-  },
-  {
-    "german": "ungeheur",
-    "english": "enormous; tremendous (archaic)",
-    "clue": "Das war eine ungeheur große Welle."
-  },
-  {
-    "german": "beobachtet",
-    "english": "observed; watched",
-    "clue": "Er hat die Katze den ganzen Tag beobachtet."
-  },
-  {
-    "german": "verschwunden",
-    "english": "disappeared",
-    "clue": "Plötzlich war der Mann in der Nacht verschwunden."
-  },
-  {
-    "german": "besonders",
-    "english": "especially; particularly",
-    "clue": "Der Tag war besonders merkwürdig."
-  },
-  {
-    "german": "vernünftig",
-    "english": "sensible; reasonable",
-    "clue": "Eine vernünftige Person würde das nicht tun."
-  },
-  {
-    "german": "verwandt",
-    "english": "related",
-    "clue": "Sie waren mit den Potters verwandt."
-  },
-  {
-    "german": "tauchte auf",
-    "english": "appeared; surfaced",
-    "clue": "Ein Mann tauchte plötzlich an der Ecke auf."
-  },
-  {
-    "german": "geradewegs",
-    "english": "straight; directly",
-    "clue": "Er kam geradewegs aus dem Boden gewachsen."
-  },
-  {
-    "german": "lautlos",
-    "english": "silent; noiselessly",
-    "clue": "Er bewegte sich völlig lautlos durch die Nacht."
-  },
-  {
-    "german": "Umhang",
-    "english": "cloak",
-    "clue": "Er trug einen langen, violetten Umhang."
-  },
-  {
-    "german": "Stiefel",
-    "english": "boots",
-    "clue": "Seine Stiefel hatten hohe Hacken."
-  },
-  {
-    "german": "anstarren",
-    "english": "to stare at",
-    "clue": "Warum musste die Katze ihn so anstarren?"
-  },
-  {
-    "german": "vergnügt",
-    "english": "gleeful; amused",
-    "clue": "Er murmelte vergnügt vor sich hin."
-  },
-  {
-    "german": "mitteilen",
-    "english": "to inform; share",
-    "clue": "Er wollte ihr etwas Wichtiges mitteilen."
-  },
-  {
-    "german": "ausgerechnet",
-    "english": "of all things/people",
-    "clue": "Warum musste es ausgerechnet heute passieren?"
-  },
-  {
-    "german": "schweigen",
-    "english": "to be silent",
-    "clue": "Dumbledore nahm ein Bonbon und schwieg."
-  },
-  {
-    "german": "besitzen",
-    "english": "to possess; own",
-    "clue": "Er hat Kräfte, die ich nie besitzen werde."
-  },
-  {
-    "german": "einsetzen",
-    "english": "to use; deploy",
-    "clue": "Er ist zu edel, um seine Kräfte einzusetzen."
-  },
-  {
-    "german": "unbedingt",
-    "english": "absolutely; by all means",
-    "clue": "Sie wollte unbedingt darüber reden."
-  },
-  {
-    "german": "durchdringend",
-    "english": "piercing; penetrating",
-    "clue": "Er sah sie mit einem durchdringenden Blick an."
-  },
-  {
-    "german": "Atem",
-    "english": "breath",
-    "clue": "Ihr stockte der Atem, als sie es hörte."
-  },
-  {
-    "german": "sanft",
-    "english": "gentle; softly",
-    "clue": "Er klopfte ihr sanft auf die Schulter."
-  },
-  {
-    "german": "düster",
-    "english": "gloomy; somber",
-    "clue": "Er blickte mit düsterer Miene zu Boden."
-  },
-  {
-    "german": "begreifen",
-    "english": "to grasp; understand",
-    "clue": "Er ist noch nicht bereit, das zu begreifen."
-  },
-  {
-    "german": "behaupten",
-    "english": "to claim; assert",
-    "clue": "Ich behaupte nicht, dass er perfekt ist."
-  },
-  {
-    "german": "donnernd",
-    "english": "thundering",
-    "clue": "Das Motorrad erhob sich donnernd in die Lüfte."
-  },
-  {
-    "german": "Hecken",
-    "english": "hedges",
-    "clue": "Die Hecken im Garten waren ordentlich geschnitten."
-  }
-]
+    {
+      "german": "überlebte",
+      "english": "survived",
+      "clue": "Er überlebte den Unfall nur knapp."
+    },
+    {
+      "german": "darauf",
+      "english": "on it; thereupon",
+      "clue": "Darauf ging er einfach wortlos hinaus."
+    },
+    {
+      "german": "sogar",
+      "english": "even",
+      "clue": "Sie kam sogar zu früh zum Termin."
+    },
+    {
+      "german": "merkwürdige",
+      "english": "strange; peculiar",
+      "clue": "Er erzählte eine merkwürdige Geschichte."
+    },
+    {
+      "german": "geheimnisvolle",
+      "english": "mysterious",
+      "clue": "Im Wald hörten wir eine geheimnisvolle Stimme."
+    },
+    {
+      "german": "solchem",
+      "english": "such",
+      "clue": "Mit solchem Lärm kann niemand schlafen."
+    },
+    {
+      "german": "herstellte",
+      "english": "produced; manufactured",
+      "clue": "Die Fabrik stellte früher Fahrräder her."
+    },
+    {
+      "german": "Schnurrbart",
+      "english": "mustache",
+      "clue": "Sein Schnurrbart war sorgfältig gestutzt."
+    },
+    {
+      "german": "dünn",
+      "english": "thin",
+      "clue": "Der Kaffee ist heute ziemlich dünn."
+    },
+    {
+      "german": "besaß",
+      "english": "possessed; had",
+      "clue": "Er besaß ein altes Haus am See."
+    },
+    {
+      "german": "doppelt",
+      "english": "double; twice",
+      "clue": "Bitte nimm doppelt so viel Wasser."
+    },
+    {
+      "german": "notwendig",
+      "english": "necessary",
+      "clue": "Eine Pause ist jetzt notwendig."
+    },
+    {
+      "german": "gewesen",
+      "english": "been",
+      "clue": "Ich bin noch nie in Wien gewesen."
+    },
+    {
+      "german": "allerdings",
+      "english": "however; admittedly",
+      "clue": "Das ist allerdings ein gutes Argument."
+    },
+    {
+      "german": "nirgendwo",
+      "english": "nowhere",
+      "clue": "Ich konnte den Schlüssel nirgendwo finden."
+    },
+    {
+      "german": "besaßen",
+      "english": "possessed; had (plural)",
+      "clue": "Sie besaßen früher keinen Fernseher."
+    },
+    {
+      "german": "Geheimnis",
+      "english": "secret",
+      "clue": "Das bleibt unser Geheimnis."
+    },
+    {
+      "german": "aufdecken",
+      "english": "to uncover; discover",
+      "clue": "Die Polizei will den Betrug aufdecken."
+    },
+    {
+      "german": "unerträglich",
+      "english": "unbearable",
+      "clue": "Die Hitze im Zimmer war unerträglich."
+    },
+    {
+      "german": "Sache",
+      "english": "thing; matter",
+      "clue": "Das ist eine ernste Sache."
+    },
+    {
+      "german": "etlichen",
+      "english": "several; quite a few",
+      "clue": "Nach etlichen Versuchen klappte es endlich."
+    },
+    {
+      "german": "behauptete",
+      "english": "claimed; asserted",
+      "clue": "Er behauptete, er habe nichts gesehen."
+    },
+    {
+      "german": "Nichtsnutz",
+      "english": "good-for-nothing",
+      "clue": "Er nennt ihn ständig einen Nichtsnutz."
+    },
+    {
+      "german": "schauderten",
+      "english": "shuddered",
+      "clue": "Sie schauderten vor Kälte im Wind."
+    },
+    {
+      "german": "Gedanken",
+      "english": "thoughts",
+      "clue": "Meine Gedanken waren ganz woanders."
+    },
+    {
+      "german": "kreuzen",
+      "english": "to cross",
+      "clue": "Hier kreuzen sich zwei wichtige Straßen."
+    },
+    {
+      "german": "Grund",
+      "english": "reason; ground",
+      "clue": "Aus welchem Grund bist du gegangen?"
+    },
+    {
+      "german": "fernzuhalten",
+      "english": "to keep away",
+      "clue": "Er versuchte, die Kinder fernzuhalten."
+    },
+    {
+      "german": "Berührung",
+      "english": "contact; touch",
+      "clue": "Bei Berührung schaltet sich das Licht ein."
+    },
+    {
+      "german": "trüben",
+      "english": "to dull; to sadden",
+      "clue": "Schlechte Nachrichten trüben die Stimmung."
+    },
+    {
+      "german": "aufschlugen",
+      "english": "opened (eyes)",
+      "clue": "Als der Wecker klingelte, schlugen sie die Augen auf."
+    },
+    {
+      "german": "wolkenverhangenen",
+      "english": "cloud-covered; overcast",
+      "clue": "Am wolkenverhangenen Himmel war kein Stern zu sehen."
+    },
+    {
+      "german": "geheimnisvollen",
+      "english": "mysterious (plural/dative)",
+      "clue": "Sie folgten den geheimnisvollen Spuren im Schnee."
+    },
+    {
+      "german": "munter",
+      "english": "cheerful; lively",
+      "clue": "Nach dem Kaffee war er wieder munter."
+    },
+    {
+      "german": "während",
+      "english": "while",
+      "clue": "Während ich koche, deckst du bitte den Tisch."
+    },
+    {
+      "german": "schreienden",
+      "english": "screaming",
+      "clue": "Die schreienden Kinder rannten durch den Flur."
+    },
+    {
+      "german": "rangelte",
+      "english": "wrestled; struggled",
+      "clue": "Der Junge rangelte mit seinem Bruder im Garten."
+    },
+    {
+      "german": "zwängte",
+      "english": "forced; squeezed",
+      "clue": "Sie zwängte sich durch die enge Tür."
+    },
+    {
+      "german": "Waldkauz",
+      "english": "tawny owl",
+      "clue": "Nachts hörten wir einen Waldkauz rufen."
+    },
+    {
+      "german": "vorbeifliegen",
+      "english": "to fly past",
+      "clue": "Ein Vogel schien direkt am Fenster vorbeizufliegen."
+    },
+    {
+      "german": "Wange",
+      "english": "cheek",
+      "clue": "Er küsste sie auf die Wange."
+    },
+    {
+      "german": "Abschiedskuss",
+      "english": "goodbye kiss",
+      "clue": "Zum Abschied gab es noch einen Abschiedskuss."
+    },
+    {
+      "german": "daneben",
+      "english": "wrong; off the mark; next to",
+      "clue": "Ich lag mit meiner Vermutung völlig daneben."
+    },
+    {
+      "german": "Wutanfall",
+      "english": "tantrum",
+      "clue": "Er bekam einen Wutanfall, als er verlor."
+    },
+    {
+      "german": "Haferbrei",
+      "english": "porridge",
+      "clue": "Zum Frühstück gab es warmen Haferbrei."
+    },
+    {
+      "german": "Schlingel",
+      "english": "rascal",
+      "clue": "Du kleiner Schlingel, was hast du angestellt?"
+    },
+    {
+      "german": "rückwärts",
+      "english": "backwards",
+      "clue": "Bitte fahr nicht rückwärts ohne zu schauen!"
+    },
+    {
+      "german": "Einbiegung",
+      "english": "turn; junction",
+      "clue": "An der nächsten Einbiegung rechts abbiegen."
+    },
+    {
+      "german": "hinzuschauen",
+      "english": "to look at",
+      "clue": "Traust du dich, hinzuschauen?"
+    },
+    {
+      "german": "getigerte",
+      "english": "tabby; striped",
+      "clue": "Die getigerte Katze schlief auf dem Sofa."
+    },
+    {
+      "german": "Straßenkarte",
+      "english": "street map; road map",
+      "clue": "Ohne Straßenkarte fanden wir das Dorf nicht."
+    },
+    {
+      "german": "gedacht",
+      "english": "thought",
+      "clue": "Ich habe an dich gedacht."
+    },
+    {
+      "german": "Sinnestäuschung",
+      "english": "hallucination; illusion",
+      "clue": "Vielleicht war es nur eine Sinnestäuschung."
+    },
+    {
+      "german": "blinzelte",
+      "english": "blinked",
+      "clue": "Er blinzelte in die grelle Sonne."
+    },
+    {
+      "german": "Schmetterlingsattacke",
+      "english": "butterfly attack",
+      "clue": "Im Spaß nannte sie seine Nervosität eine Schmetterlingsattacke."
+    },
+    {
+      "german": "bog",
+      "english": "turned; bent",
+      "clue": "Der Weg bog hinter dem Haus nach links ab."
+    },
+    {
+      "german": "entlangfuhr",
+      "english": "drove along",
+      "clue": "Er fuhr den Fluss entlang."
+    },
+    {
+      "german": "Schild",
+      "english": "sign",
+      "clue": "Das Schild zeigte den Weg zum Bahnhof."
+    },
+    {
+      "german": "verpeilte",
+      "english": "was confused; distracted",
+      "clue": "Ich war so verpeilt, dass ich den Termin vergaß."
+    },
+    {
+      "german": "vertige",
+      "english": "mistaken; confused",
+      "clue": "Ich war völlig vertige und nahm die falsche Tür."
+    },
+    {
+      "german": "Kerze",
+      "english": "candle",
+      "clue": "Sie stellte eine Kerze ins Fenster."
+    },
+    {
+      "german": "starre",
+      "english": "rigid; stiff",
+      "clue": "Vor Schreck fiel er in eine starre Haltung."
+    },
+    {
+      "german": "beobachteten",
+      "english": "observed; watched",
+      "clue": "Sie beobachteten das Spiel vom Balkon aus."
+    },
+    {
+      "german": "sodann",
+      "english": "then; thereupon",
+      "clue": "Er las den Brief und ging sodann nach Hause."
+    },
+    {
+      "german": "unterwegs",
+      "english": "on the way; underway",
+      "clue": "Ich bin noch unterwegs und komme später."
+    },
+    {
+      "german": "hängen",
+      "english": "to hang",
+      "clue": "Der Mantel hängt an der Garderobe."
+    },
+    {
+      "german": "anzuziehen",
+      "english": "to put on",
+      "clue": "Es ist kalt; vergiss nicht, eine Jacke anzuziehen."
+    },
+    {
+      "german": "trommelte",
+      "english": "drummed",
+      "clue": "Er trommelte ungeduldig mit den Fingern auf den Tisch."
+    },
+    {
+      "german": "samtweichen",
+      "english": "velvet-soft",
+      "clue": "Sie streichelte das samtweiche Kissen."
+    },
+    {
+      "german": "verleitete",
+      "english": "tempted; induced",
+      "clue": "Der Duft verleitete ihn, noch ein Stück Kuchen zu nehmen."
+    },
+    {
+      "german": "verdreckte",
+      "english": "dirty; soiled",
+      "clue": "Seine Schuhe waren völlig verdreckte."
+    },
+    {
+      "german": "Auftauchen",
+      "english": "appearance; emergence",
+      "clue": "Beim plötzlichen Auftauchen des Hundes erschrak sie."
+    },
+    {
+      "german": "sonnenklar",
+      "english": "crystal clear",
+      "clue": "Es war sonnenklar, dass er log."
+    },
+    {
+      "german": "Erzählstunde",
+      "english": "story time",
+      "clue": "In der Kita beginnt um drei die Erzählstunde."
+    },
+    {
+      "german": "nickte",
+      "english": "nodded",
+      "clue": "Sie nickte zustimmend."
+    },
+    {
+      "german": "überwog",
+      "english": "outweighed",
+      "clue": "Am Ende überwog die Freude die Angst."
+    },
+    {
+      "german": "bemerkte",
+      "english": "noticed",
+      "clue": "Er bemerkte den Fehler sofort."
+    },
+    {
+      "german": "ungewöhnliche",
+      "english": "unusual",
+      "clue": "Das war eine ungewöhnliche Idee."
+    },
+    {
+      "german": "ob",
+      "english": "whether; if",
+      "clue": "Ich weiß nicht, ob er heute kommt."
+    },
+    {
+      "german": "Verzierungen",
+      "english": "decorations",
+      "clue": "Die Verzierungen an der Tür waren handgeschnitzt."
+    },
+    {
+      "german": "grämliche",
+      "english": "grumpy; sullen",
+      "clue": "Seine grämliche Miene machte alle still."
+    },
+    {
+      "german": "Schober",
+      "english": "haystack",
+      "clue": "Hinter dem Schober versteckte sich das Kind."
+    },
+    {
+      "german": "verzich",
+      "english": "do without (archaic)",
+      "clue": "Er sagte feierlich: „Ich verzich auf meinen Anteil.“"
+    },
+    {
+      "german": "Bahn",
+      "english": "path; railway",
+      "clue": "Wir warteten auf dem Bahnsteig auf die Bahn."
+    },
+    {
+      "german": "werfen",
+      "english": "to throw",
+      "clue": "Bitte wirf den Ball nicht ins Fenster."
+    },
+    {
+      "german": "feuerblond",
+      "english": "fiery red",
+      "clue": "Sie trug ihr Haar feuerblond gefärbt."
+    },
+    {
+      "german": "beauhbte",
+      "english": "claimed (misspelling of \"behauptete\")",
+      "clue": "Er beauhbte, alles sei in Ordnung."
+    },
+    {
+      "german": "vorheischwossen",
+      "english": "predicted; foreseen (archaic)",
+      "clue": "Der Alte vorheischwossen ein Unwetter für die Nacht."
+    },
+    {
+      "german": "verfolgen",
+      "english": "to follow; pursue",
+      "clue": "Die Polizei verfolgte den Verdächtigen durch die Gassen."
+    },
+    {
+      "german": "Ehe",
+      "english": "marriage",
+      "clue": "Nach zehn Jahren Ehe feierten sie ihr Jubiläum."
+    },
+    {
+      "german": "überhaupt",
+      "english": "at all; anyway",
+      "clue": "Hast du überhaupt Zeit dafür?"
+    },
+    {
+      "german": "verteilg",
+      "english": "distributed (misspelling)",
+      "clue": "Sie verteilg die Flyer in der Fußgängerzone."
+    },
+    {
+      "german": "zuruckten",
+      "english": "returned (misspelling)",
+      "clue": "Sie zuruckten erst am Sonntag nach Hause."
+    },
+    {
+      "german": "bemerken",
+      "english": "to notice",
+      "clue": "Ich habe nicht bemerkt, dass du schon da bist."
+    },
+    {
+      "german": "glänzender",
+      "english": "shining; brilliant",
+      "clue": "Er hielt eine glänzender Rede."
+    },
+    {
+      "german": "vertrauen",
+      "english": "to trust",
+      "clue": "Du kannst mir vertrauen."
+    },
+    {
+      "german": "verschiedene",
+      "english": "various; different",
+      "clue": "Wir probierten verschiedene Lösungen aus."
+    },
+    {
+      "german": "mißtare",
+      "english": "mistrusted (archaic spelling)",
+      "clue": "Er mißtare jedem Fremden im Dorf."
+    },
+    {
+      "german": "vertreten",
+      "english": "to represent; substitute",
+      "clue": "Kannst du mich morgen im Meeting vertreten?"
+    },
+    {
+      "german": "begegne",
+      "english": "encounter",
+      "clue": "Ich hoffe, ich begegne ihm nicht noch einmal."
+    },
+    {
+      "german": "zornige",
+      "english": "angry",
+      "clue": "Sie warf ihm einen zornige Blick zu."
+    },
+    {
+      "german": "Unbehagen",
+      "english": "discomfort; unease",
+      "clue": "Ein leises Unbehagen blieb trotz der Erklärung."
+    },
+    {
+      "german": "selben",
+      "english": "same",
+      "clue": "Wir wohnen im selben Haus."
+    },
+    {
+      "german": "gewählt",
+      "english": "chosen; selected",
+      "clue": "Sie wurde einstimmig gewählt."
+    },
+    {
+      "german": "streit",
+      "english": "dispute; argument",
+      "clue": "Nach dem Streit redeten sie tagelang nicht."
+    },
+    {
+      "german": "Gabel",
+      "english": "fork",
+      "clue": "Bitte leg die Gabel neben den Teller."
+    },
+    {
+      "german": "überlegte",
+      "english": "considered; thought about",
+      "clue": "Er überlegte lange, bevor er antwortete."
+    },
+    {
+      "german": "Hastg",
+      "english": "hasty",
+      "clue": "Das war eine Hastg Entscheidung, die er bereute."
+    },
+    {
+      "german": "überwurte",
+      "english": "overwhelmed (misspelling)",
+      "clue": "Sie fühlte sich überwurte von den Aufgaben."
+    },
+    {
+      "german": "fürchte",
+      "english": "feared",
+      "clue": "Ich fürchte, wir sind zu spät."
+    },
+    {
+      "german": "griff",
+      "english": "grabbed; reached",
+      "clue": "Er griff nach seiner Tasche."
+    },
+    {
+      "german": "dahin",
+      "english": "there; to that place",
+      "clue": "Wir gehen dahin, wo es ruhig ist."
+    },
+    {
+      "german": "völlig",
+      "english": "completely",
+      "clue": "Ich war völig erschöpft nach der Reise."
+    },
+    {
+      "german": "durcheinander",
+      "english": "confused; mixed up",
+      "clue": "Nach dem Umzug war alles durcheinander."
+    },
+    {
+      "german": "ungeheur",
+      "english": "enormous; tremendous (archaic)",
+      "clue": "Das war eine ungeheur große Welle."
+    },
+    {
+      "german": "beobachtet",
+      "english": "observed; watched",
+      "clue": "Er hat die Katze den ganzen Tag beobachtet."
+    },
+    {
+      "german": "verschwunden",
+      "english": "disappeared",
+      "clue": "Plötzlich war der Mann in der Nacht verschwunden."
+    },
+    {
+      "german": "besonders",
+      "english": "especially; particularly",
+      "clue": "Der Tag war besonders merkwürdig."
+    },
+    {
+      "german": "vernünftig",
+      "english": "sensible; reasonable",
+      "clue": "Eine vernünftige Person würde das nicht tun."
+    },
+    {
+      "german": "verwandt",
+      "english": "related",
+      "clue": "Sie waren mit den Potters verwandt."
+    },
+    {
+      "german": "tauchte auf",
+      "english": "appeared; surfaced",
+      "clue": "Ein Mann tauchte plötzlich an der Ecke auf."
+    },
+    {
+      "german": "geradewegs",
+      "english": "straight; directly",
+      "clue": "Er kam geradewegs aus dem Boden gewachsen."
+    },
+    {
+      "german": "lautlos",
+      "english": "silent; noiselessly",
+      "clue": "Er bewegte sich völlig lautlos durch die Nacht."
+    },
+    {
+      "german": "Umhang",
+      "english": "cloak",
+      "clue": "Er trug einen langen, violetten Umhang."
+    },
+    {
+      "german": "Stiefel",
+      "english": "boots",
+      "clue": "Seine Stiefel hatten hohe Hacken."
+    },
+    {
+      "german": "anstarren",
+      "english": "to stare at",
+      "clue": "Warum musste die Katze ihn so anstarren?"
+    },
+    {
+      "german": "vergnügt",
+      "english": "gleeful; amused",
+      "clue": "Er murmelte vergnügt vor sich hin."
+    },
+    {
+      "german": "mitteilen",
+      "english": "to inform; share",
+      "clue": "Er wollte ihr etwas Wichtiges mitteilen."
+    },
+    {
+      "german": "ausgerechnet",
+      "english": "of all things/people",
+      "clue": "Warum musste es ausgerechnet heute passieren?"
+    },
+    {
+      "german": "schweigen",
+      "english": "to be silent",
+      "clue": "Dumbledore nahm ein Bonbon und schwieg."
+    },
+    {
+      "german": "besitzen",
+      "english": "to possess; own",
+      "clue": "Er hat Kräfte, die ich nie besitzen werde."
+    },
+    {
+      "german": "einsetzen",
+      "english": "to use; deploy",
+      "clue": "Er ist zu edel, um seine Kräfte einzusetzen."
+    },
+    {
+      "german": "unbedingt",
+      "english": "absolutely; by all means",
+      "clue": "Sie wollte unbedingt darüber reden."
+    },
+    {
+      "german": "durchdringend",
+      "english": "piercing; penetrating",
+      "clue": "Er sah sie mit einem durchdringenden Blick an."
+    },
+    {
+      "german": "Atem",
+      "english": "breath",
+      "clue": "Ihr stockte der Atem, als sie es hörte."
+    },
+    {
+      "german": "sanft",
+      "english": "gentle; softly",
+      "clue": "Er klopfte ihr sanft auf die Schulter."
+    },
+    {
+      "german": "düster",
+      "english": "gloomy; somber",
+      "clue": "Er blickte mit düsterer Miene zu Boden."
+    },
+    {
+      "german": "begreifen",
+      "english": "to grasp; understand",
+      "clue": "Er ist noch nicht bereit, das zu begreifen."
+    },
+    {
+      "german": "behaupten",
+      "english": "to claim; assert",
+      "clue": "Ich behaupte nicht, dass er perfekt ist."
+    },
+    {
+      "german": "donnernd",
+      "english": "thundering",
+      "clue": "Das Motorrad erhob sich donnernd in die Lüfte."
+    },
+    {
+      "german": "Hecken",
+      "english": "hedges",
+      "clue": "Die Hecken im Garten waren ordentlich geschnitten."
+    },
+    {
+      "german": "rasch",
+      "english": "quickly; swiftly",
+      "clue": "Mr. Dursley wandte sich rasch ab und ging ins Haus."
+    },
+    {
+      "german": "Rückspiegel",
+      "english": "rearview mirror",
+      "clue": "Er sah im Rückspiegel die Katze auf der Mauer sitzen."
+    },
+    {
+      "german": "verjagte",
+      "english": "chased away",
+      "clue": "Er verjagte den Gedanken an die seltsamen Leute aus seinem Kopf."
+    },
+    {
+      "german": "Auftrag",
+      "english": "order; assignment",
+      "clue": "Mr. Dursley hatte einen wichtigen Auftrag bei der Arbeit zu erledigen."
+    },
+    {
+      "german": "Stadtrand",
+      "english": "outskirts of town",
+      "clue": "Die Dursleys wohnten am Stadtrand in einem ordentlichen Haus."
+    },
+    {
+      "german": "verdrängt",
+      "english": "suppressed; pushed aside",
+      "clue": "Er hatte die unangenehmen Gedanken erfolgreich verdrängt."
+    },
+    {
+      "german": "üblichen",
+      "english": "usual",
+      "clue": "Er nahm den üblichen Weg zur Arbeit."
+    },
+    {
+      "german": "morgendlichen",
+      "english": "morning (adj.)",
+      "clue": "Er steckte im morgendlichen Verkehr fest."
+    },
+    {
+      "german": "Stau",
+      "english": "traffic jam",
+      "clue": "Mr. Dursley saß im Stau und bemerkte die vielen Eulen."
+    },
+    {
+      "german": "fest",
+      "english": "stuck; firm",
+      "clue": "Er saß fest im Verkehr und konnte sich nicht bewegen."
+    },
+    {
+      "german": "Menge",
+      "english": "crowd; quantity",
+      "clue": "Eine Menge von Leuten in Umhängen stand auf der Straße."
+    },
+    {
+      "german": "Umhängen",
+      "english": "cloaks",
+      "clue": "Die seltsamen Leute trugen lange Umhänge."
+    },
+    {
+      "german": "anzogen",
+      "english": "attracted; put on (clothes)",
+      "clue": "Die Umhänge, die sie anzogen, waren sehr auffällig."
+    },
+    {
+      "german": "dumme",
+      "english": "stupid; silly",
+      "clue": "Mr. Dursley hielt das für eine dumme Mode."
+    },
+    {
+      "german": "Fingern",
+      "english": "fingers",
+      "clue": "Er trommelte mit den Fingern auf das Lenkrad."
+    },
+    {
+      "german": "Lenkrad",
+      "english": "steering wheel",
+      "clue": "Mr. Dursley trommelte ungeduldig auf das Lenkrad."
+    },
+    {
+      "german": "Ansammlung",
+      "english": "gathering; cluster",
+      "clue": "Er bemerkte eine Ansammlung seltsamer Gestalten."
+    },
+    {
+      "german": "Gestalten",
+      "english": "figures; shapes",
+      "clue": "Die merkwürdigen Gestalten tuschelten aufgeregt miteinander."
+    },
+    {
+      "german": "miteinander",
+      "english": "with each other",
+      "clue": "Die Leute in Umhängen redeten aufgeregt miteinander."
+    },
+    {
+      "german": "erzürnt",
+      "english": "angered; enraged",
+      "clue": "Mr. Dursley war erzürnt über die seltsamen Vorkommnisse."
+    },
+    {
+      "german": "smaragdgrünen",
+      "english": "emerald green",
+      "clue": "Professor McGonagall trug einen smaragdgrünen Umhang."
+    },
+    {
+      "german": "sammelten",
+      "english": "gathered; collected",
+      "clue": "Die Leute sammelten sich in kleinen Gruppen."
+    },
+    {
+      "german": "irgendetwas",
+      "english": "something; anything",
+      "clue": "Mr. Dursley spürte, dass irgendetwas nicht stimmte."
+    },
+    {
+      "german": "anderenfalls",
+      "english": "otherwise",
+      "clue": "Er musste sich beruhigen, anderenfalls würde er verrückt werden."
+    },
+    {
+      "german": "schwergefallen",
+      "english": "difficult (for someone)",
+      "clue": "Es war ihm schwergefallen, nicht an die Potters zu denken."
+    },
+    {
+      "german": "zentrieren",
+      "english": "to center; to focus",
+      "clue": "Er versuchte, seine Gedanken zu zentrieren."
+    },
+    {
+      "german": "helllichten",
+      "english": "broad (daylight)",
+      "clue": "Am helllichten Tag flogen Eulen durch die Stadt."
+    },
+    {
+      "german": "vorbeischossen",
+      "english": "shot past; zoomed by",
+      "clue": "Die Eulen vorbeischossen am Fenster."
+    },
+    {
+      "german": "wohl",
+      "english": "probably; well",
+      "clue": "Das war wohl nur Einbildung, dachte er."
+    },
+    {
+      "german": "verfolgten",
+      "english": "followed; pursued",
+      "clue": "Seine Augen verfolgten die Eulen am Himmel."
+    },
+    {
+      "german": "Mündern",
+      "english": "mouths",
+      "clue": "Die Leute standen mit offenen Mündern da."
+    },
+    {
+      "german": "jedoch",
+      "english": "however",
+      "clue": "Er wollte es vergessen, jedoch gelang es ihm nicht."
+    },
+    {
+      "german": "mehrere",
+      "english": "several",
+      "clue": "Mehrere Eulen flogen am helllichten Tag vorbei."
+    },
+    {
+      "german": "Vorbeigehen",
+      "english": "passing by",
+      "clue": "Im Vorbeigehen hörte er den Namen Potter."
+    },
+    {
+      "german": "bereiteten",
+      "english": "prepared; caused",
+      "clue": "Die Ereignisse bereiteten ihm große Sorgen."
+    },
+    {
+      "german": "tuschelte",
+      "english": "whispered",
+      "clue": "Die Menge tuschelte aufgeregt über die Potters."
+    },
+    {
+      "german": "Sammelbüchse",
+      "english": "collection box",
+      "clue": "Ein Mann mit einer Sammelbüchse stand auf der Straße."
+    },
+    {
+      "german": "angewurzelt",
+      "english": "rooted to the spot",
+      "clue": "Mr. Dursley blieb wie angewurzelt stehen."
+    },
+    {
+      "german": "überquerte",
+      "english": "crossed",
+      "clue": "Er überquerte schnell die Straße."
+    },
+    {
+      "german": "stürmte",
+      "english": "stormed; rushed",
+      "clue": "Er stürmte zurück ins Büro."
+    },
+    {
+      "german": "gestört",
+      "english": "disturbed",
+      "clue": "Mr. Dursley fühlte sich den ganzen Tag gestört."
+    },
+    {
+      "german": "daheim",
+      "english": "at home",
+      "clue": "Endlich war er wieder daheim im Ligusterweg."
+    },
+    {
+      "german": "nun",
+      "english": "now; well",
+      "clue": "Nun, dachte er, das war ein seltsamer Tag."
+    },
+    {
+      "german": "geriet",
+      "english": "got into; fell into",
+      "clue": "Er geriet in Panik bei dem Gedanken an die Potters."
+    },
+    {
+      "german": "beunruhigen",
+      "english": "to worry; to disturb",
+      "clue": "Er wollte seine Frau nicht beunruhigen."
+    },
+    {
+      "german": "erwähnte",
+      "english": "mentioned",
+      "clue": "Er erwähnte vorsichtig die seltsamen Ereignisse."
+    },
+    {
+      "german": "deswegen",
+      "english": "because of that; therefore",
+      "clue": "Deswegen war er den ganzen Tag so nervös gewesen."
+    },
+    {
+      "german": "Schritt",
+      "english": "step",
+      "clue": "Er machte einen Schritt zurück vor Schreck."
+    },
+    {
+      "german": "voller",
+      "english": "full of",
+      "clue": "Der Himmel war voller Eulen."
+    },
+    {
+      "german": "zusammenprallte",
+      "english": "collided",
+      "clue": "Er zusammenprallte beinahe mit einem kleinen Mann."
+    },
+    {
+      "german": "Verzeihung",
+      "english": "pardon; excuse me",
+      "clue": "Verzeihung, sagte der kleine Mann fröhlich."
+    },
+    {
+      "german": "stolpern",
+      "english": "to stumble",
+      "clue": "Mr. Dursley begann zu stolpern."
+    },
+    {
+      "german": "beinahe",
+      "english": "almost; nearly",
+      "clue": "Er wäre beinahe hingefallen."
+    },
+    {
+      "german": "hinfiel",
+      "english": "fell down",
+      "clue": "Er hinfiel fast, als der kleine Mann ihn umarmte."
+    },
+    {
+      "german": "ärgern",
+      "english": "to annoy; to be angry",
+      "clue": "Mr. Dursley konnte sich nicht mehr ärgern."
+    },
+    {
+      "german": "umgestoßen",
+      "english": "knocked over",
+      "clue": "Er wurde fast von dem kleinen Mann umgestoßen."
+    },
+    {
+      "german": "Gegenteil",
+      "english": "opposite",
+      "clue": "Im Gegenteil, der Mann war sehr freundlich."
+    },
+    {
+      "german": "piepsiger",
+      "english": "squeaky",
+      "clue": "Der kleine Mann hatte eine piepsige Stimme."
+    },
+    {
+      "german": "freudigen",
+      "english": "joyful",
+      "clue": "Die Zauberer waren in freudiger Stimmung."
+    },
+    {
+      "german": "umarmte",
+      "english": "hugged",
+      "clue": "Der kleine Mann umarmte Mr. Dursley."
+    },
+    {
+      "german": "ungefähr",
+      "english": "approximately; about",
+      "clue": "Der Mann war ungefähr in Bauchhöhe."
+    },
+    {
+      "german": "Bauchhöhe",
+      "english": "waist height",
+      "clue": "Der kleine Mann reichte ihm etwa bis zur Bauchhöhe."
+    },
+    {
+      "german": "völlig",
+      "english": "completely; totally",
+      "clue": "Mr. Dursley war völlig verwirrt."
+    },
+    {
+      "german": "einzubilden",
+      "english": "to imagine",
+      "clue": "Er versuchte sich einzubilden, dass alles normal war."
+    },
+    {
+      "german": "Einbildungskraft",
+      "english": "imagination",
+      "clue": "Seine Einbildungskraft spielte ihm wohl Streiche."
+    },
+    {
+      "german": "Auffahrt",
+      "english": "driveway",
+      "clue": "Er parkte das Auto in der Auffahrt."
+    },
+    {
+      "german": "besserte",
+      "english": "improved",
+      "clue": "Seine Laune besserte sich nicht."
+    },
+    {
+      "german": "Laune",
+      "english": "mood",
+      "clue": "Mr. Dursley war in schlechter Laune."
+    },
+    {
+      "german": "dasselbe",
+      "english": "the same",
+      "clue": "Seine Frau dachte dasselbe über die Potters."
+    },
+    {
+      "german": "zusammenzureißen",
+      "english": "to pull oneself together",
+      "clue": "Er versuchte sich zusammenzureißen."
+    },
+    {
+      "german": "entschlossen",
+      "english": "determined; resolved",
+      "clue": "Er war entschlossen, nicht mehr daran zu denken."
+    },
+    {
+      "german": "alledem",
+      "english": "all of that",
+      "clue": "Trotz alledem konnte er nicht schlafen."
+    },
+    {
+      "german": "ansah",
+      "english": "looked at",
+      "clue": "Er ansah seine Frau besorgt."
+    },
+    {
+      "german": "Schluss",
+      "english": "end; conclusion",
+      "clue": "Schluss damit, dachte er."
+    },
+    {
+      "german": "folgende",
+      "english": "following",
+      "clue": "Die folgende Meldung war sehr seltsam."
+    },
+    {
+      "german": "Meldung",
+      "english": "report; announcement",
+      "clue": "Im Fernsehen kam eine Meldung über die Eulen."
+    },
+    {
+      "german": "berichten",
+      "english": "to report",
+      "clue": "Die Nachrichten berichten von seltsamen Ereignissen."
+    },
+    {
+      "german": "Verhalten",
+      "english": "behavior",
+      "clue": "Das Verhalten der Eulen war sehr ungewöhnlich."
+    },
+    {
+      "german": "obwohl",
+      "english": "although",
+      "clue": "Obwohl es Tag war, flogen überall Eulen."
+    },
+    {
+      "german": "tagsüber",
+      "english": "during the day",
+      "clue": "Eulen fliegen normalerweise nicht tagsüber."
+    },
+    {
+      "german": "Fachleute",
+      "english": "experts",
+      "clue": "Die Fachleute konnten es sich nicht erklären."
+    },
+    {
+      "german": "Gewohnheiten",
+      "english": "habits",
+      "clue": "Die Eulen hatten ihre Gewohnheiten geändert."
+    },
+    {
+      "german": "Grinsen",
+      "english": "grin; smirk",
+      "clue": "Der Nachrichtensprecher konnte sich ein Grinsen nicht verkneifen."
+    },
+    {
+      "german": "berichtet",
+      "english": "reported",
+      "clue": "Es wurde auch von Sternschnuppen berichtet."
+    },
+    {
+      "german": "anstellte",
+      "english": "did; got up to",
+      "clue": "Er fragte sich, was die Zauberer wohl anstellte."
+    },
+    {
+      "german": "Sternschnuppen",
+      "english": "shooting stars",
+      "clue": "Überall wurden Sternschnuppen gesehen."
+    },
+    {
+      "german": "Weile",
+      "english": "while",
+      "clue": "Er überlegte eine Weile."
+    },
+    {
+      "german": "regnerische",
+      "english": "rainy",
+      "clue": "Es war kein regnerischer Tag."
+    },
+    {
+      "german": "Eiszapfen",
+      "english": "icicles",
+      "clue": "Im November hingen keine Eiszapfen am Dach."
+    },
+    {
+      "german": "allerorten",
+      "english": "everywhere",
+      "clue": "Allerorten wurden seltsame Dinge gesehen."
+    },
+    {
+      "german": "sonderbarer",
+      "english": "stranger; more peculiar",
+      "clue": "Es wurde immer sonderbarer an diesem Tag."
+    },
+    {
+      "german": "Tuscheln",
+      "english": "whispering",
+      "clue": "Das Tuscheln der Leute machte ihn nervös."
+    },
+    {
+      "german": "Zweck",
+      "english": "purpose",
+      "clue": "Er fragte sich, welchen Zweck das alles hatte."
+    },
+    {
+      "german": "aussehender",
+      "english": "looking (adj.)",
+      "clue": "Ein seltsam aussehender Mann stand an der Ecke."
+    },
+    {
+      "german": "Klüngel",
+      "english": "clique; bunch",
+      "clue": "Ein Klüngel von Zauberern stand tuschelnd zusammen."
+    },
+    {
+      "german": "spitzlippig",
+      "english": "thin-lipped; pursed lips",
+      "clue": "Professor McGonagall schaute spitzlippig."
+    },
+    {
+      "german": "stattdessen",
+      "english": "instead",
+      "clue": "Er sagte nichts, stattdessen ging er weiter."
+    },
+    {
+      "german": "beiläufig",
+      "english": "casually",
+      "clue": "Er erwähnte die Potters nur beiläufig."
+    },
+    {
+      "german": "verlor",
+      "english": "lost",
+      "clue": "Mrs. Dursley verlor sofort ihre gute Laune."
+    },
+    {
+      "german": "schlich",
+      "english": "crept; sneaked",
+      "clue": "Die Katze schlich um die Mauer herum."
+    },
+    {
+      "german": "bildete",
+      "english": "formed; imagined",
+      "clue": "Er bildete sich das alles nur ein."
+    },
+    {
+      "german": "herauskäme",
+      "english": "would come out",
+      "clue": "Er hoffte, dass nichts Schlimmes herauskäme."
+    },
+    {
+      "german": "ertragen",
+      "english": "to bear; to endure",
+      "clue": "Er konnte den Gedanken an die Potters nicht ertragen."
+    },
+    {
+      "german": "tröstender",
+      "english": "comforting",
+      "clue": "Er suchte nach einem tröstenden Gedanken."
+    },
+    {
+      "german": "selbst",
+      "english": "self; even",
+      "clue": "Selbst wenn es stimmte, wollte er nichts davon wissen."
+    },
+    {
+      "german": "ihresgleichen",
+      "english": "their kind; people like them",
+      "clue": "Die Dursleys wollten nichts mit ihresgleichen zu tun haben."
+    },
+    {
+      "german": "hielten",
+      "english": "held; kept",
+      "clue": "Sie hielten sich von solchen Leuten fern."
+    },
+    {
+      "german": "hineingeraten",
+      "english": "got into; became involved",
+      "clue": "Er wollte nicht in solche Geschichten hineingeraten."
+    },
+    {
+      "german": "gähnte",
+      "english": "yawned",
+      "clue": "Mr. Dursley gähnte und ging ins Bett."
+    },
+    {
+      "german": "drehte",
+      "english": "turned",
+      "clue": "Er drehte sich um und schlief ein."
+    },
+    {
+      "german": "damit",
+      "english": "with it; so that",
+      "clue": "Damit war für ihn der Tag beendet."
+    },
+    {
+      "german": "jedenfalls",
+      "english": "anyway; in any case",
+      "clue": "Jedenfalls konnte er jetzt schlafen."
+    },
+    {
+      "german": "hinübergeglitten",
+      "english": "glided over",
+      "clue": "Eine Eule war hinübergeglitten zum Fenster."
+    },
+    {
+      "german": "Müdigkeit",
+      "english": "tiredness; fatigue",
+      "clue": "Die Müdigkeit überkam ihn endlich."
+    },
+    {
+      "german": "gerichtet",
+      "english": "directed; focused",
+      "clue": "Alle Augen waren auf den Himmel gerichtet."
+    },
+    {
+      "german": "regte",
+      "english": "stirred; moved",
+      "clue": "Nichts regte sich in der Straße."
+    },
+    {
+      "german": "zugeknallt",
+      "english": "slammed shut",
+      "clue": "Die Tür wurde zugeknallt."
+    },
+    {
+      "german": "rührte",
+      "english": "stirred; moved",
+      "clue": "Die Katze rührte sich nicht von der Mauer."
+    },
+    {
+      "german": "jäh",
+      "english": "sudden; abrupt",
+      "clue": "Jäh erschien ein Mann am Ende der Straße."
+    },
+    {
+      "german": "gewachsen",
+      "english": "grown; a match for",
+      "clue": "Er schien der Situation nicht gewachsen."
+    },
+    {
+      "german": "Schwanz",
+      "english": "tail",
+      "clue": "Die Katze bewegte ihren Schwanz nicht."
+    },
+    {
+      "german": "Schlitzen",
+      "english": "slits",
+      "clue": "Die Augen der Katze waren wie Schlitzen."
+    },
+    {
+      "german": "Streife",
+      "english": "patrol",
+      "clue": "Eine Streife fuhr durch den Ligusterweg."
+    },
+    {
+      "german": "Schnallenstiefel",
+      "english": "buckled boots",
+      "clue": "Dumbledore trug Schnallenstiefel mit hohen Absätzen."
+    },
+    {
+      "german": "leuchteten",
+      "english": "shone; glowed",
+      "clue": "Seine blauen Augen leuchteten hell."
+    },
+    {
+      "german": "Hacken",
+      "english": "heels",
+      "clue": "Er drehte sich auf den Hacken um."
+    },
+    {
+      "german": "funkelnd",
+      "english": "sparkling; twinkling",
+      "clue": "Dumbledores Augen waren funkelnd und freundlich."
+    },
+    {
+      "german": "gedankenverloren",
+      "english": "lost in thought",
+      "clue": "Er stand gedankenverloren auf dem Bürgersteig."
+    },
+    {
+      "german": "durchstöberte",
+      "english": "rummaged through",
+      "clue": "Dumbledore durchstöberte seinen Umhang."
+    },
+    {
+      "german": "anstarre",
+      "english": "stare at",
+      "clue": "Er bemerkte, dass die Katze ihn anstarre."
+    },
+    {
+      "german": "irgendeinem",
+      "english": "some; any",
+      "clue": "In irgendeinem Umhang hatte er das Feuerzeug."
+    },
+    {
+      "german": "Stecknadelköpfe",
+      "english": "pinheads",
+      "clue": "Die Sterne leuchteten wie Stecknadelköpfe."
+    },
+    {
+      "german": "Ferne",
+      "english": "distance",
+      "clue": "In der Ferne hörte man eine Eule."
+    },
+    {
+      "german": "geschaut",
+      "english": "looked",
+      "clue": "Er hatte den ganzen Tag auf die Karte geschaut."
+    },
+    {
+      "german": "scharfäugige",
+      "english": "sharp-eyed",
+      "clue": "Die scharfäugige Katze beobachtete alles."
+    },
+    {
+      "german": "Bürgersteig",
+      "english": "sidewalk; pavement",
+      "clue": "Dumbledore erschien auf dem Bürgersteig."
+    },
+    {
+      "german": "geschah",
+      "english": "happened",
+      "clue": "Etwas Seltsames geschah in dieser Nacht."
+    },
+    {
+      "german": "Mauer",
+      "english": "wall",
+      "clue": "Die Katze saß reglos auf der Mauer."
+    },
+    {
+      "german": "Lächeln",
+      "english": "smile",
+      "clue": "Ein Lächeln erschien auf Dumbledores Gesicht."
+    },
+    {
+      "german": "wandte",
+      "english": "turned",
+      "clue": "Er wandte sich der Katze zu."
+    },
+    {
+      "german": "dreinblickenden",
+      "english": "looking (expression)",
+      "clue": "Die streng dreinblickende Katze war Professor McGonagall."
+    },
+    {
+      "german": "Backsteinmauer",
+      "english": "brick wall",
+      "clue": "Die Katze saß auf der Backsteinmauer im Ligusterweg."
+    },
+    {
+      "german": "vorsichtiger",
+      "english": "more careful",
+      "clue": "Man hätte vorsichtiger sein sollen heute Nacht."
+    },
+    {
+      "german": "Bemerkt",
+      "english": "noticed",
+      "clue": "Niemand hatte bemerkt, dass eine große Eule am Fenster vorbeiflog."
+    },
+    {
+      "german": "Vorwurf",
+      "english": "reproach; accusation",
+      "clue": "In ihrer Stimme lag ein leiser Vorwurf."
+    },
+    {
+      "german": "Verlieren",
+      "english": "to lose",
+      "clue": "Sie wollten keine Zeit verlieren."
+    },
+    {
+      "german": "Herumtreiben",
+      "english": "to hang around; to roam about",
+      "clue": "Seltsame Gestalten schienen sich in der Gegend herumzutreiben."
+    },
+    {
+      "german": "Gerüchte",
+      "english": "rumors",
+      "clue": "Die Gerüchte über die Potters verbreiteten sich schnell."
+    },
+    {
+      "german": "Anziehen",
+      "english": "to put on; to dress",
+      "clue": "Mr. Dursley wollte sich seine langweiligste Krawatte anziehen."
+    },
+    {
+      "german": "Schwieg",
+      "english": "was silent; kept quiet",
+      "clue": "Professor McGonagall schwieg einen Moment lang."
+    },
+    {
+      "german": "Bescherung",
+      "english": "mess; disaster (colloquial)",
+      "clue": "Das ist ja eine schöne Bescherung!"
+    },
+    {
+      "german": "Verschwindet",
+      "english": "disappears",
+      "clue": "Das Glas verschwindet einfach vor seinen Augen."
+    },
+    {
+      "german": "Herausfinden",
+      "english": "to find out",
+      "clue": "Er wollte herausfinden, was wirklich passiert war."
+    },
+    {
+      "german": "Vernünftige",
+      "english": "reasonable; sensible",
+      "clue": "Die Dursleys waren ganz normale, vernünftige Leute."
+    },
+    {
+      "german": "Weitere",
+      "english": "further; additional",
+      "clue": "Er wollte keine weiteren Fragen stellen."
+    },
+    {
+      "german": "Tüte",
+      "english": "bag",
+      "clue": "Er kaufte eine Tüte Donuts auf dem Weg zur Arbeit."
+    },
+    {
+      "german": "Fischte",
+      "english": "fished (out)",
+      "clue": "Er fischte den Schlüssel aus seiner Tasche."
+    },
+    {
+      "german": "Notiz",
+      "english": "note",
+      "clue": "Eine Notiz war an die Decke des Bündels gesteckt."
+    },
+    {
+      "german": "Verwirrt",
+      "english": "confused",
+      "clue": "Mr. Dursley war völlig verwirrt von dem, was er sah."
+    },
+    {
+      "german": "Dauernd",
+      "english": "constantly; all the time",
+      "clue": "Er schaute dauernd aus dem Fenster."
+    },
+    {
+      "german": "Fürchtete",
+      "english": "feared",
+      "clue": "Er fürchtete, dass jemand etwas bemerkt haben könnte."
+    },
+    {
+      "german": "Schmeicheln",
+      "english": "to flatter",
+      "clue": "Sie wollte ihm nicht schmeicheln."
+    },
+    {
+      "german": "Einzusetzen",
+      "english": "to use; to deploy",
+      "clue": "Er war bereit, all seine Kräfte einzusetzen."
+    },
+    {
+      "german": "Gefielen",
+      "english": "pleased; liked",
+      "clue": "Die Nachrichten gefielen ihm überhaupt nicht."
+    },
+    {
+      "german": "Ohrenschützer",
+      "english": "earmuffs",
+      "clue": "Die Leute trugen seltsame Umhänge statt Ohrenschützer."
+    },
+    {
+      "german": "Erreicht",
+      "english": "reached; achieved",
+      "clue": "Die Nachricht hatte ihn noch nicht erreicht."
+    },
+    {
+      "german": "Durchdringenden",
+      "english": "piercing; penetrating",
+      "clue": "Sie warf ihm einen durchdringenden Blick zu."
+    },
+    {
+      "german": "Blick",
+      "english": "glance; look",
+      "clue": "Professor McGonagall warf Dumbledore einen scharfen Blick zu."
+    },
+    {
+      "german": "Mund",
+      "english": "mouth",
+      "clue": "Sein Mund stand vor Überraschung offen."
+    },
+    {
+      "german": "Weiter",
+      "english": "further; continue",
+      "clue": "Sie gingen weiter die Straße entlang."
+    },
+    {
+      "german": "Auftauchte",
+      "english": "appeared; turned up",
+      "clue": "Plötzlich auftauchte ein Mann am Ende der Straße."
+    },
+    {
+      "german": "Gerücht",
+      "english": "rumor",
+      "clue": "Das Gerücht über die Potters machte schnell die Runde."
+    },
+    {
+      "german": "Zufolge",
+      "english": "according to",
+      "clue": "Dem Gerücht zufolge waren die Potters tot."
+    },
+    {
+      "german": "Belegter",
+      "english": "hoarse; husky",
+      "clue": "Mit belegter Stimme stellte er die Frage."
+    },
+    {
+      "german": "Zitternder",
+      "english": "trembling",
+      "clue": "Mit zitternder Stimme sprach sie weiter."
+    },
+    {
+      "german": "Fort",
+      "english": "away; gone",
+      "clue": "Voldemort ist fort, aber nicht für immer."
+    },
+    {
+      "german": "Deshalb",
+      "english": "therefore; that's why",
+      "clue": "Deshalb feiern heute alle Zauberer."
+    },
+    {
+      "german": "Düsterer",
+      "english": "gloomy; dark",
+      "clue": "Ein düsterer Schatten lag über dem Haus."
+    },
+    {
+      "german": "Spitzentaschentuch",
+      "english": "lace handkerchief",
+      "clue": "Dumbledore zog ein Spitzentaschentuch aus der Tasche."
+    },
+    {
+      "german": "Betupfte",
+      "english": "dabbed",
+      "clue": "Er betupfte seine Augen mit dem Taschentuch."
+    },
+    {
+      "german": "Schniefen",
+      "english": "to sniffle",
+      "clue": "Sie begann leise zu schniefen."
+    },
+    {
+      "german": "Zeiger",
+      "english": "hands (of a clock); pointer",
+      "clue": "Die Zeiger der Uhr bewegten sich seltsam."
+    },
+    {
+      "german": "Ziffern",
+      "english": "digits; numbers",
+      "clue": "Die Ziffern auf der Uhr leuchteten im Dunkeln."
+    },
+    {
+      "german": "Drehten",
+      "english": "turned; rotated",
+      "clue": "Die Zeiger drehten sich in die falsche Richtung."
+    },
+    {
+      "german": "Übrigens",
+      "english": "by the way",
+      "clue": "Übrigens, woher haben Sie diese Narbe?"
+    },
+    {
+      "german": "Ähneln",
+      "english": "to resemble",
+      "clue": "Er wird seinen Eltern sehr ähneln."
+    },
+    {
+      "german": "Entlang",
+      "english": "along",
+      "clue": "Er ging die Straße entlang."
+    },
+    {
+      "german": "Gequält",
+      "english": "tormented; strained",
+      "clue": "Ein gequältes Lächeln erschien auf seinem Gesicht."
+    },
+    {
+      "german": "Erlahmender",
+      "english": "flagging; waning",
+      "clue": "Mit erlahmender Kraft sprach er weiter."
+    },
+    {
+      "german": "Blickte",
+      "english": "looked; gazed",
+      "clue": "Er blickte hinauf zu den Sternen."
+    },
+    {
+      "german": "Verdrehen",
+      "english": "to roll (eyes); to twist",
+      "clue": "Sie wollte die Augen verdrehen."
+    },
+    {
+      "german": "Aufwächst",
+      "english": "grows up",
+      "clue": "Es ist besser, wenn er bei seiner Familie aufwächst."
+    },
+    {
+      "german": "Anzuvertrauen",
+      "english": "to entrust",
+      "clue": "Es war schwer, ihm das Kind anzuvertrauen."
+    },
+    {
+      "german": "Scheinwerfer",
+      "english": "headlight",
+      "clue": "Ein Scheinwerfer erschien am Himmel."
+    },
+    {
+      "german": "Dröhnen",
+      "english": "to roar; rumble",
+      "clue": "Ein lautes Dröhnen erfüllte die stille Straße."
+    },
+    {
+      "german": "Gewaltig",
+      "english": "enormous; tremendous",
+      "clue": "Ein gewaltiges Motorrad landete vor ihnen."
+    },
+    {
+      "german": "Breitbeinig",
+      "english": "with legs apart; straddling",
+      "clue": "Breitbeinig stieg er vom Motorrad."
+    },
+    {
+      "german": "Daraufsaß",
+      "english": "sat on it",
+      "clue": "Der Mann, der daraufsaß, war riesig."
+    },
+    {
+      "german": "Verboten",
+      "english": "forbidden",
+      "clue": "Fliegen über Städten war eigentlich verboten."
+    },
+    {
+      "german": "Strähnen",
+      "english": "strands (of hair)",
+      "clue": "Wilde Strähnen schwarzen Haars hingen ihm ins Gesicht."
+    },
+    {
+      "german": "Mülleimerdeckel",
+      "english": "trash can lid",
+      "clue": "Die Katze stieß einen Mülleimerdeckel um."
+    },
+    {
+      "german": "Ausladenden",
+      "english": "sprawling; sweeping",
+      "clue": "Er hatte einen ausladenden Bart."
+    },
+    {
+      "german": "Muskelbepackten",
+      "english": "muscular; brawny",
+      "clue": "Seine muskelbepackten Arme hielten das Baby vorsichtig."
+    },
+    {
+      "german": "Armen",
+      "english": "arms",
+      "clue": "Er trug Harry in seinen Armen."
+    },
+    {
+      "german": "Leintüchern",
+      "english": "bed sheets",
+      "clue": "Das Baby war in Leintüchern eingewickelt."
+    },
+    {
+      "german": "Erleichterter",
+      "english": "relieved",
+      "clue": "Ein erleichterter Seufzer entfuhr ihm."
+    },
+    {
+      "german": "Geborgt",
+      "english": "borrowed",
+      "clue": "Das Motorrad hatte er von Sirius Black geborgt."
+    },
+    {
+      "german": "Zerstört",
+      "english": "destroyed",
+      "clue": "Das Haus war völlig zerstört."
+    },
+    {
+      "german": "Geschwirrt",
+      "english": "buzzed; whirred",
+      "clue": "Den ganzen Tag waren Eulen durch die Luft geschwirrt."
+    },
+    {
+      "german": "Kamen",
+      "english": "came",
+      "clue": "Sie kamen von überall her."
+    },
+    {
+      "german": "Tiefem",
+      "english": "deep",
+      "clue": "Mit tiefem Bedauern sprach Dumbledore."
+    },
+    {
+      "german": "Büschel",
+      "english": "tuft",
+      "clue": "Ein Büschel schwarzes Haar schaute unter der Decke hervor."
+    },
+    {
+      "german": "Rabenschwarzen",
+      "english": "jet-black",
+      "clue": "Er hatte rabenschwarzes Haar wie sein Vater."
+    },
+    {
+      "german": "Schnitt",
+      "english": "cut",
+      "clue": "Ein Schnitt in Form eines Blitzes war auf seiner Stirn."
+    },
+    {
+      "german": "Flüsterte",
+      "english": "whispered",
+      "clue": "Dumbledore flüsterte einen letzten Gruß."
+    },
+    {
+      "german": "Dagegen",
+      "english": "against it; in comparison",
+      "clue": "Dagegen war nichts zu machen."
+    },
+    {
+      "german": "Knies",
+      "english": "knee's",
+      "clue": "Der Schmerz in seinem Knie wurde stärker."
+    },
+    {
+      "german": "Tadelloser",
+      "english": "impeccable; flawless",
+      "clue": "Er erschien immer in tadelloser Kleidung."
+    },
+    {
+      "german": "Beugte",
+      "english": "bent; leaned",
+      "clue": "Er beugte sich über das kleine Bündel."
+    },
+    {
+      "german": "Struppigen",
+      "english": "shaggy; unkempt",
+      "clue": "Sein struppigen Haar stand in alle Richtungen ab."
+    },
+    {
+      "german": "Kratzigen",
+      "english": "scratchy; rough",
+      "clue": "Sein kratzigen Bart kitzelte das Baby."
+    },
+    {
+      "german": "Barthaarigen",
+      "english": "bearded",
+      "clue": "Das barthaarigen Gesicht war voller Tränen."
+    },
+    {
+      "german": "Stieß",
+      "english": "pushed; uttered",
+      "clue": "Er stieß einen lauten Schluchzer aus."
+    },
+    {
+      "german": "Zischte",
+      "english": "hissed",
+      "clue": "Professor McGonagall zischte wütend."
+    },
+    {
+      "german": "Schluchze",
+      "english": "sob",
+      "clue": "Ein lauter Schluchze entfuhr Hagrid."
+    },
+    {
+      "german": "Gepunktes",
+      "english": "spotted; dotted",
+      "clue": "Ein gepunktes Taschentuch kam zum Vorschein."
+    },
+    {
+      "german": "Vergrub",
+      "english": "buried",
+      "clue": "Er vergrub sein Gesicht in den Händen."
+    },
+    {
+      "german": "Reißen",
+      "english": "to tear; to pull",
+      "clue": "Er musste sich zusammenreißen."
+    },
+    {
+      "german": "Vordereingang",
+      "english": "front entrance",
+      "clue": "Sie legten das Baby vor dem Vordereingang ab."
+    },
+    {
+      "german": "Kehrte",
+      "english": "returned; turned",
+      "clue": "Er kehrte dem Haus den Rücken zu."
+    },
+    {
+      "german": "Zurück",
+      "english": "back",
+      "clue": "Er blickte noch einmal zurück."
+    },
+    {
+      "german": "Heftig",
+      "english": "violently; vigorously",
+      "clue": "Hagrid schluchzte heftig."
+    },
+    {
+      "german": "Funkelnde",
+      "english": "sparkling; twinkling",
+      "clue": "Seine funkelnde Augen blickten traurig."
+    },
+    {
+      "german": "Erloschen",
+      "english": "extinguished; gone out",
+      "clue": "Das Licht in seinen Augen war nicht erloschen."
+    },
+    {
+      "german": "Dumpfer",
+      "english": "muffled; dull",
+      "clue": "Ein dumpfer Schlag war zu hören."
+    },
+    {
+      "german": "Jackenärmel",
+      "english": "jacket sleeve",
+      "clue": "Er wischte sich die Tränen am Jackenärmel ab."
+    },
+    {
+      "german": "Schwang",
+      "english": "swung",
+      "clue": "Er schwang sich auf das Motorrad."
+    },
+    {
+      "german": "Erhob",
+      "english": "rose; raised",
+      "clue": "Das Motorrad erhob sich in die Luft."
+    },
+    {
+      "german": "Vermute",
+      "english": "suppose; assume",
+      "clue": "Ich vermute, wir werden uns wiedersehen."
+    },
+    {
+      "german": "Schnäuzte",
+      "english": "blew (nose)",
+      "clue": "Hagrid schnäuzte sich laut."
+    },
+    {
+      "german": "Entfernte",
+      "english": "removed; moved away",
+      "clue": "Er entfernte sich langsam von der Szene."
+    },
+    {
+      "german": "Türschwelle",
+      "english": "doorstep; threshold",
+      "clue": "Harry lag auf der Türschwelle, in Decken gehüllt."
+    },
+    {
+      "german": "Kräuselte",
+      "english": "curled; ruffled",
+      "clue": "Ein Lächeln kräuselte seine Lippen."
+    },
+    {
+      "german": "Sorgfältig",
+      "english": "carefully",
+      "clue": "Er legte das Baby sorgfältig auf die Schwelle."
+    },
+    {
+      "german": "Geschnittenen",
+      "english": "cut; trimmed",
+      "clue": "Der sorgfältig geschnittenen Rasen war sein ganzer Stolz."
+    },
+    {
+      "german": "Dalag",
+      "english": "lay there",
+      "clue": "Das Baby dalag friedlich schlafend."
+    },
+    {
+      "german": "Unerhörtes",
+      "english": "outrageous; unheard-of",
+      "clue": "Für die Dursleys wäre das etwas völlig Unerhörtes."
+    },
+    {
+      "german": "Vetter",
+      "english": "cousin (male)",
+      "clue": "Dudley war Harrys Vetter."
+    },
+    {
+      "german": "Peinigen",
+      "english": "to torment",
+      "clue": "Dudley würde Harry jahrelang peinigen."
+    },
+    {
+      "german": "Piesacken",
+      "english": "to bully; to pester",
+      "clue": "Er hörte nie auf, Harry zu piesacken."
+    },
+    {
+      "german": "Geheime",
+      "english": "secret",
+      "clue": "Im ganzen Land fanden geheime Feiern statt."
+    },
+    {
+      "german": "Versammlungen",
+      "english": "gatherings; meetings",
+      "clue": "Geheime Versammlungen von Zauberern wurden abgehalten."
+    },
+    {
+      "german": "Stattfanden",
+      "english": "took place",
+      "clue": "Überall stattfanden Feiern zu Ehren von Harry Potter."
+    },
+    {
+      "german": "Gedämpfte",
+      "english": "muffled; subdued",
+      "clue": "Gedämpfte Stimmen waren durch die Mauer zu hören."
+    }
+  ]
 }
