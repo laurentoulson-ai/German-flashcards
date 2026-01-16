@@ -28,7 +28,7 @@ body {
 
 .container {
     /* slightly more transparent so the background image shows through more */
-    background-color: rgba(33, 53, 89, 0.60); /* --secondary @ 60% */
+    background-color: rgba(33, 53, 89, 0.75); /* set to 75% opacity */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.12);
     padding: 30px;
@@ -42,20 +42,25 @@ header {
     margin-bottom: 20px;
     padding: 0; /* removed previous bottom padding to let the image fill the header */
     border-bottom: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(33, 53, 89, 0.60); /* subtle fallback behind image */
 }
 
 .cover-image {
     display: block;
     width: 100%;
-    height: 260px; /* default desktop height */
-    object-fit: cover;
+    height: auto;            /* ensure full image is shown, not cropped */
+    max-height: 60vh;       /* limit height to viewport while allowing scaling */
+    object-fit: contain;    /* keep entire image visible and preserve aspect ratio */
     border-top-left-radius: 15px; /* match container rounded corners */
     border-top-right-radius: 15px;
 }
 
 @media (max-width: 768px) {
     .cover-image {
-        height: 160px; /* smaller height on mobile */
+        max-height: 40vh; /* smaller max height on mobile */
     }
 }
 
@@ -179,7 +184,7 @@ h1, h2, h3, p, span, li {
 .progress-value {
     font-size: 1.8rem;
     font-weight: bold;
-    color: var(--secondary);
+    color: var(--primary); /* use yellow for better visibility */
 }
 
 .actions {
@@ -474,4 +479,9 @@ h1, h2, h3, p, span, li {
     font-size: 1.4rem;
     color: var(--primary);
     font-weight: 700;
+}
+
+/* Ensure progress numbers on the homepage are always the primary (yellow) color */
+#totalWords, #learnedWords, #chaptersCount, .progress-value {
+  color: var(--primary) !important;
 }
