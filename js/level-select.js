@@ -43,6 +43,11 @@ async function loadChapterData(chapterNumber) {
     document.getElementById('level2Count').textContent = learnedCount;
     document.getElementById('level3Count').textContent = masteredCount;
 
+    // Update Familiarise count (remaining in pool)
+    const famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
+    const famCountElem = document.getElementById('famCount');
+    if (famCountElem) famCountElem.textContent = famPool.length;
+
     // Store chapter data for game session
     localStorage.setItem('currentChapter', chapterNumber);
     localStorage.setItem('chapterData', JSON.stringify(chapter));
@@ -92,4 +97,17 @@ function startLevel(level) {
     
     // Navigate to game
     window.location.href = 'game.html';
+}
+
+// Start the Familiarise multiple-choice game
+function startFamiliarise() {
+    const chapterNumber = parseInt(localStorage.getItem('currentChapter')) || 1;
+    // Ensure familiarise pool exists
+    const chapter = flashcardData.chapters[chapterNumber - 1] || null;
+    const wordCount = chapter && Array.isArray(chapter.words) ? chapter.words.length : 0;
+    flashcardData.initFamiliariseChapter(chapterNumber, wordCount);
+
+    // set a special level marker and navigate
+    localStorage.setItem('gameLevel', 'familiarise');
+    window.location.href = 'familiarise.html';
 }

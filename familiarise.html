@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Familiarise - German Flashcards</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="game-container familiarise-container">
+    <div class="game-header">
+      <div class="header-left">
+        <button class="btn-icon" id="backBtn">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="game-info">
+          <h2 id="gameChapter">Chapter</h2>
+          <div class="level-badge" id="levelBadge">
+            <i class="fas fa-lightbulb"></i>
+            <span>Familiarise</span>
+          </div>
+        </div>
+      </div>
+      <div class="progress-stats">
+        <div class="stat">
+          <span class="stat-label">Remaining</span>
+          <span class="stat-value" id="remainingCount">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Correct</span>
+          <span class="stat-value correct" id="correctCount">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Attempted</span>
+          <span class="stat-value" id="attemptedCount">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flashcard-container">
+      <div class="mcq-card">
+        <div class="mcq-question" id="mcqQuestion">Which word means "..."?</div>
+        <div class="mcq-options" id="mcqOptions">
+          <!-- buttons injected here -->
+        </div>
+      </div>
+    </div>
+
+    <div class="mcq-actions">
+      <button class="btn-secondary" id="nextBtn" style="display:none;">Next</button>
+      <button class="btn" id="resetBtn">Reset Pool</button>
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/familiarise.js"></script>
+</body>
+</html>

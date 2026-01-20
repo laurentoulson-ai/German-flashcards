@@ -62,7 +62,8 @@ class FlashcardData {
                 totalWords: 0,
                 learnedWords: 0,
                 strongestWords: 0
-            }
+            },
+            familiarise: {} // per-chapter pools for the Familiarise game
         };
     }
     
@@ -80,6 +81,44 @@ class FlashcardData {
             this.updateStats();
             this.saveProgress();
         }
+        // also ensure familiarise pool exists for the chapter (full set initially)
+        this.initFamiliariseChapter(chapterNumber, wordCount);
+    }
+
+    // Initialize familiarise pool for a chapter if missing; stores remaining indices
+    initFamiliariseChapter(chapterNumber, wordCount) {
+        if (!this.progress.familiarise) this.progress.familiarise = {};
+        if (!this.progress.familiarise[chapterNumber] || !Array.isArray(this.progress.familiarise[chapterNumber])) {
+            this.progress.familiarise[chapterNumber] = Array.from({length: wordCount}, (_, i) => i);
+            this.saveProgress();
+        }
+    }
+
+    // Return the current pool (array of indices) for the Familiarise game for a chapter
+    getFamiliarisePool(chapterNumber) {
+        if (!this.progress.familiarise) this.progress.familiarise = {};
+        return this.progress.familiarise[chapterNumber] ? [...this.progress.familiarise[chapterNumber]] : [];
+    }
+
+    // Mark a word index as correctly answered in Familiarise: remove it from the pool and persist.
+    markFamiliariseCorrect(chapterNumber, wordIndex) {
+        if (!this.progress.familiarise) this.progress.familiarise = {};
+        const pool = this.progress.familiarise[chapterNumber] || [];
+        const pos = pool.indexOf(Number(wordIndex));
+        if (pos > -1) {
+            pool.splice(pos, 1);
+            this.progress.familiarise[chapterNumber] = pool;
+            // if emptied, reset to full set for that chapter (so the pool cycles)
+            if (pool.length === 0) {
+                // try to find chapter length
+                const ch = this.chapters.find(c => Number(c.chapter) === Number(chapterNumber));
+                const count = ch && Array.isArray(ch.words) ? ch.words.length : 0;
+                this.progress.familiarise[chapterNumber] = Array.from({length: count}, (_, i) => i);
+            }
+            this.saveProgress();
+            return true;
+        }
+        return false;
     }
     
     updateStats() {
