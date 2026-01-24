@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let famPool = [];
+let famSessionPool = []; // indices chosen for this session
+let sessionPos = 0; // position inside famSessionPool
 let currentCorrectIndex = null; // index in chapter.words
 let currentOptions = []; // array of {index, text}
 let correctCount = 0;
@@ -25,32 +27,39 @@ function initFamiliarise(chapterNumber) {
   }
 
   if (!chapter) {
-    // nothing to do
     document.getElementById('mcqQuestion').textContent = 'No chapter data available.';
     return;
   }
 
   document.getElementById('gameChapter').textContent = chapter.title || `Chapter ${chapterNumber}`;
 
-  // Ensure familiarise pool initialized
+  // Ensure familiarise pool initialized and load it
   flashcardData.initFamiliariseChapter(chapterNumber, chapter.words.length);
   famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
 
+  // Determine session cap (from level-select control stored as famCardCount)
+  const famCardCount = parseInt(localStorage.getItem('famCardCount')) || 10;
+
+  // Build a session-limited random selection from the global pool (those not yet answered correctly)
+  const poolCopy = shuffleArray([...famPool]);
+  const take = Math.min(famCardCount, poolCopy.length);
+  famSessionPool = poolCopy.slice(0, take);
+  sessionPos = 0;
+
   // bind buttons
   document.getElementById('backBtn').addEventListener('click', () => {
-    // navigate back to level select (progress already saved by flashcardData methods)
     window.location.href = 'level-select.html';
   });
 
   document.getElementById('nextBtn').addEventListener('click', () => {
     document.getElementById('nextBtn').style.display = 'none';
-    renderNextQuestion(chapterNumber, chapter);
-  });
-
-  document.getElementById('resetBtn').addEventListener('click', () => {
-    resetFamiliarisePool(chapterNumber, chapter.words.length);
-    famPool = flashcardData.getFamiliarisePool(chapterNumber);
-    updateStatsDisplay();
+    sessionPos++;
+    // if session finished, go back to level-select
+    if (sessionPos >= famSessionPool.length) {
+      // small delay so user sees updated stats
+      setTimeout(() => window.location.href = 'level-select.html', 250);
+      return;
+    }
     renderNextQuestion(chapterNumber, chapter);
   });
 
@@ -63,24 +72,25 @@ function initFamiliarise(chapterNumber) {
 }
 
 function updateStatsDisplay() {
-  document.getElementById('remainingCount').textContent = famPool.length;
+  // Remaining shows how many questions left in THIS SESSION (not entire pool)
+  const remaining = Math.max(0, (famSessionPool ? famSessionPool.length : 0) - sessionPos);
+  document.getElementById('remainingCount').textContent = remaining;
   document.getElementById('correctCount').textContent = correctCount;
   document.getElementById('attemptedCount').textContent = attemptedCount;
 }
 
 function renderNextQuestion(chapterNumber, chapter) {
+  // Refresh famPool in case other tabs changed it
   famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
 
-  // If pool is empty, initFamiliariseChapter will reset it inside markFamiliariseCorrect; but ensure non-empty
-  if (!famPool || famPool.length === 0) {
-    flashcardData.initFamiliariseChapter(chapterNumber, chapter.words.length);
-    famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
+  // If session exhausted (safety), go back
+  if (!famSessionPool || sessionPos >= famSessionPool.length) {
+    window.location.href = 'level-select.html';
+    return;
   }
 
-  // pick a random index from pool as the correct answer
-  const poolCopy = [...famPool];
-  const randPos = Math.floor(Math.random() * poolCopy.length);
-  currentCorrectIndex = poolCopy[randPos];
+  // pick the next correct index from famSessionPool
+  currentCorrectIndex = famSessionPool[sessionPos];
 
   // Prepare distractors: choose up to 3 other unique indices from the chapter words (excluding correct)
   const allIndices = Array.from({length: chapter.words.length}, (_, i) => i).filter(i => i !== currentCorrectIndex);
@@ -95,7 +105,8 @@ function renderNextQuestion(chapterNumber, chapter) {
 
   // Render question and options
   const english = chapter.words[currentCorrectIndex].english || '';
-  document.getElementById('mcqQuestion').textContent = `Which word means "${english}"?`;
+  const qEl = document.getElementById('mcqQuestion');
+  qEl.textContent = `Which word means "${english}"?`;
 
   const optionsContainer = document.getElementById('mcqOptions');
   optionsContainer.innerHTML = '';
@@ -119,7 +130,10 @@ function onOptionSelected(e) {
   const selectedIndex = Number(btn.dataset.index);
 
   // disable all options
-  document.querySelectorAll('.mcq-option').forEach(b => b.disabled = true);
+  document.querySelectorAll('.mcq-option').forEach(b => {
+    b.disabled = true;
+    b.classList.remove('mcq-correct','mcq-wrong');
+  });
 
   attemptedCount++;
 
@@ -141,17 +155,10 @@ function onOptionSelected(e) {
   famPool = flashcardData.getFamiliarisePool(parseInt(localStorage.getItem('currentChapter')) || 1) || [];
   updateStatsDisplay();
 
-  // show next button (or change text if pool just reset)
+  // show next button (positioned under options in the UI)
   const nextBtn = document.getElementById('nextBtn');
   nextBtn.style.display = 'inline-block';
-  nextBtn.textContent = famPool.length === 0 ? 'Continue (pool reset)' : 'Next';
-}
-
-function resetFamiliarisePool(chapterNumber, wordCount) {
-  // reset the pool to the full set
-  if (!flashcardData.progress.familiarise) flashcardData.progress.familiarise = {};
-  flashcardData.progress.familiarise[chapterNumber] = Array.from({length: wordCount}, (_, i) => i);
-  flashcardData.saveProgress();
+  nextBtn.textContent = (sessionPos + 1 >= famSessionPool.length) ? 'Finish' : 'Next';
 }
 
 // small utility

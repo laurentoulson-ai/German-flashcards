@@ -107,7 +107,24 @@ function startFamiliarise() {
     const wordCount = chapter && Array.isArray(chapter.words) ? chapter.words.length : 0;
     flashcardData.initFamiliariseChapter(chapterNumber, wordCount);
 
+    // read card count from UI (same control used for other levels)
+    const cardCount = parseInt(document.getElementById('cardCount')?.value) || 10;
+    localStorage.setItem('famCardCount', String(cardCount));
+
     // set a special level marker and navigate
     localStorage.setItem('gameLevel', 'familiarise');
     window.location.href = 'familiarise.html';
+}
+
+// Reset familiarise pool for the current chapter (called from level-select UI)
+function resetFamiliarisePoolFromLevel() {
+    const chapterNumber = parseInt(localStorage.getItem('currentChapter')) || 1;
+    const chapter = flashcardData.chapters[chapterNumber - 1] || null;
+    const wordCount = chapter && Array.isArray(chapter.words) ? chapter.words.length : 0;
+    if (!flashcardData.progress.familiarise) flashcardData.progress.familiarise = {};
+    flashcardData.progress.familiarise[chapterNumber] = Array.from({length: wordCount}, (_, i) => i);
+    flashcardData.saveProgress();
+    // update UI count immediately
+    const famCountElem = document.getElementById('famCount');
+    if (famCountElem) famCountElem.textContent = (flashcardData.getFamiliarisePool(chapterNumber) || []).length;
 }
