@@ -6,56 +6,75 @@ class FlashcardData {
         this.currentChapter = null;
         this.currentLevel = 1;
     }
-    
-    async loadChapter(chapterNumber) {
+
+    // Return current app language ('de' or 'es') — prefer explicit window var then localStorage
+    getAppLang() {
         try {
-            const response = await fetch(`data/chapters/chapter${chapterNumber}.json`);
-            if (!response.ok) {
-                return {
-                    chapter: chapterNumber,
-                    title: `Chapter ${chapterNumber}`,
-                    words: [],
-                    image: "data/images/background.png"
-                };
-            }
-            const json = await response.json();
-            // Ensure an image property exists. Prefer a chapter-specific image if available,
-            // otherwise fall back to a chapter image file or the generic background.
-            json.image = json.image || `data/images/chapter${chapterNumber}.png`;
-            // If that specific image doesn't exist when hosted, the browser will simply skip it
-            // and the CSS fallback/background will handle appearance.
-            return json;
-        } catch (error) {
-            console.error(`Error loading chapter ${chapterNumber}:`, error);
-            return this.createPlaceholderChapter(chapterNumber);
+            return window.APP_LANG || localStorage.getItem('appLanguage') || 'de';
+        } catch (e) {
+            return 'de';
         }
     }
-    
-    createPlaceholderChapter(number) {
-        return {
-            chapter: number,
-            title: `Chapter ${number}`,
-            words: [],
-            image: "data/images/background.png"
-        };
+
+    async loadChapter(chapterNumber) {
+        const lang = this.getAppLang();
+        // Try a series of likely file locations to support different folder layouts
+        const candidates = [];
+        if (lang === 'es') {
+            // prefer data/chapters/spanish, then data/spanish/chapters, then data/spanish
+            candidates.push(
+                `data/chapters/spanish/chapter${chapterNumber}.json`,
+                `data/spanish/chapters/chapter${chapterNumber}.json`,
+                `data/spanish/chapter${chapterNumber}.json`
+            );
+        } else {
+            // prefer data/chapters/german, then data/german/chapters, then legacy data/chapters
+            candidates.push(
+                `data/chapters/german/chapter${chapterNumber}.json`,
+                `data/german/chapters/chapter${chapterNumber}.json`,
+                `data/chapters/chapter${chapterNumber}.json`,
+                `data/german/chapter${chapterNumber}.json`
+            );
+        }
+
+        for (const path of candidates) {
+            try {
+                const response = await fetch(path);
+                if (response.ok) {
+                    const json = await response.json();
+                    json.image = json.image || `data/images/chapter${chapterNumber}.png`;
+                    return json;
+                }
+            } catch (err) {
+                // try next candidate
+                // console.debug(`Failed to fetch ${path}:`, err);
+            }
+        }
+
+        // If none of the candidates returned, fallback to placeholder chapter
+        return this.createPlaceholderChapter(chapterNumber);
     }
-    
+
     async loadAllChapters() {
         const chapterPromises = [];
         for (let i = 1; i <= 17; i++) {
             chapterPromises.push(this.loadChapter(i));
         }
-        
         this.chapters = await Promise.all(chapterPromises);
         return this.chapters;
     }
-    
+
     loadProgress() {
-        const saved = localStorage.getItem('germanFlashcardsProgress');
+        const lang = (typeof window !== 'undefined' && (window.APP_LANG || localStorage.getItem('appLanguage'))) ? (window.APP_LANG || localStorage.getItem('appLanguage')) : 'de';
+        const key = `germanFlashcardsProgress_${lang}`;
+        const saved = localStorage.getItem(key);
         if (saved) {
-            return JSON.parse(saved);
+            try {
+                return JSON.parse(saved);
+            } catch (e) {
+                console.warn('Failed to parse saved progress for', lang, e);
+            }
         }
-        
         return {
             chapters: {},
             stats: {
@@ -63,14 +82,16 @@ class FlashcardData {
                 learnedWords: 0,
                 strongestWords: 0
             },
-            familiarise: {} // per-chapter pools for the Familiarise game
+            familiarise: {}
         };
     }
-    
+
     saveProgress() {
-        localStorage.setItem('germanFlashcardsProgress', JSON.stringify(this.progress));
+        const lang = this.getAppLang();
+        const key = `germanFlashcardsProgress_${lang}`;
+        localStorage.setItem(key, JSON.stringify(this.progress));
     }
-    
+
     initChapterProgress(chapterNumber, wordCount) {
         if (!this.progress.chapters[chapterNumber]) {
             this.progress.chapters[chapterNumber] = {
@@ -302,15 +323,14 @@ class FlashcardData {
     exportProgress() {
         const dataStr = JSON.stringify(this.progress, null, 2);
         const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-        
-        const exportFileDefaultName = `german-flashcards-progress-${new Date().toISOString().split('T')[0]}.json`;
-        
+        const lang = this.getAppLang();
+        const exportFileDefaultName = `german-flashcards-progress-${lang}-${new Date().toISOString().split('T')[0]}.json`;
         const linkElement = document.createElement('a');
         linkElement.setAttribute('href', dataUri);
         linkElement.setAttribute('download', exportFileDefaultName);
         linkElement.click();
     }
-    
+
     importProgress(jsonData) {
         try {
             const newProgress = JSON.parse(jsonData);
@@ -322,6 +342,7 @@ class FlashcardData {
             return false;
         }
     }
+
 }
 
 const flashcardData = new FlashcardData();

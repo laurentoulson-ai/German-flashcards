@@ -30,7 +30,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="data/images/cover.jpeg" alt="Cover" class="cover-image">
+            <img id="coverImage" src="data/images/cover.jpeg" alt="Cover" class="cover-image">
         </header>
         
         <main class="chapters-grid" id="chaptersContainer">
@@ -67,6 +67,26 @@
     
     <input type="file" id="importFile" accept=".json" style="display: none;">
     
+    <!-- ensure the app language is available before loading data.js; default to 'de' -->
+    <script>
+        (function(){
+            try {
+                var lang = localStorage.getItem('appLanguage') || 'de';
+                // expose to scripts
+                window.APP_LANG = lang;
+            } catch (e) {
+                window.APP_LANG = 'de';
+            }
+            // set the cover image depending on language (use Spanish cover when 'es')
+            try {
+                var img = document.getElementById('coverImage');
+                if (img) {
+                    if (window.APP_LANG === 'es') img.src = 'data/images/cover-spanish.png';
+                    else img.src = 'data/images/cover.jpeg';
+                }
+            } catch (e) { console.warn('Failed to set cover image', e); }
+        })();
+    </script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>

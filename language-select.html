@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Select Language — Flashcards</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .lang-container { max-width: 720px; margin: 60px auto; text-align: center; padding: 30px; }
+    .lang-buttons { display:flex; gap:20px; justify-content:center; margin-top:30px; }
+    .lang-btn { padding: 18px 28px; font-size:1.1rem; border-radius:12px; cursor:pointer; border:none; font-weight:700; }
+    .lang-de { background: linear-gradient(135deg,#e4ab49,#f6ad55); color:#16324a; }
+    .lang-es { background: linear-gradient(135deg,#48bb78,#38a169); color:#07221a; }
+    .lang-note { margin-top:18px; color: rgba(255,255,255,0.85); }
+    body { background-image: url('data/images/background.png'); background-size:cover; background-position:center; }
+    .card { background: rgba(33,53,89,0.8); padding:30px; border-radius:16px; color:var(--primary); }
+  </style>
+</head>
+<body>
+  <div class="lang-container">
+    <div class="card">
+      <h1>Select Language</h1>
+      <p class="lang-note">Choose your language to begin. Your progress is stored separately per language.</p>
+      <div class="lang-buttons">
+        <button class="lang-btn lang-de" id="btnDe">Deutsch (German)</button>
+        <button class="lang-btn lang-es" id="btnEs">Español (Spanish)</button>
+      </div>
+      <p style="margin-top:18px;font-size:0.95rem;opacity:0.9">You can switch languages later using the same selector (this app stores progress per language).</p>
+    </div>
+  </div>
+
+  <script>
+    function chooseLang(lang) {
+      try {
+        localStorage.setItem('appLanguage', lang);
+      } catch(e){}
+      // navigate to the main chapters page which will read appLanguage
+      window.location.href = 'index.html';
+    }
+    document.getElementById('btnDe').addEventListener('click', () => chooseLang('de'));
+    document.getElementById('btnEs').addEventListener('click', () => chooseLang('es'));
+  </script>
+</body>
+</html>
