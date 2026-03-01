@@ -88,11 +88,12 @@
           </div>
 
           <div id="generatedPreviewContainer" style="margin-top:12px; display:none;">
-            <label for="generatedPreview">Preview / Edit generated JSON (required before saving):</label>
-            <textarea id="generatedPreview" style="width:100%;height:180px;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:#0f1724;color:#e6eef8;"></textarea>
+            <label for="generatedPreview">Preview generated JSON (review before accepting):</label>
+            <textarea id="generatedPreview" readonly style="width:100%;height:180px;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:#0f1724;color:#e6eef8;"></textarea>
             <div style="margin-top:8px; display:flex; gap:8px;">
-              <button class="btn btn-play" id="saveLocallyBtn">Save locally</button>
-              <button class="btn-secondary" id="downloadEditedBtn" style="display:none;">Download edited</button>
+              <button class="btn btn-play" id="acceptGeneratedBtn" style="display:none;">Accept</button>
+              <button class="btn-secondary" id="retryGenerationBtn" style="display:none;">Retry</button>
+              <button class="btn-secondary" id="downloadEditedBtn" style="display:none;">Download JSON</button>
             </div>
           </div>
 

@@ -162,129 +162,167 @@ function openUploadModal(chapterNumber, e) {
             feedback.textContent = 'Please paste words to generate.';
             return;
         }
-        // build system prompt from notes.txt template (client-side)
-        // notes template stored in /notes.txt — but we will reconstruct a reasonable prompt here
-        const template = `"""
-I'm learning new words and need a list of words translating into english along with a short sentence using the word in context. The words are from harry potter and the philosopher's stone, so where possible, utilise the context from the book. You should output this in the following json format:\n{\n   \"{lang}\": \"sobrevivió\",\n   \"english\": \"survived\",\n   \"clue\": \"Apenas sobrevivió al accidente.\"\n },\n ...\nYou should only output exactly this JSON format, with no additional text.\n\nHere is the list of words: {user_prompt}
-"""`;
+
         const lang = flashcardData.getAppLang();
         const langKey = (lang === 'es') ? 'spanish' : 'german';
-        const systemPrompt = template.replace('{lang}', langKey).replace('{user_prompt}', raw.replace(/"/g, '\\"'));
+        const chapterNum = chapterNumber;
 
-        // attempt to call AI provider — requires configuration of LLAMA_API_URL and KEY in window
         feedback.style.display = 'block';
         feedback.style.color = '#ffdede';
         feedback.textContent = 'Generating JSON via AI...';
 
         try {
-            const generated = await callLlamaGenerate(systemPrompt);
-            if (!generated) throw new Error('No response from AI');
+            // call server proxy with structured payload so server can use OpenRouter key from .env
+            const payload = {
+                userWords: raw,
+                chapterNumber: chapterNum,
+                lang: langKey,
+                model: 'stepfun/step-3.5-flash',
+                max_tokens: 1600,
+                temperature: 0.0
+            };
 
-            // Attempt to parse AI output as JSON array or object
-            let parsed;
-            try {
-                parsed = JSON.parse(generated);
-            } catch (e) {
-                // AI may return a list without wrapping; try to wrap
-                const wrapped = `[${generated.trim().replace(/(^,|,$)/g, '')}]`;
-                try { parsed = JSON.parse(wrapped); } catch (e2) { parsed = null; }
-            }
+            // callLlamaGenerate returns the full provider response object now
+            const result = await callLlamaGenerate(payload);
+            if (!result) throw new Error('No response from AI');
 
-            if (!parsed || (!Array.isArray(parsed) && typeof parsed !== 'object')) {
-                feedback.textContent = 'AI response could not be parsed as JSON. Check API settings or download the raw output.';
-                console.warn('AI output:', generated);
+            // If server returned a checker result, use it to decide whether to show retry
+            const aiText = result.text || (typeof result === 'string' ? result : null);
+            const checker = result.checker || null;
+
+            if (!aiText) {
+                feedback.textContent = 'AI returned no text. Check server logs.';
+                console.warn('AI raw response:', result.raw || result);
                 return;
             }
 
-            // Normalize into chapter object
-            let chapterObj;
-            if (Array.isArray(parsed)) {
-                chapterObj = { chapter: chapterNumber, title: `Chapter ${chapterNumber}`, words: parsed };
-            } else if (parsed.words && Array.isArray(parsed.words)) {
-                chapterObj = parsed;
-            } else {
-                // If object is a single word or map, try to coerce
-                feedback.textContent = 'Generated JSON did not match expected chapter structure.';
-                return;
-            }
-
-            // Save to localStorage under language-specific key
-            const key = `localChapter_${flashcardData.getAppLang()}_${chapterNumber}`;
-            localStorage.setItem(key, JSON.stringify(chapterObj));
-
-            // show download and proceed options
-            downloadBtn.style.display = 'inline-block';
-            proceedBtn.style.display = 'inline-block';
-            feedback.style.color = '#c8ffd1';
-            feedback.textContent = 'Generated JSON saved locally. Please download for backup — it will be stored only on this device.';
-
-            // Populate preview editor so user can inspect/edit before saving
+            // Show preview (readonly) and allow Accept / Retry
             const previewContainer = document.getElementById('generatedPreviewContainer');
             const previewArea = document.getElementById('generatedPreview');
-            const saveBtn = document.getElementById('saveLocallyBtn');
-            const downloadEditedBtn = document.getElementById('downloadEditedBtn');
-            if (previewContainer && previewArea) {
-                previewArea.value = JSON.stringify(chapterObj, null, 2);
-                previewContainer.style.display = 'block';
-                downloadEditedBtn.style.display = 'inline-block';
+            const acceptBtn = document.getElementById('acceptGeneratedBtn');
+            const retryBtn = document.getElementById('retryGenerationBtn');
+            const downloadBtnEdited = document.getElementById('downloadEditedBtn');
+            const downloadGeneratedBtnLocal = document.getElementById('downloadGeneratedBtn');
+
+            // Populate preview
+            previewArea.value = aiText;
+            previewContainer.style.display = 'block';
+            downloadGeneratedBtnLocal.style.display = 'inline-block';
+            downloadBtnEdited.style.display = 'inline-block';
+
+            // Show Accept/Retry depending on checker
+            acceptBtn.style.display = 'inline-block';
+            retryBtn.style.display = 'inline-block';
+
+            // If checker exists and says invalid, highlight feedback
+            if (checker && checker.valid === false) {
+                feedback.style.color = '#ffdede';
+                feedback.textContent = 'AI output failed validation. Review the preview or press Retry to try again.';
+            } else {
+                feedback.style.color = '#c8ffd1';
+                feedback.textContent = 'AI generated JSON. Please review the preview and Accept to save.';
             }
 
-            // wire save edited JSON button
-            saveBtn.onclick = function() {
+            // wire accept button: parse and save locally under language-specific key
+            acceptBtn.onclick = function() {
                 try {
-                    const edited = JSON.parse(previewArea.value);
-                    if (!validateChapterJson(edited, chapterNumber)) {
-                        alert('Edited JSON does not match expected chapter structure. Please fix before saving.');
+                    const parsed = JSON.parse(previewArea.value);
+                    let chapterObj;
+                    if (Array.isArray(parsed)) {
+                        chapterObj = { chapter: chapterNum, title: `Chapter ${chapterNum}`, words: parsed };
+                    } else if (parsed.words && Array.isArray(parsed.words)) {
+                        chapterObj = parsed;
+                    } else {
+                        alert('Generated JSON is not in expected chapter structure. Please retry.');
                         return;
                     }
-                    localStorage.setItem(key, JSON.stringify(edited));
-                    alert('Edited chapter saved locally.');
-                    // refresh chapters
+                    const key = `localChapter_${flashcardData.getAppLang()}_${chapterNum}`;
+                    localStorage.setItem(key, JSON.stringify(chapterObj));
+                    feedback.style.color = '#c8ffd1';
+                    feedback.textContent = 'Generated chapter saved locally.';
+
+                    // make proceed button visible in modal
+                    downloadGeneratedBtnLocal.style.display = 'inline-block';
+                    proceedBtn.style.display = 'inline-block';
+
+                    // store preview in generatedPreview (non-editable) for user's final view
+                    document.getElementById('generatedPreview').value = JSON.stringify(chapterObj, null, 2);
+
+                    // refresh chapters in UI
                     flashcardData.loadAllChapters().then(() => { displayChapters(); updateProgressSummary(); });
                 } catch (err) {
-                    alert('Edited content is not valid JSON. Please correct it before saving.');
+                    alert('Generated output is not valid JSON. Please Retry.');
                 }
             };
 
-            // wire download edited button
-            downloadEditedBtn.onclick = function() {
+            // wire retry button: call generation again with slightly higher temperature
+            retryBtn.onclick = async function() {
+                feedback.style.display = 'block';
+                feedback.style.color = '#ffdede';
+                feedback.textContent = 'Retrying generation (higher creativity)...';
+                // request with a bit higher temperature
+                const retryPayload = Object.assign({}, payload, { temperature: 0.25 });
+                const retryResult = await callLlamaGenerate(retryPayload);
+                if (!retryResult) {
+                    feedback.textContent = 'Retry failed: no response.';
+                    return;
+                }
+                const retryText = retryResult.text || (typeof retryResult === 'string' ? retryResult : null);
+                if (retryText) {
+                    previewArea.value = retryText;
+                    feedback.style.color = '#c8ffd1';
+                    feedback.textContent = 'New generation ready. Review and Accept.';
+                } else {
+                    feedback.style.color = '#ffdede';
+                    feedback.textContent = 'Retry failed. Check server logs.';
+                }
+            };
+
+            // wire download buttons
+            downloadGeneratedBtnLocal.onclick = function() {
+                const blob = new Blob([aiText], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `chapter${chapterNum}-${flashcardData.getAppLang()}.json`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                URL.revokeObjectURL(url);
+            };
+
+            downloadBtnEdited.onclick = function() {
                 const text = document.getElementById('generatedPreview').value;
                 const blob = new Blob([text], { type: 'application/json' });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `chapter${chapterNumber}-${flashcardData.getAppLang()}-edited.json`;
+                a.download = `chapter${chapterNum}-${flashcardData.getAppLang()}-preview.json`;
                 document.body.appendChild(a);
                 a.click();
                 a.remove();
                 URL.revokeObjectURL(url);
             };
 
-            // wire download
-            downloadBtn.onclick = function() {
-                const blob = new Blob([JSON.stringify(chapterObj, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `chapter${chapterNumber}-${flashcardData.getAppLang()}.json`;
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                URL.revokeObjectURL(url);
-            };
-
+            // wire proceed button (same as before)
             proceedBtn.onclick = function() {
-                // store chapterData for session and go to level select
-                localStorage.setItem('chapterData', JSON.stringify(chapterObj));
-                localStorage.setItem('selectedChapter', chapterNumber);
-                modal.style.display = 'none';
-                window.location.href = 'level-select.html';
+                try {
+                    const edited = JSON.parse(document.getElementById('generatedPreview').value);
+                    const key = `localChapter_${flashcardData.getAppLang()}_${chapterNum}`;
+                    localStorage.setItem(key, JSON.stringify(edited));
+                    localStorage.setItem('chapterData', JSON.stringify(edited));
+                    localStorage.setItem('selectedChapter', chapterNum);
+                    modal.style.display = 'none';
+                    window.location.href = 'level-select.html';
+                } catch (err) {
+                    alert('Preview content is not valid JSON. Cannot proceed.');
+                }
             };
 
         } catch (err) {
             console.error('AI generation failed:', err);
             feedback.style.color = '#ffdede';
-            feedback.textContent = 'AI generation failed. Please check API configuration or try uploading a correctly formatted JSON file.';
+            feedback.textContent = 'AI generation failed. Please check server configuration.';
         }
     };
 
@@ -359,8 +397,9 @@ function validateChapterJson(obj, expectedChapterNumber) {
 // Attempt to call a configured Llama API endpoint; expects window.LLAMA_API_URL and window.LLAMA_API_KEY to be set by deployer
 async function callLlamaGenerate(payload) {
     // payload can be a string (systemPrompt) or an object { userWords, chapterNumber, lang }
-    const proxyUrl = window.LLAMA_API_URL || '/api/llama';
-    const key = window.LLAMA_API_KEY || null;
+    // Use server endpoint; allow override via window.AI_API_URL for flexibility
+    const proxyUrl = window.AI_API_URL || '/api/generate';
+
     if (!proxyUrl) {
         console.warn('No LLAMA_API_URL configured. AI generation disabled.');
         return null;
@@ -376,8 +415,8 @@ async function callLlamaGenerate(payload) {
             throw new Error('Invalid payload for callLlamaGenerate');
         }
 
+        // Do not send API keys from the frontend. The server will apply its own authorization.
         const headers = { 'Content-Type': 'application/json' };
-        if (key) headers['Authorization'] = `Bearer ${key}`;
 
         const resp = await fetch(proxyUrl, { method: 'POST', headers, body: JSON.stringify(bodyToSend) });
         if (!resp.ok) throw new Error(`AI API responded ${resp.status}`);
@@ -389,7 +428,7 @@ async function callLlamaGenerate(payload) {
         // fallback to the whole response
         return JSON.stringify(data);
     } catch (err) {
-        console.error('LLama API call failed', err);
+        console.error('AI API call failed', err);
         return null;
     }
 }
