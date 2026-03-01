@@ -1,0 +1,13 @@
+# Ignore local server environment file containing API keys
+server/.env
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# macOS
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea/
