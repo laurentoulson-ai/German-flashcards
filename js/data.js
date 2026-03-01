@@ -185,8 +185,101 @@ class FlashcardData {
     }
     
     getSessionWords(chapterNumber, level, count, mode = 'mix') {
+        // Support aggregated 'all' chapters: build combined words and map progress across chapters
+        if (String(chapterNumber) === 'all') {
+            // Ensure chapters loaded
+            if (!Array.isArray(this.chapters) || this.chapters.length === 0) {
+                // fallback: try to load from localStorage stored chapterData
+                try {
+                    const stored = localStorage.getItem('chapterData');
+                    if (stored) {
+                        const parsed = JSON.parse(stored);
+                        if (parsed && parsed.chapter === 'all') {
+                            // use stored aggregated chapter
+                            // normalize into expected shape
+                            const wordsArray = Array.isArray(parsed.words) ? parsed.words : [];
+                            // treat as combined below by constructing local combined structures
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Failed to parse stored chapterData for all chapters', e);
+                }
+            }
+
+            // Build combined words list with mapping to original chapter/index
+            const combinedWords = [];
+            const mapping = []; // mapping[i] = { chapter: chNum, index: idx }
+            this.chapters.forEach((ch, chIdx) => {
+                const chNum = (ch && ch.chapter) ? Number(ch.chapter) : (chIdx + 1);
+                const words = Array.isArray(ch.words) ? ch.words : [];
+                // ensure progress exists for each chapter
+                this.initChapterProgress(chNum, words.length);
+                for (let i = 0; i < words.length; i++) {
+                    combinedWords.push(Object.assign({}, words[i], { originalChapter: chNum, originalIndex: i }));
+                    mapping.push({ chapter: chNum, index: i });
+                }
+            });
+
+            const wordsArray = combinedWords;
+
+            // Build per-level combined pool indices based on per-chapter progress
+            const combinedProgressPools = {
+                wordsToLearn: [],
+                learnedWords: [],
+                strongestWords: []
+            };
+
+            // iterate mapping and include combinedIndex into appropriate pools
+            mapping.forEach((m, combinedIdx) => {
+                const p = this.progress.chapters[m.chapter] || { wordsToLearn: [], learnedWords: [], strongestWords: [] };
+                if (Array.isArray(p.wordsToLearn) && p.wordsToLearn.includes(m.index)) combinedProgressPools.wordsToLearn.push(combinedIdx);
+                if (Array.isArray(p.learnedWords) && p.learnedWords.includes(m.index)) combinedProgressPools.learnedWords.push(combinedIdx);
+                if (Array.isArray(p.strongestWords) && p.strongestWords.includes(m.index)) combinedProgressPools.strongestWords.push(combinedIdx);
+            });
+
+            // Helper to sanitize combined indices
+            const sanitizeCombined = (arr) => {
+                const seen = new Set();
+                const res = [];
+                for (const v of arr) {
+                    const idx = Number(v);
+                    if (!Number.isFinite(idx) || idx < 0 || idx >= wordsArray.length) continue;
+                    if (seen.has(idx)) continue;
+                    seen.add(idx);
+                    res.push(idx);
+                }
+                return res;
+            };
+
+            let wordPoolIndices = [];
+            if (level === 1) {
+                if (mode === 'weak') wordPoolIndices = sanitizeCombined(combinedProgressPools.wordsToLearn || []);
+                else if (mode === 'consolidate') wordPoolIndices = sanitizeCombined(combinedProgressPools.learnedWords || []);
+                else wordPoolIndices = sanitizeCombined([...(combinedProgressPools.wordsToLearn || []), ...(combinedProgressPools.learnedWords || [])]);
+            } else if (level === 2) {
+                wordPoolIndices = sanitizeCombined(combinedProgressPools.learnedWords || []);
+            } else if (level === 3) {
+                wordPoolIndices = sanitizeCombined(combinedProgressPools.strongestWords || []);
+            }
+
+            // Shuffle/select
+            const shuffled = this.shuffleArray([...wordPoolIndices]);
+            if (shuffled.length === 0 && wordsArray.length > 0) {
+                console.warn(`getSessionWords: aggregated pool empty for 'all' chapters, falling back to all combined indices.`);
+                const allIndices = Array.from({ length: wordsArray.length }, (_, i) => i);
+                const shuffledAll = this.shuffleArray(allIndices);
+                const takeAll = Math.min(Number(count) || 0, shuffledAll.length);
+                const selectedAll = shuffledAll.slice(0, takeAll);
+                return selectedAll.map(ci => Object.assign({}, wordsArray[ci], { index: ci, level: level }));
+            }
+
+            const take = Math.min(Number(count) || 0, shuffled.length);
+            const selectedIndices = shuffled.slice(0, take);
+            return selectedIndices.map(ci => Object.assign({}, wordsArray[ci], { index: ci, level: level }));
+        }
+
         // Find chapter by its numeric chapter property or by index fallback
-        let chapter = this.chapters.find(c => Number(c.chapter) === Number(chapterNumber)) || this.chapters[chapterNumber - 1];
+        let chapter = this.chapters.find(c => String(c.chapter) === String(chapterNumber)) || (Number.isFinite(Number(chapterNumber)) ? this.chapters[chapterNumber - 1] : undefined);
 
         // If chapters aren't loaded (e.g. directly opened game.html), fall back to stored chapterData
         if ((!chapter || !Array.isArray(chapter.words)) && typeof localStorage !== 'undefined') {
@@ -194,7 +287,7 @@ class FlashcardData {
                 const stored = localStorage.getItem('chapterData');
                 if (stored) {
                     const parsed = JSON.parse(stored);
-                    if (parsed && Number(parsed.chapter) === Number(chapterNumber)) {
+                    if (parsed && String(parsed.chapter) === String(chapterNumber)) {
                         chapter = parsed;
                     }
                 }

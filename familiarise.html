@@ -54,6 +54,40 @@
 
   </div>
 
+  <!-- Session Complete Modal (summary for familiarise) -->
+  <div class="modal-overlay" id="famSessionCompleteModal" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Familiarise Session Complete</h2>
+        <p>Review your results</p>
+      </div>
+      <div class="modal-body">
+        <div class="results-summary">
+          <div class="result-item total">
+            <span class="result-label">Total Questions</span>
+            <span class="result-value" id="famResultTotal">0</span>
+          </div>
+          <div class="result-item correct">
+            <span class="result-label">Correct</span>
+            <span class="result-value" id="famResultCorrect">0</span>
+          </div>
+          <div class="result-item wrong">
+            <span class="result-label">Wrong</span>
+            <span class="result-value" id="famResultWrong">0</span>
+          </div>
+          <div class="result-item accuracy">
+            <span class="result-label">Accuracy</span>
+            <span class="result-value" id="famResultAccuracy">0%</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="famPracticeAgainBtn"><i class="fas fa-redo"></i> Practice Again</button>
+        <button class="btn" id="famBackToLevelsBtn"><i class="fas fa-list"></i> Back to Levels</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/data.js"></script>
   <script src="js/familiarise.js"></script>
 </body>

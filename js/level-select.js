@@ -1,16 +1,38 @@
 // Level selection page logic
 document.addEventListener('DOMContentLoaded', async function() {
-    const chapterNumber = parseInt(localStorage.getItem('selectedChapter')) || 1;
+    const sel = localStorage.getItem('selectedChapter') || '1';
+    const chapterNumber = (sel === 'all') ? 'all' : (parseInt(sel) || 1);
     await loadChapterData(chapterNumber);
     setupEventListeners();
 });
 
 async function loadChapterData(chapterNumber) {
-    // Load chapter data
-    const chapter = flashcardData.chapters[chapterNumber - 1] || 
-                   await flashcardData.loadChapter(chapterNumber);
-    
-    if (!chapter) return;
+    // Load chapter data (support aggregated 'all' chapters)
+    let chapter = null;
+    if (chapterNumber === 'all') {
+        // build aggregated chapter object with original mapping
+        const combined = [];
+        // ensure chapters are loaded
+        if (!Array.isArray(flashcardData.chapters) || flashcardData.chapters.length === 0) {
+            await flashcardData.loadAllChapters();
+        }
+        flashcardData.chapters.forEach((ch, index) => {
+            const chNum = (ch && ch.chapter) ? Number(ch.chapter) : (index + 1);
+            // ensure per-chapter progress exists
+            flashcardData.initChapterProgress(chNum, Array.isArray(ch.words) ? ch.words.length : 0);
+            if (Array.isArray(ch.words)) {
+                ch.words.forEach((w, idx) => {
+                    // preserve original fields and attach metadata
+                    combined.push(Object.assign({}, w, { originalChapter: chNum, originalIndex: idx }));
+                });
+            }
+        });
+        chapter = { chapter: 'all', title: 'All Chapters', words: combined, image: 'data/images/background.png' };
+    } else {
+        // single chapter
+        chapter = flashcardData.chapters[chapterNumber - 1] || await flashcardData.loadChapter(chapterNumber);
+        if (!chapter) return;
+    }
     
     // Update UI with chapter info
     document.getElementById('chapterTitle').textContent = chapter.title || `Chapter ${chapterNumber}`;
@@ -22,15 +44,30 @@ async function loadChapterData(chapterNumber) {
                     chapter.image : 'data/images/placeholder.jpg';
     imageContainer.style.backgroundImage = `url('${imageUrl}')`;
     
-    // Initialize progress for this chapter
-    flashcardData.initChapterProgress(chapterNumber, chapter.words.length);
-    const progress = flashcardData.progress.chapters[chapterNumber];
-    
-    // Compute learned (includes strongest/mastered words)
-    const learnedCount = (progress.learnedWords ? progress.learnedWords.length : 0) + (progress.strongestWords ? progress.strongestWords.length : 0);
-    const masteredCount = (progress.strongestWords ? progress.strongestWords.length : 0);
-    const totalCount = chapter.words.length;
-    const toLearnCount = Math.max(0, totalCount - learnedCount);
+    // Initialize progress and compute statistics
+    let totalCount = chapter.words.length;
+    let learnedCount = 0;
+    let masteredCount = 0;
+    let toLearnCount = 0;
+
+    if (chapterNumber === 'all') {
+        // Sum per-chapter stats
+        flashcardData.chapters.forEach((ch, idx) => {
+            const chNum = (ch && ch.chapter) ? Number(ch.chapter) : (idx + 1);
+            flashcardData.initChapterProgress(chNum, Array.isArray(ch.words) ? ch.words.length : 0);
+            const p = flashcardData.progress.chapters[chNum] || { learnedWords: [], strongestWords: [] };
+            learnedCount += (p.learnedWords ? p.learnedWords.length : 0);
+            masteredCount += (p.strongestWords ? p.strongestWords.length : 0);
+        });
+        toLearnCount = Math.max(0, totalCount - learnedCount);
+    } else {
+        // single chapter progress
+        flashcardData.initChapterProgress(chapterNumber, chapter.words.length);
+        const progress = flashcardData.progress.chapters[chapterNumber];
+        learnedCount = (progress.learnedWords ? progress.learnedWords.length : 0) + (progress.strongestWords ? progress.strongestWords.length : 0);
+        masteredCount = (progress.strongestWords ? progress.strongestWords.length : 0);
+        toLearnCount = Math.max(0, totalCount - learnedCount);
+    }
     
     // Update statistics (per-chapter)
     document.getElementById('wordsToLearn').textContent = toLearnCount;
@@ -44,9 +81,22 @@ async function loadChapterData(chapterNumber) {
     document.getElementById('level3Count').textContent = masteredCount;
 
     // Update Familiarise count (remaining in pool)
-    const famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
     const famCountElem = document.getElementById('famCount');
-    if (famCountElem) famCountElem.textContent = famPool.length;
+    if (famCountElem) {
+        if (chapterNumber === 'all') {
+            // sum familiarise pool sizes across chapters
+            let sum = 0;
+            flashcardData.chapters.forEach((ch, idx) => {
+                const chNum = (ch && ch.chapter) ? Number(ch.chapter) : (idx + 1);
+                const pool = flashcardData.getFamiliarisePool(chNum) || [];
+                sum += pool.length;
+            });
+            famCountElem.textContent = sum;
+        } else {
+            const famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
+            famCountElem.textContent = famPool.length;
+        }
+    }
 
     // Store chapter data for game session
     localStorage.setItem('currentChapter', chapterNumber);

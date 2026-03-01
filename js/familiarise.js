@@ -19,7 +19,7 @@ function initFamiliarise(chapterNumber) {
       const stored = localStorage.getItem('chapterData');
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (Number(parsed.chapter) === Number(chapterNumber)) chapter = parsed;
+        if (String(parsed.chapter) === String(chapterNumber)) chapter = parsed;
       }
     } catch (e) {
       console.warn('Failed loading chapterData fallback', e);
@@ -40,17 +40,37 @@ function initFamiliarise(chapterNumber) {
 
   document.getElementById('gameChapter').textContent = chapter.title || `Chapter ${chapterNumber}`;
 
-  // Ensure familiarise pool initialized and load it
-  flashcardData.initFamiliariseChapter(chapterNumber, chapter.words.length);
-  famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
-
-  // If pool is empty but chapter has words, re-init (covers cases where progress stored an empty array)
-  if ((Array.isArray(famPool) && famPool.length === 0) && Array.isArray(chapter.words) && chapter.words.length > 0) {
-    console.warn(`Familiarise pool for chapter ${chapterNumber} was empty; reinitializing to full set for language ${flashcardData.getAppLang()}`);
-    if (!flashcardData.progress.familiarise) flashcardData.progress.familiarise = {};
-    flashcardData.progress.familiarise[chapterNumber] = Array.from({length: chapter.words.length}, (_, i) => i);
-    flashcardData.saveProgress();
+  // If aggregated 'all' chapter, build famPool from per-chapter pools; otherwise init per-chapter pool
+  if (String(chapterNumber) === 'all' || (chapter && String(chapter.chapter) === 'all')) {
+    // ensure all per-chapter progress exists and load chapters
+    if (!Array.isArray(flashcardData.chapters) || flashcardData.chapters.length === 0) {
+      // try loading
+      flashcardData.loadAllChapters().then(() => {
+        // nothing here, we proceed below
+      });
+    }
+    // build famPool as indices into chapter.words where the original chapter's familiarise pool still contains that index
+    famPool = [];
+    for (let i = 0; i < chapter.words.length; i++) {
+      const w = chapter.words[i];
+      const origCh = Number(w.originalChapter || w.chapter || 0);
+      const origIdx = Number(w.originalIndex !== undefined ? w.originalIndex : i);
+      const pool = flashcardData.getFamiliarisePool(origCh) || [];
+      if (pool.includes(origIdx)) famPool.push(i);
+    }
+  } else {
+    // Ensure familiarise pool initialized and load it for the single chapter
+    flashcardData.initFamiliariseChapter(chapterNumber, chapter.words.length);
     famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
+
+    // If pool is empty but chapter has words, re-init (covers cases where progress stored an empty array)
+    if ((Array.isArray(famPool) && famPool.length === 0) && Array.isArray(chapter.words) && chapter.words.length > 0) {
+      console.warn(`Familiarise pool for chapter ${chapterNumber} was empty; reinitializing to full set for language ${flashcardData.getAppLang()}`);
+      if (!flashcardData.progress.familiarise) flashcardData.progress.familiarise = {};
+      flashcardData.progress.familiarise[chapterNumber] = Array.from({length: chapter.words.length}, (_, i) => i);
+      flashcardData.saveProgress();
+      famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
+    }
   }
 
   // DEBUG: after initialization
@@ -60,7 +80,7 @@ function initFamiliarise(chapterNumber) {
   } catch (e) { /* ignore */ }
 
   // Determine session cap (from level-select control stored as famCardCount)
-  const famCardCount = parseInt(localStorage.getItem('famCardCount')) || 10;
+  const famCardCount = parseInt(localStorage.getItem('famCardCount')) || 20;
 
   // Build a session-limited random selection from the global pool (those not yet answered correctly)
   const poolCopy = shuffleArray([...famPool]);
@@ -76,10 +96,10 @@ function initFamiliarise(chapterNumber) {
   document.getElementById('nextBtn').addEventListener('click', () => {
     document.getElementById('nextBtn').style.display = 'none';
     sessionPos++;
-    // if session finished, go back to level-select
+    // if session finished, show summary modal
     if (sessionPos >= famSessionPool.length) {
-      // small delay so user sees updated stats
-      setTimeout(() => window.location.href = 'level-select.html', 250);
+      // small delay so user sees updated stats, then show summary modal
+      setTimeout(() => showFamiliariseSummary(), 250);
       return;
     }
     renderNextQuestion(chapterNumber, chapter);
@@ -93,6 +113,27 @@ function initFamiliarise(chapterNumber) {
   renderNextQuestion(chapterNumber, chapter);
 }
 
+// Show familiarise session summary modal
+function showFamiliariseSummary() {
+  const total = correctCount + attemptedCount - correctCount >= 0 ? attemptedCount : (famSessionPool ? famSessionPool.length : 0);
+  // Use attemptedCount as total questions answered in session
+  const totalQ = attemptedCount || (famSessionPool ? famSessionPool.length : 0);
+  const correct = correctCount;
+  const wrong = attemptedCount - correctCount;
+  const accuracy = totalQ > 0 ? Math.round((correct / totalQ) * 100) : 0;
+
+  document.getElementById('famResultTotal').textContent = totalQ;
+  document.getElementById('famResultCorrect').textContent = correct;
+  document.getElementById('famResultWrong').textContent = wrong;
+  document.getElementById('famResultAccuracy').textContent = `${accuracy}%`;
+
+  document.getElementById('famSessionCompleteModal').style.display = 'flex';
+
+  // wire modal buttons
+  document.getElementById('famPracticeAgainBtn').onclick = function() { location.reload(); };
+  document.getElementById('famBackToLevelsBtn').onclick = function() { window.location.href = 'level-select.html'; };
+}
+
 function updateStatsDisplay() {
   // Remaining shows how many questions left in THIS SESSION (not entire pool)
   const remaining = Math.max(0, (famSessionPool ? famSessionPool.length : 0) - sessionPos);
@@ -103,16 +144,33 @@ function updateStatsDisplay() {
 
 function renderNextQuestion(chapterNumber, chapter) {
   // Refresh famPool in case other tabs changed it
-  famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
+  if (String(chapterNumber) === 'all' || (chapter && String(chapter.chapter) === 'all')) {
+    // rebuild famPool from per-chapter pools
+    famPool = [];
+    for (let i = 0; i < chapter.words.length; i++) {
+      const w = chapter.words[i];
+      const origCh = Number(w.originalChapter || w.chapter || 0);
+      const origIdx = Number(w.originalIndex !== undefined ? w.originalIndex : i);
+      const pool = flashcardData.getFamiliarisePool(origCh) || [];
+      if (pool.includes(origIdx)) famPool.push(i);
+    }
+    // rebuild session pool to reflect any removals
+    const famCardCount = parseInt(localStorage.getItem('famCardCount')) || 20;
+    const poolCopy = shuffleArray([...famPool]);
+    const take = Math.min(famCardCount, poolCopy.length);
+    famSessionPool = poolCopy.slice(0, take);
+  } else {
+    famPool = flashcardData.getFamiliarisePool(chapterNumber) || [];
+  }
 
   // DEBUG: log pool when rendering
   try {
     console.log('renderNextQuestion: famPool length=', famPool.length, 'famSessionPool length=', famSessionPool.length, 'sessionPos=', sessionPos);
   } catch (e) {}
 
-  // If session exhausted (safety), go back
+  // If session exhausted (safety), show summary modal
   if (!famSessionPool || sessionPos >= famSessionPool.length) {
-    window.location.href = 'level-select.html';
+    showFamiliariseSummary();
     return;
   }
 
@@ -171,8 +229,21 @@ function onOptionSelected(e) {
   if (isCorrect) {
     correctCount++;
     btn.classList.add('mcq-correct');
-    // remove from familiarise pool (and it will auto-reset if emptied)
-    flashcardData.markFamiliariseCorrect(parseInt(localStorage.getItem('currentChapter')) || 1, currentCorrectIndex);
+    // remove from familiarise pool on the correct word
+    // If aggregated 'all' chapter, mark against the original chapter/index
+    const chapterData = JSON.parse(localStorage.getItem('chapterData') || '{}');
+    const isAll = (String(localStorage.getItem('currentChapter')) === 'all') || (chapterData && String(chapterData.chapter) === 'all');
+    if (isAll) {
+      const sessionWord = chapterData.words && chapterData.words[currentCorrectIndex];
+      if (sessionWord && sessionWord.originalChapter !== undefined && sessionWord.originalIndex !== undefined) {
+        flashcardData.markFamiliariseCorrect(Number(sessionWord.originalChapter), Number(sessionWord.originalIndex));
+      } else {
+        // fallback: if structure not present, try using currentChapter numeric
+        flashcardData.markFamiliariseCorrect(parseInt(localStorage.getItem('currentChapter')) || 1, currentCorrectIndex);
+      }
+    } else {
+      flashcardData.markFamiliariseCorrect(parseInt(localStorage.getItem('currentChapter')) || 1, currentCorrectIndex);
+    }
   } else {
     btn.classList.add('mcq-wrong');
     // highlight the correct option
@@ -182,7 +253,21 @@ function onOptionSelected(e) {
   }
 
   // Update pool and stats display after marking
-  famPool = flashcardData.getFamiliarisePool(parseInt(localStorage.getItem('currentChapter')) || 1) || [];
+  const chapterData = JSON.parse(localStorage.getItem('chapterData') || '{}');
+  const isAll = (String(localStorage.getItem('currentChapter')) === 'all') || (chapterData && String(chapterData.chapter) === 'all');
+  if (isAll) {
+    // rebuild famPool for aggregated view
+    famPool = [];
+    for (let i = 0; i < chapterData.words.length; i++) {
+      const w = chapterData.words[i];
+      const origCh = Number(w.originalChapter || w.chapter || 0);
+      const origIdx = Number(w.originalIndex !== undefined ? w.originalIndex : i);
+      const pool = flashcardData.getFamiliarisePool(origCh) || [];
+      if (pool.includes(origIdx)) famPool.push(i);
+    }
+  } else {
+    famPool = flashcardData.getFamiliarisePool(parseInt(localStorage.getItem('currentChapter')) || 1) || [];
+  }
   updateStatsDisplay();
 
   // show next button (positioned under options in the UI)

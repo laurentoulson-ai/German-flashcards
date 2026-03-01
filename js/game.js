@@ -10,10 +10,12 @@ class GameSession {
         this.clueShown = false;
         
         // Get session settings
-        this.chapterNumber = parseInt(localStorage.getItem('currentChapter')) || 1;
+        // Keep raw chapter identifier (can be 'all' or numeric string)
+        this.chapterNumber = localStorage.getItem('currentChapter') || '1';
         this.level = parseInt(localStorage.getItem('gameLevel')) || 1;
-        this.cardCount = parseInt(localStorage.getItem('cardCount')) || 10;
-        this.sessionMode = localStorage.getItem('sessionMode') || 'mix';
+        // New defaults: 20 cards and weak mode
+        this.cardCount = parseInt(localStorage.getItem('cardCount')) || 20;
+        this.sessionMode = localStorage.getItem('sessionMode') || 'weak';
         
         // Get chapter data
         const chapterData = JSON.parse(localStorage.getItem('chapterData'));
@@ -278,14 +280,27 @@ class GameSession {
     async endSession() {
         // Save progress for all answered words
         for (const [wordIndex, isCorrect] of this.answeredWords.entries()) {
-            flashcardData.updateWordStatus(
-                this.chapterNumber,
-                wordIndex,
-                this.level,
-                isCorrect
-            );
+            // Find the session word object for this index
+            const sessionWord = this.sessionWords.find(w => Number(w.index) === Number(wordIndex));
+            if (sessionWord && sessionWord.originalChapter && (sessionWord.originalIndex !== undefined)) {
+                // Update progress for the original chapter/word index
+                flashcardData.updateWordStatus(
+                    Number(sessionWord.originalChapter),
+                    Number(sessionWord.originalIndex),
+                    this.level,
+                    isCorrect
+                );
+            } else {
+                // Fallback to current chapter session (single-chapter session)
+                flashcardData.updateWordStatus(
+                    this.chapterNumber,
+                    Number(wordIndex),
+                    this.level,
+                    isCorrect
+                );
+            }
         }
-        
+         
         // Save to localStorage
         flashcardData.saveProgress();
         
@@ -321,14 +336,14 @@ class GameSession {
     }
     
     saveProgress() {
-        // Save any answered words before leaving
+        // Save any answered words before leaving. Map answers back to original chapter if needed.
         for (const [wordIndex, isCorrect] of this.answeredWords.entries()) {
-            flashcardData.updateWordStatus(
-                this.chapterNumber,
-                wordIndex,
-                this.level,
-                isCorrect
-            );
+            const sessionWord = this.sessionWords.find(w => Number(w.index) === Number(wordIndex));
+            if (sessionWord && sessionWord.originalChapter && (sessionWord.originalIndex !== undefined)) {
+                flashcardData.updateWordStatus(Number(sessionWord.originalChapter), Number(sessionWord.originalIndex), this.level, isCorrect);
+            } else {
+                flashcardData.updateWordStatus(this.chapterNumber, Number(wordIndex), this.level, isCorrect);
+            }
         }
         flashcardData.saveProgress();
     }

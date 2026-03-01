@@ -130,7 +130,7 @@
                 </label>
                 <div class="number-input">
                     <button class="number-btn" onclick="changeCardCount(-5)">-5</button>
-                    <input type="number" id="cardCount" min="1" max="50" value="10">
+                    <input type="number" id="cardCount" min="1" max="50" value="20">
                     <button class="number-btn" onclick="changeCardCount(5)">+5</button>
                 </div>
                 <span class="hint">Total words in chapter: <span id="totalWords">0</span></span>
@@ -143,7 +143,7 @@
                 </label>
                 <select id="sessionMode">
                     <option value="mix">Random mix</option>
-                    <option value="weak">Weak words only</option>
+                    <option value="weak" selected>Weak words only</option>
                     <option value="consolidate">Learned words only</option>
                 </select>
             </div>
