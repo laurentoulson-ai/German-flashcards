@@ -99,11 +99,4 @@ Security and best practices
 - Use the host's secret management when deploying.
 - If you accidentally expose a key, rotate it immediately on OpenRouter.
 
-Optional improvements you can make
-- Deploy the proxy to a cloud host and set AI_API_URL in the front-end to the deployed URL.
-- Enable CHECKER_MODEL in server/.env to have the server return a validation result.
-- Add server-side JSON schema validation (ajv) to reject malformed outputs before returning them to the client.
-
-If you want, I can add a server/.env.template (non-secret) or the ajv validation next — tell me which.
-
 
