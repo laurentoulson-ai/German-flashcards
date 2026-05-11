@@ -1,5 +1,486 @@
 {
   "chapter": 4,
-  "title": "Chapter 4",
-  "words": []
+  "title": "4: Der Hüter des Schlüssel",
+  "words": [
+    {
+      "german": "Hereingestolpert",
+      "english": "stumbled in",
+      "clue": "Hagrid war plötzlich hereingestolpert und hatte dabei die Tür zu Splitter gerissen."
+    },
+    {
+      "german": "Bewaffnet",
+      "english": "armed",
+      "clue": "Die Zauberer waren bewaffnet mit ihren Zauberstäben."
+    },
+    {
+      "german": "Ohrenbetäubenden",
+      "english": "deafening",
+      "clue": "Mit ohrenbetäubendem Lärm ertönte die Stimme durch das Haus."
+    },
+    {
+      "german": "Türöffnung",
+      "english": "doorway",
+      "clue": "In der Türöffnung stand eine riesige Gestalt."
+    },
+    {
+      "german": "Rahmen",
+      "english": "frame",
+      "clue": "Die alte Tür hing noch im Rahmen."
+    },
+    {
+      "german": "Lärm",
+      "english": "noise",
+      "clue": "Der schreckliche Lärm weckte alle aus dem Schlaf."
+    },
+    {
+      "german": "Fältchen",
+      "english": "wrinkles; small folds",
+      "clue": "Sein Gesicht war voller kleiner Fältchen."
+    },
+    {
+      "german": "Käferaugen",
+      "english": "beetle eyes",
+      "clue": "Dursley hatte große, glänzende Käferaugen."
+    },
+    {
+      "german": "Mächtig",
+      "english": "mighty; powerful",
+      "clue": "Hagrid war eine mächtige und imposante Gestalt."
+    },
+    {
+      "german": "Hausfriedensbruch",
+      "english": "breaking and entering; trespassing",
+      "clue": "Der Hausfriedensbruch war eindeutig, als Hagrid die Tür zerstörte."
+    },
+    {
+      "german": "Mund",
+      "english": "mouth",
+      "clue": "Dursley sperrte den Mund weit auf."
+    },
+    {
+      "german": "Oberpflaume",
+      "english": "upper lip",
+      "clue": "Seine Oberpflaume zitterte vor Wut."
+    },
+    {
+      "german": "Eingedellte",
+      "english": "dented; dinted",
+      "clue": "Der eingedellte Kessel rollte über den Boden."
+    },
+    {
+      "german": "Stattdessen",
+      "english": "instead",
+      "clue": "Er lief nicht weg, sondern stattdessen auf Hagrid zu."
+    },
+    {
+      "german": "Gewaltige",
+      "english": "enormous; tremendous",
+      "clue": "Hagrid hob eine gewaltige Keule in die Höhe."
+    },
+    {
+      "german": "Beugte",
+      "english": "bent",
+      "clue": "Hagrid beugte sich niedrig, um die Türöffnung zu passieren."
+    },
+    {
+      "german": "Ineinandergesteckte",
+      "english": "nested; interlocked",
+      "clue": "Die ineinandergesteckten Dachziegel waren beschädigt."
+    },
+    {
+      "german": "Bernsteinfarbenen",
+      "english": "amber-colored",
+      "clue": "Die bernsteinfarbenen Augen leuchteten in der Dunkelheit."
+    },
+    {
+      "german": "Flüssigkeit",
+      "english": "liquid",
+      "clue": "Eine grüne Flüssigkeit tropfte aus der Flasche."
+    },
+    {
+      "german": "Genehmigte",
+      "english": "approved; permitted",
+      "clue": "Der Minister genehmigte Hagrids Aktion nicht."
+    },
+    {
+      "german": "Anwenden",
+      "english": "to use; to apply",
+      "clue": "Er wollte Magie anwenden, um Hagrid aufzuhalten."
+    },
+    {
+      "german": "Schatten",
+      "english": "shadow",
+      "clue": "Ein großer Schatten fiel über die Türöffnung."
+    },
+    {
+      "german": "Zurückweichen",
+      "english": "to retreat; to back away",
+      "clue": "Dursley musste vor Hagrid zurückweichen."
+    },
+    {
+      "german": "Kriegst",
+      "english": "you get",
+      "clue": "Du kriegst die Wahrheit über Harry Potter nicht."
+    },
+    {
+      "german": "Handbewegung",
+      "english": "hand gesture; hand movement",
+      "clue": "Mit einer ausdrucksstarken Handbewegung deutete Hagrid auf Harry."
+    },
+    {
+      "german": "Blass",
+      "english": "pale",
+      "clue": "Dursley wurde blass, als er Hagrid sah."
+    },
+    {
+      "german": "Bestürzten",
+      "english": "alarmed; dismayed",
+      "clue": "Die bestürzten Dursleys wussten nicht, was sie tun sollten."
+    },
+    {
+      "german": "Silbe",
+      "english": "syllable",
+      "clue": "Jede Silbe klang in Hagrids tiefem Ton bedeutungsvoll."
+    },
+    {
+      "german": "Entrüstung",
+      "english": "indignation; outrage",
+      "clue": "Mit großer Entrüstung protestierte Dursley gegen Hagrids Vorwürfe."
+    },
+    {
+      "german": "Vorenthalten",
+      "english": "to withhold; to deny",
+      "clue": "Die Dursleys vorenthielten Harry die Wahrheit über seine Eltern."
+    },
+    {
+      "german": "Pfeifen",
+      "english": "whistling; to whistle",
+      "clue": "Das Geräusch war wie ein ständiges Pfeifen des Windes."
+    },
+    {
+      "german": "Rüstungsgegenstände",
+      "english": "suits of armor",
+      "clue": "Im Schloss standen alte Rüstungsgegenstände in den Fluren."
+    },
+    {
+      "german": "Brauereigaul",
+      "english": "brewery horse",
+      "clue": "Hagrid schalt Vernon Dursley einen Brauereigaul."
+    },
+    {
+      "german": "Umgehauen",
+      "english": "knocked over; struck down",
+      "clue": "Der Tisch wurde umgehauen, als Hagrid hindurchging."
+    },
+    {
+      "german": "Lebende",
+      "english": "living",
+      "clue": "Harry war der einzige Lebende, der Voldemort überlebte."
+    },
+    {
+      "german": "Zerzaust",
+      "english": "disheveled; unkempt",
+      "clue": "Harrys zerzaustes schwarzes Haar stand in alle Richtungen ab."
+    },
+    {
+      "german": "Aussehende",
+      "english": "looking; appearing",
+      "clue": "Das sonderbar aussehende Kind war Harry Potter."
+    },
+    {
+      "german": "Pergamentrolle",
+      "english": "parchment scroll",
+      "clue": "Hagrid zog eine wichtige Pergamentrolle aus seiner Tasche."
+    },
+    {
+      "german": "Wohlauf",
+      "english": "well; in good health",
+      "clue": "Harry war wohlauf trotz allem, das ihm passiert war."
+    },
+    {
+      "german": "Aschfahl",
+      "english": "ash-pale",
+      "clue": "Dursley wurde aschfahl im Gesicht."
+    },
+    {
+      "german": "Vermaledeite",
+      "english": "cursed; damned",
+      "clue": "Diese vermalediete Magie war Dursleys größter Feind."
+    },
+    {
+      "german": "Froschlaich",
+      "english": "frog spawn",
+      "clue": "Die schreckliche Flüssigkeit sah aus wie Froschlaich."
+    },
+    {
+      "german": "Missgeburt",
+      "english": "monstrosity; misshapen creature",
+      "clue": "Diese Missgeburt von einem Tier war furchtbar anzusehen."
+    },
+    {
+      "german": "Erneut",
+      "english": "again; anew",
+      "clue": "Hagrid wiederholte seine Frage erneut, lauter und deutlicher."
+    },
+    {
+      "german": "Schimpfen",
+      "english": "to scold; to curse; to swear",
+      "clue": "Dursley begann zu schimpfen wie ein wahnsinnig gewordener Mann."
+    },
+    {
+      "german": "Gejagt",
+      "english": "hunted",
+      "clue": "Die armen Auroren wurden wie Gejagde durch die Nacht verfolgt."
+    },
+    {
+      "german": "Fürchten",
+      "english": "to fear",
+      "clue": "Viele Zauberer fürchten Voldemort immer noch."
+    },
+    {
+      "german": "Besorgter",
+      "english": "more concerned; more worried",
+      "clue": "Dursley sah besorgter aus als je zuvor."
+    },
+    {
+      "german": "Finsteren",
+      "english": "dark",
+      "clue": "In der finsteren Nacht war es schwer zu sehen."
+    },
+    {
+      "german": "Schluckende",
+      "english": "swallowing",
+      "clue": "Mit schluckenden Bewegungen versuchte Dursley zu sprechen."
+    },
+    {
+      "german": "Wasserspeier",
+      "english": "gargoyle; water spout",
+      "clue": "Die Wasserspeier auf dem Dach des Schlosses wirkten lebendig."
+    },
+    {
+      "german": "Verschaffe",
+      "english": "procure; provide",
+      "clue": "Verschaffe mir sofort die Wahrheit!"
+    },
+    {
+      "german": "Fremden",
+      "english": "stranger",
+      "clue": "Ein Fremder war in der Nacht in Little Whinging angekommen."
+    },
+    {
+      "german": "Anzufreunden",
+      "english": "to make friends with",
+      "clue": "Harry sollte sich mit den anderen Schülern anzufreunden versuchen."
+    },
+    {
+      "german": "Übernommen",
+      "english": "taken over",
+      "clue": "Harry hatte die Verantwortung für sein Leben endlich übernommen."
+    },
+    {
+      "german": "Einzusacken",
+      "english": "to pocket; to put away",
+      "clue": "Hagrid steckte die Pergamentrolle ein und sackte sie in seine Tasche ein."
+    },
+    {
+      "german": "Rätsel",
+      "english": "riddle; mystery",
+      "clue": "Das Rätsel der Nacht war gelöst: Harry Potter war am Leben!"
+    },
+    {
+      "german": "Auftauchte",
+      "english": "appeared; emerged",
+      "clue": "Hagrid tauchte plötzlich aus der Dunkelheit auf."
+    },
+    {
+      "german": "Taschentuch",
+      "english": "handkerchief",
+      "clue": "Dursley wischte sich mit einem Taschentuch die Stirn ab."
+    },
+    {
+      "german": "Gepunktetes",
+      "english": "spotted; dotted",
+      "clue": "Das gepunktete Tuch war völlig nass von Schweiß."
+    },
+    {
+      "german": "Narbe",
+      "english": "scar",
+      "clue": "Harrys berühmte Narbe war in Hagrids Augen ein Symbol seiner Stärke."
+    },
+    {
+      "german": "Schnitt",
+      "english": "cut",
+      "clue": "Der tiefe Schnitt in der Holztür war Beweis von Hagrids Kraft."
+    },
+    {
+      "german": "Fluch",
+      "english": "curse",
+      "clue": "Der fürchterliche Fluch Voldemorts hatte Harry nicht töten können."
+    },
+    {
+      "german": "Schmerzhaftes",
+      "english": "painful",
+      "clue": "Die schmerzhaften Erinnerungen der Nacht verfolgten Dursley."
+    },
+    {
+      "german": "Zerstörten",
+      "english": "destroyed",
+      "clue": "Voldemort zerstörte Harrys Eltern, konnte aber nicht alles zerstören."
+    },
+    {
+      "german": "Saftige",
+      "english": "juicy; hefty",
+      "clue": "Hagrid gab Dursley eine saftige Ohrfeige mit Worten."
+    },
+    {
+      "german": "Ohrfeigen",
+      "english": "slaps",
+      "clue": "Die Ohrfeigen in form von Worten trafen Dursley hart."
+    },
+    {
+      "german": "Eingelassen",
+      "english": "let in; admitted",
+      "clue": "Dursley hätte diesen verrückten Hagrid nie eingelassen."
+    },
+    {
+      "german": "Zerfledderten",
+      "english": "tattered; torn to shreds",
+      "clue": "Seine zerfledderten Roben waren völlig zerlumpt."
+    },
+    {
+      "german": "Atmend",
+      "english": "breathing",
+      "clue": "Der atmend schwere Hagrid stand in der Türöffnung."
+    },
+    {
+      "german": "Unterdessen",
+      "english": "meanwhile; in the meantime",
+      "clue": "Unterdessen schlief Harry friedlich in seinem Schrank."
+    },
+    {
+      "german": "Zunge",
+      "english": "tongue",
+      "clue": "Mit kluger Zunge verteidigte Hagrid Harry vor Durleys Angriffen."
+    },
+    {
+      "german": "Weiterzumachen",
+      "english": "to continue; to go on",
+      "clue": "Hagrid weigerte sich weiterzumachen und stand fest."
+    },
+    {
+      "german": "Schwach",
+      "english": "weak",
+      "clue": "Durleys Argumente waren schwach gegen Hagrids Wahrheiten."
+    },
+    {
+      "german": "Betrachtete",
+      "english": "regarded; looked at",
+      "clue": "Hagrid betrachtete Harry mit großem Mitgefühl."
+    },
+    {
+      "german": "Deswegen",
+      "english": "for that reason; therefore",
+      "clue": "Deswegen war Hagrid hergekommen, um Harry zu holen."
+    },
+    {
+      "german": "Fürchterlichen",
+      "english": "terrible; dreadful",
+      "clue": "Die fürchterlichen Ereignisse der Nacht waren endlich vorbei."
+    },
+    {
+      "german": "Irrtum",
+      "english": "mistake; error",
+      "clue": "Es war ein großer Irrtum, Harry bei den Dursleys zu verstecken."
+    },
+    {
+      "german": "Schikaniert",
+      "english": "bullied; harassed",
+      "clue": "Die Dursleys hatten Harry sein ganzes Leben lang schikaniert."
+    },
+    {
+      "german": "Kröten",
+      "english": "toads",
+      "clue": "Die grünen Kröten hüpften überall herum wie verrückt."
+    },
+    {
+      "german": "Geschehen",
+      "english": "happened; occurred",
+      "clue": "Das schreckliche Geschehen der Vergangenheit sollte nicht vergessen werden."
+    },
+    {
+      "german": "Zornig",
+      "english": "angry",
+      "clue": "Dursley war so zornig, dass sein Gesicht rot anlief."
+    },
+    {
+      "german": "Flucht",
+      "english": "escape; flight",
+      "clue": "Hagrids Flucht aus Hogwarts war geheim gehalten worden."
+    },
+    {
+      "german": "Lächerlichen",
+      "english": "ridiculous; absurd",
+      "clue": "Die Durleys hielten die ganze Geschichte für lächerlich."
+    },
+    {
+      "german": "Geschafft",
+      "english": "done; managed",
+      "clue": "Hagrid hatte es geschafft, Harry zu finden und zu retten."
+    },
+    {
+      "german": "Kampflos",
+      "english": "without a fight; without resistance",
+      "clue": "Harry hätte sich nicht kampflos den Durleys ergeben sollen."
+    },
+    {
+      "german": "Zauberspruchfibeln",
+      "english": "spell primers; spell guides",
+      "clue": "Die alten Zauberspruchfibeln waren voller wichtiger Information."
+    },
+    {
+      "german": "Endgültig",
+      "english": "final; definitive",
+      "clue": "Hagrids endgültige Entscheidung war, Harry nach Hogwarts zu bringen."
+    },
+    {
+      "german": "Beleidge",
+      "english": "insult; offend",
+      "clue": "Du wirst meine Familie nicht beleidge, Hagrid!"
+    },
+    {
+      "german": "Zuwandte",
+      "english": "turned toward",
+      "clue": "Hagrid zuwandte sich Harry mit sanftem Blick."
+    },
+    {
+      "german": "Geringeltes",
+      "english": "ringed; striped",
+      "clue": "Das geringelte Tier war völlig harmlos."
+    },
+    {
+      "german": "Geklappt",
+      "english": "worked; turned out",
+      "clue": "Der ganze Plan hatte wunderbar geklappt."
+    },
+    {
+      "german": "Buschigen",
+      "english": "bushy; thick",
+      "clue": "Hagrids buschige Augenbrauen zuckten nervös."
+    },
+    {
+      "german": "Wahrheit",
+      "english": "truth",
+      "clue": "Die Wahrheit über Harry Potters Vergangenheit wurde endlich enthüllt."
+    },
+    {
+      "german": "Rausgeworfen",
+      "english": "thrown out; expelled",
+      "clue": "Dumbledore hätte Hagrid fast aus Hogwarts rausgeworfen."
+    },
+    {
+      "german": "Erledigen",
+      "english": "to settle; to finish; to deal with",
+      "clue": "Hagrid musste eine wichtige Aufgabe erledigen und durfte keine Zeit verlieren."
+    }
+  ]
 }
