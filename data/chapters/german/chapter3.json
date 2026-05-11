@@ -1,5 +1,846 @@
 {
   "chapter": 3,
-  "title": "Chapter 3",
-  "words": []
+  "title": "3: Brief von Niemandem",
+  "words": [
+    {
+      "german": "Bisher",
+      "english": "so far",
+      "clue": "Bisher hatte Harry noch nie einen Brief erhalten."
+    },
+    {
+      "german": "Strafe",
+      "english": "punishment",
+      "clue": "Die Dursleys fürchteten, dass Harry eine Strafe verdienen würde."
+    },
+    {
+      "german": "Ferngesteuertes",
+      "english": "remote-controlled",
+      "clue": "Dudley spielte mit seinem ferngesteuerten Auto."
+    },
+    {
+      "german": "Bruch",
+      "english": "break",
+      "clue": "Harry hatte einen Bruch in seinem Arm."
+    },
+    {
+      "german": "Krücken",
+      "english": "crutches",
+      "clue": "Der Mann lief auf Krücken."
+    },
+    {
+      "german": "Gestützt",
+      "english": "supported",
+      "clue": "Er war auf seinen Stock gestützt."
+    },
+    {
+      "german": "Überquerte",
+      "english": "crossed",
+      "clue": "Harry überquerte die Straße vorsichtig."
+    },
+    {
+      "german": "Haufen",
+      "english": "pile",
+      "clue": "Ein Haufen Briefe lag auf dem Tisch."
+    },
+    {
+      "german": "Vergnügen",
+      "english": "pleasure",
+      "clue": "Es war ihm ein Vergnügen, die Post zu lesen."
+    },
+    {
+      "german": "Hoffnungsschimmer",
+      "english": "glimmer of hope",
+      "clue": "Ein kleiner Hoffnungsschimmer erschien in seinem Herzen."
+    },
+    {
+      "german": "Klo",
+      "english": "toilet",
+      "clue": "Die Briefe kamen sogar aus dem Klo."
+    },
+    {
+      "german": "Fürchterliches",
+      "english": "terrible",
+      "clue": "Es war etwas Fürchterliches zu sehen."
+    },
+    {
+      "german": "Geschluckt",
+      "english": "swallowed",
+      "clue": "Er hatte die Nachricht schwer geschluckt."
+    },
+    {
+      "german": "Erfuhr",
+      "english": "found out",
+      "clue": "Harry erfuhr von den Briefen durch die Eule."
+    },
+    {
+      "german": "Schien",
+      "english": "seemed",
+      "clue": "Die Sache schien unmöglich zu sein."
+    },
+    {
+      "german": "Stolzierte",
+      "english": "strutted",
+      "clue": "Die Eule stolzierte durch das Klassenzimmer."
+    },
+    {
+      "german": "Gegenseitig",
+      "english": "mutual",
+      "clue": "Sie zeigten gegenseitige Verachtung."
+    },
+    {
+      "german": "Hiebe",
+      "english": "hits",
+      "clue": "Die Hiebe waren schmerzhaft."
+    },
+    {
+      "german": "Stolzesten",
+      "english": "proudest",
+      "clue": "Der stolzeste Moment seines Lebens war gekommen."
+    },
+    {
+      "german": "Fassen",
+      "english": "to grasp",
+      "clue": "Harry konnte es kaum fassen."
+    },
+    {
+      "german": "Entgegen",
+      "english": "contrary to",
+      "clue": "Entgegen aller Erwartungen kam die Eule."
+    },
+    {
+      "german": "Spüle",
+      "english": "sink",
+      "clue": "Ein Brief landete in der Spüle."
+    },
+    {
+      "german": "Bündel",
+      "english": "bundle",
+      "clue": "Ein Bündel von hundert Briefen."
+    },
+    {
+      "german": "Kniff",
+      "english": "trick",
+      "clue": "Mr. Dursley hatte einen Kniff, um die Briefe zu blocken."
+    },
+    {
+      "german": "Bezweifelte",
+      "english": "doubted",
+      "clue": "Harry bezweifelte, dass es echte Briefe waren."
+    },
+    {
+      "german": "Ernsthaft",
+      "english": "earnestly",
+      "clue": "Er sprach ernsthaft mit dem Jungen."
+    },
+    {
+      "german": "Vermutlich",
+      "english": "presumably",
+      "clue": "Es war vermutlich eine Falle."
+    },
+    {
+      "german": "Fetzen",
+      "english": "shreds",
+      "clue": "Die Briefe waren in Fetzen gerissen."
+    },
+    {
+      "german": "Knallte",
+      "english": "slammed",
+      "clue": "Mr. Dursley knallte die Tür zu."
+    },
+    {
+      "german": "Knuff",
+      "english": "nudge",
+      "clue": "Dudley gab Harry einen Knuff in die Rippen."
+    },
+    {
+      "german": "Umschlag",
+      "english": "envelope",
+      "clue": "Der Umschlag war dick und schwer."
+    },
+    {
+      "german": "Hob",
+      "english": "raised",
+      "clue": "Die Eule hob ihre Flügel."
+    },
+    {
+      "german": "Aufforderungen",
+      "english": "requests",
+      "clue": "Die Briefe waren voller Aufforderungen."
+    },
+    {
+      "german": "Fehler",
+      "english": "mistake",
+      "clue": "Es war ein großer Fehler, die Briefe zu ignorieren."
+    },
+    {
+      "german": "Ausgeschlossen",
+      "english": "impossible",
+      "clue": "Es war völlig ausgeschlossen, dass Eulen echt waren."
+    },
+    {
+      "german": "Gelblichem",
+      "english": "yellowish",
+      "clue": "Das Pergament hatte eine gelbliche Farbe."
+    },
+    {
+      "german": "Smaragdgrüner",
+      "english": "emerald green",
+      "clue": "Das Wappen war smaragdgrün gefärbt."
+    },
+    {
+      "german": "Draufgeklebt",
+      "english": "pasted on",
+      "clue": "Ein Siegel war auf dem Umschlag draufgeklebt."
+    },
+    {
+      "german": "Adler",
+      "english": "eagle",
+      "clue": "Der Adler war Teil des Wappens."
+    },
+    {
+      "german": "Wappen",
+      "english": "coat of arms",
+      "clue": "Das Wappen zeigte mehrere Tiere."
+    },
+    {
+      "german": "Schild",
+      "english": "shield",
+      "clue": "Ein Schild war in die Ecke eingeprägt."
+    },
+    {
+      "german": "Eingeprägt",
+      "english": "imprinted",
+      "clue": "Das Siegel war deutlich eingeprägt."
+    },
+    {
+      "german": "Dachs",
+      "english": "badger",
+      "clue": "Ein Dachs war auf dem Wappen abgebildet."
+    },
+    {
+      "german": "Unverwandt",
+      "english": "intently",
+      "clue": "Harry starrte unverwandt auf den Brief."
+    },
+    {
+      "german": "Reichte",
+      "english": "reached",
+      "clue": "Die Eule reichte den Brief Harry."
+    },
+    {
+      "german": "Schnaubte",
+      "english": "snorted",
+      "clue": "Mr. Dursley schnaubte verächtlich."
+    },
+    {
+      "german": "Abscheu",
+      "english": "disgust",
+      "clue": "Er blickte auf die Eule mit Abscheu."
+    },
+    {
+      "german": "Überflog",
+      "english": "scanned",
+      "clue": "Harry überflog die erste Zeile."
+    },
+    {
+      "german": "Wellhornschnecke",
+      "english": "whelk",
+      "clue": "Eine Wellhornschnecke war merkwürdig."
+    },
+    {
+      "german": "Wechselte",
+      "english": "changed; exchanged",
+      "clue": "Die Stimmung wechselte plötzlich."
+    },
+    {
+      "german": "Verkehrsampel",
+      "english": "traffic light",
+      "clue": "Die Verkehrsampel zeigte rot."
+    },
+    {
+      "german": "Ohnmacht",
+      "english": "fainting",
+      "clue": "Sie fiel in Ohnmacht."
+    },
+    {
+      "german": "Schmerzhaften",
+      "english": "painful",
+      "clue": "Der schmerzhaften Erkenntnis konnte er nicht entkommen."
+    },
+    {
+      "german": "Genick",
+      "english": "back of the neck",
+      "clue": "Er packte ihn am Genick."
+    },
+    {
+      "german": "Lieferten",
+      "english": "delivered",
+      "clue": "Die Eulen lieferten die Briefe."
+    },
+    {
+      "german": "Erbitterten",
+      "english": "bitter",
+      "clue": "Ein erbitterter Kampf entstand."
+    },
+    {
+      "german": "Stummen",
+      "english": "silent",
+      "clue": "Ein stummer Kampf spielte sich ab."
+    },
+    {
+      "german": "Kampf",
+      "english": "struggle",
+      "clue": "Es war ein Kampf, um die Briefe zu verhindern."
+    },
+    {
+      "german": "Herabhängend",
+      "english": "hanging down",
+      "clue": "Das Seil hing herabhängend."
+    },
+    {
+      "german": "Davon",
+      "english": "of it; from it; away",
+      "clue": "Er wusste nichts davon."
+    },
+    {
+      "german": "Aufnahmen",
+      "english": "recordings; intakes",
+      "clue": "Die Aufnahmen waren beeindruckend."
+    },
+    {
+      "german": "Auszumerzen",
+      "english": "to eliminate; to weed out",
+      "clue": "Mr. Dursley versuchte, alle Briefe auszumerzen."
+    },
+    {
+      "german": "Gezwängt",
+      "english": "cramped; squeezed",
+      "clue": "Sie waren alle in den kleinen Wagen gezwängt."
+    },
+    {
+      "german": "Versehentlich",
+      "english": "accidentally; unintentionally",
+      "clue": "Es geschah versehentlich."
+    },
+    {
+      "german": "Angebunden",
+      "english": "tied up; bound",
+      "clue": "Die Eule war angebunden."
+    },
+    {
+      "german": "Verbrannt",
+      "english": "burned; burnt",
+      "clue": "Der Brief war verbrannt."
+    },
+    {
+      "german": "Schmerzhaft",
+      "english": "painful; aching",
+      "clue": "Es war schmerzhaft zu beobachten."
+    },
+    {
+      "german": "Wirkenden",
+      "english": "acting; seeming",
+      "clue": "Ein sonderbar wirkender Ort."
+    },
+    {
+      "german": "Aufbewahrte",
+      "english": "stored; kept",
+      "clue": "Er aufbewahrte die Briefe im Klo."
+    },
+    {
+      "german": "Ließ",
+      "english": "let; allowed",
+      "clue": "Er ließ ihn nicht in die Nähe der Post kommen."
+    },
+    {
+      "german": "Kreisen",
+      "english": "circling; moving in circles",
+      "clue": "Die Eule flog kreisen über dem Haus."
+    },
+    {
+      "german": "Sendung",
+      "english": "shipment; broadcast",
+      "clue": "Eine mysteriöse Sendung kam an."
+    },
+    {
+      "german": "Abgesetzt",
+      "english": "set down; deposited",
+      "clue": "Die Eule hatte den Brief abgesetzt."
+    },
+    {
+      "german": "Bildschirm",
+      "english": "screen",
+      "clue": "Ein Bildschirm war an der Wand."
+    },
+    {
+      "german": "Gerammt",
+      "english": "rammed; stuffed",
+      "clue": "Der Brief war in den Spalt gerammt."
+    },
+    {
+      "german": "Luftgewehr",
+      "english": "air gun; BB gun",
+      "clue": "Dudley spielte mit seinem Luftgewehr."
+    },
+    {
+      "german": "Getauscht",
+      "english": "exchanged; swapped",
+      "clue": "Sie hatten Blicke getauscht."
+    },
+    {
+      "german": "Durchgebogenem",
+      "english": "bent through; curved",
+      "clue": "Mit durchgebogenem Rücken..."
+    },
+    {
+      "german": "Lauf",
+      "english": "barrel; course",
+      "clue": "Der Lauf des Gewehrs zeigte nach unten."
+    },
+    {
+      "german": "Angerührt",
+      "english": "touched",
+      "clue": "Harry wurde von der Nachricht angerührt."
+    },
+    {
+      "german": "Anbrüllte",
+      "english": "roared at; yelled at",
+      "clue": "Mr. Dursley anbrüllte Harry."
+    },
+    {
+      "german": "Seufzte",
+      "english": "sighed",
+      "clue": "Harry seufzte schwer."
+    },
+    {
+      "german": "Schweigsam",
+      "english": "silent; taciturn",
+      "clue": "Er war schweigsam geworden."
+    },
+    {
+      "german": "Absichtlich",
+      "english": "deliberately; intentionally",
+      "clue": "Es war absichtlich so geplant."
+    },
+    {
+      "german": "Übergeben",
+      "english": "handed over; vomited",
+      "clue": "Der Brief wurde übergeben."
+    },
+    {
+      "german": "Unablässig",
+      "english": "incessantly; constantly",
+      "clue": "Die Eulen kamen unablässig."
+    },
+    {
+      "german": "Düsterer",
+      "english": "darker; gloomier",
+      "clue": "Ein düsterer Blick."
+    },
+    {
+      "german": "Flur",
+      "english": "hallway; corridor",
+      "clue": "Harry ging durch den Flur."
+    },
+    {
+      "german": "Dorthin",
+      "english": "there; to that place",
+      "clue": "Er konnte nicht dorthin gehen."
+    },
+    {
+      "german": "Schlug",
+      "english": "hit; struck",
+      "clue": "Er schlug die Tür zu."
+    },
+    {
+      "german": "Ersticken",
+      "english": "to choke; to suffocate",
+      "clue": "Vor Erstickung verschwand der Brief."
+    },
+    {
+      "german": "Entlang",
+      "english": "along; alongside",
+      "clue": "Sie gingen entlang des Ganges."
+    },
+    {
+      "german": "Entwinden",
+      "english": "to wrest away; to wriggle free",
+      "clue": "Harry konnte sich entwinden."
+    },
+    {
+      "german": "Gerangel",
+      "english": "scuffle; wrestling",
+      "clue": "Es gab ein wildes Gerangel um die Briefe."
+    },
+    {
+      "german": "Saftige",
+      "english": "juicy; substantial",
+      "clue": "Saftige Schläge trafen ihn."
+    },
+    {
+      "german": "Schläge",
+      "english": "blows; hits",
+      "clue": "Die Schläge waren hart."
+    },
+    {
+      "german": "Einstecken",
+      "english": "to pocket; to take",
+      "clue": "Er musste die Schläge einstecken."
+    },
+    {
+      "german": "Ringend",
+      "english": "wrestling; struggling",
+      "clue": "Ringend um Luft..."
+    },
+    {
+      "german": "Ausgezogen",
+      "english": "pulled out; taken off",
+      "clue": "Der Brief war ausgezogen."
+    },
+    {
+      "german": "Gewiss",
+      "english": "certain; sure",
+      "clue": "Er war sich gewiss."
+    },
+    {
+      "german": "Klappte",
+      "english": "snapped; closed",
+      "clue": "Der Brief klappte zu."
+    },
+    {
+      "german": "Ausgeheckt",
+      "english": "plotted; devised",
+      "clue": "Was hatte er ausgeheckt?"
+    },
+    {
+      "german": "Verstummen",
+      "english": "to fall silent; to stop",
+      "clue": "Die Eule ließ verstummen."
+    },
+    {
+      "german": "Pochendem",
+      "english": "throbbing; pounding",
+      "clue": "Mit pochendem Herzen..."
+    },
+    {
+      "german": "Matschiges",
+      "english": "mushy; soggy",
+      "clue": "Das matschige Papier."
+    },
+    {
+      "german": "Furchtbaren",
+      "english": "terrible; dreadful",
+      "clue": "Ein furchtbares Gefühl."
+    },
+    {
+      "german": "Schreck",
+      "english": "fright; scare",
+      "clue": "Vor Schreck konnte er nicht sprechen."
+    },
+    {
+      "german": "Befahl",
+      "english": "ordered; commanded",
+      "clue": "Mr. Dursley befahl Stillschweigen."
+    },
+    {
+      "german": "Niedergeschlagen",
+      "english": "downcast; dejected",
+      "clue": "Harry war niedergeschlagen."
+    },
+    {
+      "german": "Schloß",
+      "english": "locked; closed",
+      "clue": "Er schloß die Tür ab."
+    },
+    {
+      "german": "Beschriftete",
+      "english": "labeled; wrote on",
+      "clue": "Die beschrifteten Pakete kamen an."
+    },
+    {
+      "german": "Zerriss",
+      "english": "tore apart; ripped up",
+      "clue": "Er zerriss den Brief."
+    },
+    {
+      "german": "Nagelte",
+      "english": "nailed",
+      "clue": "Er nagelte die Fenster zu."
+    },
+    {
+      "german": "Soeben",
+      "english": "just now; a moment ago",
+      "clue": "Das war soeben geschehen."
+    },
+    {
+      "german": "Hammer",
+      "english": "hammer",
+      "clue": "Ein Hammer und Nägel..."
+    },
+    {
+      "german": "Nägel",
+      "english": "nails",
+      "clue": "Viele Nägel waren nötig."
+    },
+    {
+      "german": "Leisten",
+      "english": "to achieve; to accomplish",
+      "clue": "Mehr konnte er nicht leisten."
+    },
+    {
+      "german": "Spalten",
+      "english": "cracks; splits",
+      "clue": "Briefe kamen durch alle Spalten."
+    },
+    {
+      "german": "Butzemann",
+      "english": "bogey man; bogeyman",
+      "clue": "Ein Butzemann-artiger Charakter."
+    },
+    {
+      "german": "Versteckt",
+      "english": "hidden",
+      "clue": "Der Brief war versteckt."
+    },
+    {
+      "german": "Verdatterte",
+      "english": "bewildered; stunned",
+      "clue": "Ein verdatterter Ausdruck."
+    },
+    {
+      "german": "Hineingereicht",
+      "english": "handed in; passed through",
+      "clue": "Der Brief wurde hineingereicht."
+    },
+    {
+      "german": "Während",
+      "english": "while; during",
+      "clue": "Während der Reise geschah es."
+    },
+    {
+      "german": "Wütend",
+      "english": "angry; furious",
+      "clue": "Mr. Dursley war wütend."
+    },
+    {
+      "german": "Molkerei",
+      "english": "dairy",
+      "clue": "Ein Brief kam in der Molkerei an."
+    },
+    {
+      "german": "Anrief",
+      "english": "called; rang up",
+      "clue": "Er anrief die Molkerei."
+    },
+    {
+      "german": "Aufzutreiben",
+      "english": "to track down; to find",
+      "clue": "Sie versuchten, die Quelle aufzutreiben."
+    },
+    {
+      "german": "Erschöpft",
+      "english": "exhausted; worn out",
+      "clue": "Harry war erschöpft."
+    },
+    {
+      "german": "Verfluchten",
+      "english": "cursed; damned",
+      "clue": "Diese verfluchten Briefe!"
+    },
+    {
+      "german": "Pfeifend",
+      "english": "whistling",
+      "clue": "Pfeifend lief er davon."
+    },
+    {
+      "german": "Kugeln",
+      "english": "balls; bullets",
+      "clue": "Dudley schoß mit Kugeln."
+    },
+    {
+      "german": "Klatschen",
+      "english": "to splash; to clap",
+      "clue": "Das Wasser klatscht herunter."
+    },
+    {
+      "german": "Haarbüschel",
+      "english": "tufts of hair",
+      "clue": "Haarbüschel flogen umher."
+    },
+    {
+      "german": "Abreise",
+      "english": "departure",
+      "clue": "Die Abreise war geplant."
+    },
+    {
+      "german": "Widerrede",
+      "english": "contradiction; objection",
+      "clue": "Ohne Widerrede gehorchte Harry."
+    },
+    {
+      "german": "Brettervernagelten",
+      "english": "boarded up with planks",
+      "clue": "Das Fenster war brettervernagelt."
+    },
+    {
+      "german": "Brüllen",
+      "english": "roaring; yelling",
+      "clue": "Brüllen konnte man hören."
+    },
+    {
+      "german": "Außerirdischen",
+      "english": "extraterrestrial; alien",
+      "clue": "Ein außerirdisches Wesen schien es."
+    },
+    {
+      "german": "Verzeihn",
+      "english": "forgive; pardon",
+      "clue": "Verzeihn Sie mir, sagte er."
+    },
+    {
+      "german": "Empfangsschalter",
+      "english": "reception desk",
+      "clue": "Am Empfangsschalter wartete jemand."
+    },
+    {
+      "german": "Geschah",
+      "english": "happened; occurred",
+      "clue": "Es geschah plötzlich."
+    },
+    {
+      "german": "Inmitten",
+      "english": "in the middle of; amid",
+      "clue": "Inmitten des Durcheinanders..."
+    },
+    {
+      "german": "Umgepflügten",
+      "english": "plowed; turned over",
+      "clue": "Die umgepflügte Erde."
+    },
+    {
+      "german": "Hängebrücke",
+      "english": "suspension bridge",
+      "clue": "Eine alte Hängebrücke..."
+    },
+    {
+      "german": "Obersten",
+      "english": "topmost; uppermost",
+      "clue": "Die obersten Steine..."
+    },
+    {
+      "german": "Dumpfer",
+      "english": "dull; muffled",
+      "clue": "Ein dumpfer Laut."
+    },
+    {
+      "german": "Küste",
+      "english": "coast; shore",
+      "clue": "An der Küste des Meeres."
+    },
+    {
+      "german": "Tropfen",
+      "english": "drops; drips",
+      "clue": "Tropfen Wasser fielen."
+    },
+    {
+      "german": "Schmales",
+      "english": "narrow",
+      "clue": "Ein schmales Tal."
+    },
+    {
+      "german": "Felsen",
+      "english": "rocks; cliffs",
+      "clue": "Schroffe Felsen."
+    },
+    {
+      "german": "Thronte",
+      "english": "enthroned; sat proudly",
+      "clue": "Ein Schloss thronte auf dem Hügel."
+    },
+    {
+      "german": "Schäbigste",
+      "english": "shabbiest; most squalid",
+      "clue": "Das schäbigste Haus der Gegend."
+    },
+    {
+      "german": "Zugehumpelt",
+      "english": "hobbled; limped",
+      "clue": "Er zugehumpelt zum Hafen."
+    },
+    {
+      "german": "Deutete",
+      "english": "pointed; indicated",
+      "clue": "Er deutete auf das Haus."
+    },
+    {
+      "german": "Verschmitzten",
+      "english": "mischievous; cunning",
+      "clue": "Ein verschmitztes Lächeln."
+    },
+    {
+      "german": "Erreichten",
+      "english": "reached; arrived at",
+      "clue": "Sie erreichten das Ziel."
+    },
+    {
+      "german": "Rutschend",
+      "english": "sliding; slipping",
+      "clue": "Rutschend den Berg hinunter."
+    },
+    {
+      "german": "Schlitternd",
+      "english": "skidding; sliding",
+      "clue": "Schlitternd auf dem Eis."
+    },
+    {
+      "german": "Schrumpelten",
+      "english": "shriveled; withered",
+      "clue": "Die Blätter schrumpelten."
+    },
+    {
+      "german": "Ausnahmsweise",
+      "english": "exceptionally; for once",
+      "clue": "Ausnahmsweise sagte er ja."
+    },
+    {
+      "german": "Riechende",
+      "english": "smelling; odorous",
+      "clue": "Ein sonderbar riechender Ort."
+    },
+    {
+      "german": "Leintücher",
+      "english": "linen sheets; bedsheets",
+      "clue": "Schmutzige Leintücher hingen herum."
+    },
+    {
+      "german": "Zerrissensten",
+      "english": "most torn; most tattered",
+      "clue": "Die zerrissensten Fetzen."
+    },
+    {
+      "german": "Bibberte",
+      "english": "trembled; shivered",
+      "clue": "Er bibberte vor Kälte."
+    },
+    {
+      "german": "Wälzte",
+      "english": "rolled; tossed",
+      "clue": "Er wälzte sich herum."
+    },
+    {
+      "german": "Herunterbaumelte",
+      "english": "dangled down; hung loosely",
+      "clue": "Ein Seil herunterbaumelte."
+    },
+    {
+      "german": "Vollgestopft",
+      "english": "crammed full; stuffed",
+      "clue": "Der Rucksack war vollgestopft."
+    },
+    {
+      "german": "Stibitzen",
+      "english": "to pinch; to steal",
+      "clue": "Er versuchte, es zu stibitzen."
+    }
+  ]
 }
