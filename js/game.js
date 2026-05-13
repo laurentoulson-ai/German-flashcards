@@ -59,6 +59,11 @@ class GameSession {
     }
     
     async loadSessionWords() {
+        // For 'all' chapters mode, chapters must be loaded before getSessionWords can build the combined pool
+        if (String(this.chapterNumber) === 'all' && flashcardData.chapters.length === 0) {
+            await flashcardData.loadAllChapters();
+        }
+
         this.sessionWords = flashcardData.getSessionWords(
             this.chapterNumber,
             this.level,

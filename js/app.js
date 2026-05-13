@@ -68,7 +68,38 @@ function displayChapters() {
     }
     
     container.innerHTML = '';
-    
+
+    // "Test All Chapters" card — always first
+    const totalAll = flashcardData.progress.stats.totalWords || 0;
+    const learnedAll = (flashcardData.progress.stats.learnedWords || 0) + (flashcardData.progress.stats.strongestWords || 0);
+    const toLearnAll = Math.max(0, totalAll - learnedAll);
+
+    const allCard = document.createElement('div');
+    allCard.className = 'chapter-card';
+    allCard.onclick = () => {
+        localStorage.setItem('selectedChapter', 'all');
+        window.location.href = 'level-select.html';
+    };
+    allCard.innerHTML = `
+        <div class="chapter-image" style="background-image: url('data/images/cover.jpeg')">
+            <div class="chapter-number">ALL</div>
+        </div>
+        <div class="chapter-info">
+            <h3 class="chapter-title">All Chapters</h3>
+            <div class="chapter-stats">
+                <div class="stat">
+                    <i class="fas fa-book"></i>
+                    <span>To Learn: ${toLearnAll}</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Learned: ${learnedAll}</span>
+                </div>
+            </div>
+        </div>
+    `;
+    container.appendChild(allCard);
+
     flashcardData.chapters.forEach((chapter, index) => {
         const chapterNumber = index + 1;
         const progress = flashcardData.progress.chapters[chapterNumber] || {
