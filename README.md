@@ -1,11 +1,11 @@
 German Flashcards
 =================
 
-A small web app for studying German vocabulary from 'Harry Potter und der Stein der Weisen', chapter-by-chapter. It displays chapter cards, lets you select learning levels and run short practice sessions (flashcards), and tracks progress in the browser.
+A small web app I designed for studying German vocabulary from 'Harry Potter und der Stein der Weisen', chapter-by-chapter. It displays chapter cards, lets you select learning levels and run short practice sessions (flashcards), and tracks progress in the browser. The app can be used for learning any language.
 
 Quick overview
 --------------
-- Chapters are JSON files in data/chapters/chapterN.json. Each chapter contains a "words" array of objects with fields: "german", "english" and "clue". Chapters can be added one at a time.
+- Chapters are JSON files in data/chapters/chapterN.json. Each chapter contains a "words" array of objects with fields: "german", "english" and "clue". Chapters can be added one at a time. The current JSON files are words I want to learn - you can replace these with your own JSON files of words you want to learn.
 - The homepage shows all chapters and a progress summary (total words, words learned).
 - Practice sessions are available per chapter with three levels (learn → consolidate → strengthen). Answers update progress saved to localStorage.
 
@@ -28,7 +28,7 @@ The app can be run directly from GitHub pages.
 
   Clone repo > Settings > Pages > Publish site
 
-  # Site will be available at https://[Your username].github.io/German-flashcards/
+  ### Site will be available at https://[Your username].github.io/German-flashcards/
 
 Files & structure
 -----------------
